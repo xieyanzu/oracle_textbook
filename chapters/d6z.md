@@ -20,9 +20,8 @@
 
 
 
-<p align="center"><img src="./img/d6z/tu6.1.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.1.png" /></p>  
 <p align="center">图6.1  视图概念</p>  
-
 
 
 
@@ -77,14 +76,13 @@ SELECT * FROM USER_VIEWS
 &emsp;&emsp;
 
 
-&emsp;&emsp;执行该SQL语句，选择一个视图，单击TEXT字段LONG右边的小按钮![img](./img/d6z/tubiao6.1.png)，弹出视图的SELECT语句，如图6.2所示。
+&emsp;&emsp;执行该SQL语句，选择一个视图，单击TEXT字段LONG右边的小按钮![img](../img/d6z/tubiao6.1.png)，弹出视图的SELECT语句，如图6.2所示。
 
 
 
 
-<p align="center"><img src="./img/d6z/tu6.2.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.2.png" /></p>  
 <p align="center">图6.2  获取视图信息</p>  
-
 
 
 
@@ -96,7 +94,7 @@ SELECT * FROM USER_VIEWS
 
 &emsp;&emsp;使用CREATE VIEW语句可以创建视图，其语法形式如下：
 
- 
+
 ```
 CREATE [OR REPLACE] [FORCE|NOFORCE] VIEW view[(aliaslist)]
 
@@ -106,7 +104,7 @@ AS subquery
 
 [WITH READ ONLY]
 ```
- 
+
 
 &emsp;&emsp;其中，OR REPLACE表示如果视图已经存在则重新创建，FORCE表示创建视图而不管基表是否存在，NOFORCE表示只有在基表存在的情况下才创建视图（默认情况），view表示视图名，aliaslist表示别名列表（别名之间用逗号隔开，别名的个数需要和查询中选择的字段或表达式的个数一致），subquery表示子查询，WITH CHECK OPTION表示只有可访问的行在视图中才能被插入或更新，cname表示为CHECK OPTION约束指定的名称，WITH READ ONLY表示在该视图中不可执行DML操作。
 
@@ -116,13 +114,13 @@ AS subquery
 
 &emsp;&emsp;视图的作用之一就是隐藏数据，下面就针对雇员表创建一个视图，隐藏其他数据，只显示雇员编号、姓氏和雇佣日期这三个字段的信息，且它们的别名分别设置为id、Name和Start，其SQL语句如下：
 
- 
+
 ```
 CREATE OR REPLACE VIEW emp_hidedata_view("id", "Name", "Start")
 
 AS SELECT employee_id, last_name, hire_date FROM employees
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看Views文件夹，如图6.3所示，显示视图已经创建成功。
 
@@ -130,14 +128,12 @@ AS SELECT employee_id, last_name, hire_date FROM employees
 
 
 
-<p align="center"><img src="./img/d6z/tu6.3.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.3.png" /></p>  
 <p align="center">图6.3  Views文件夹</p>  
 
 
-
-<p align="center"><img src="./img/d6z/tu6.4.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.4.png" /></p>  
 <p align="center">图6.4  获取视图内容</p>  
-
 
 ​                                        
 
@@ -147,21 +143,20 @@ AS SELECT employee_id, last_name, hire_date FROM employees
 
 &emsp;&emsp;对于创建好的视图，可以像从表中查询数据一样从视图中获取数据，例如可以执行如下的SQL语句：
 
- 
+
 ```
 SELECT * FROM emp_hidedata_view
 
 WHERE "id" BETWEEN 200 AND 207
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，运行结果如图6.5所示。
 
 
 
-<p align="center"><img src="./img/d6z/tu6.5.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.5.png" /></p>  
 <p align="center">图6.5  从视图中查询数据</p>  
-
 
 
 
@@ -169,7 +164,7 @@ WHERE "id" BETWEEN 200 AND 207
 
 &emsp;&emsp;复杂视图是子查询中涉及表的数目超过一个，或包含函数，或包含数据分组的视图。假设现在要创建这样一个视图，该视图包括部门名称、部门平均薪水、最低薪水和最高薪水（别名分别是dept_name、avg_salary、min_salary和max_salary），而这些数据是通过对雇员表employees分组计算得来的。创建视图的SQL语句如下：
 
- 
+
 ```
 CREATE OR REPLACE VIEW dept_salary_view(dept_name, avg_salary, min_salary, max_salary)
 
@@ -183,16 +178,15 @@ AS
 
 ​         GROUP BY d.department_name
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看dept_salary_view视图的数据，如图6.6所示。
 
 
 
 
-<p align="center"><img src="./img/d6z/tu6.6.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.6.png" /></p>  
 <p align="center">图6.6  获取复杂视图数据</p>  
-
 
 
 
@@ -206,17 +200,17 @@ AS
 
 &emsp;&emsp;执行下面针对视图emp_hidedata_view的删除语句，并提交事务，经确认，雇员表中编号为208的记录（确定之前插入了该记录）被删除，说明针对简单视图的删除操作对视图的基表起了作用。
 
- 
+
 ```
 DELETE FROM emp_hidedata_view WHERE "id" = 208
 ```
- 
+
 
 - 更新简单视图行
 
 &emsp;&emsp;执行下面针对视图emp_hidedata_view的更新语句，并提交事务，经确认，雇员表中编号为207的雇员（确定之前插入了该记录），其姓氏从“Wang”变成了“Wan”，如图6.7所示。这说明针对简单视图的更新操作也对视图的基表起了作用。
 
- 
+
 ```
 UPDATE emp_hidedata_view 
 
@@ -226,9 +220,8 @@ WHERE "id" = 207
 ```
 
 
-<p align="center"><img src="./img/d6z/tu6.7.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.7.png" /></p>  
 <p align="center">图6.7  更新简单视图行</p>  
-
 
 
 
@@ -236,29 +229,29 @@ WHERE "id" = 207
 
 &emsp;&emsp;执行下面针对视图emp_hidedata_view的插入语句，Oracle提示无法将NULL插入雇员表的EMAIL字段，插入简单视图行不成功。
 
- 
+
 ```
 INSERT INTO emp_hidedata_view
 
 VALUES(210,'Jiang','17-6月-13')
 ```
- 
+
 
 &emsp;&emsp;插入不成功的原因在于，在创建emp_hidedata_view视图时，选择了雇员表employees的雇员编号、姓氏和雇佣日期，并没有选择EMAIL等其他字段。这些没有选择的字段在雇员表employees中有非空字段，而当向emp_hidedata_view视图插入行时，最终是要给雇员表employees插入行，但实际插入的数据不包括这些非空字段的值，所以插入时出错。
 
 &emsp;&emsp;假设针对部门表departments创建下面的视图dept_hidedata_view，包括部门表中的部门编号和部门名称两个非空字段，不包括经理编号和所在地编号两个可以为空的字段，其SQL语句如下：
 
- 
+
 ```
 CREATE OR REPLACE VIEW dept_hidedata_view
 
 AS SELECT department_id, department_name FROM departments
 ```
- 
+
 
 &emsp;&emsp;针对这个简单视图dept_hidedata_view插入行，SQL语句如下，提交事务，经确认，部门表中已经插入了编号为310的部门信息。
 
- 
+
 ```
 INSERT INTO dept_hidedata_view
 
@@ -308,7 +301,7 @@ VALUES(310,'Department3')
 
 &emsp;&emsp;例如针对雇员表employees创建了如下的视图，要求部门编号必须为60，其SQL语句如下：
 
- 
+
 ```
 CREATE OR REPLACE VIEW emp_dept60_view
 
@@ -316,11 +309,11 @@ AS SELECT * FROM employees WHERE department_id = 60
 
 WITH CHECK OPTION CONSTRAINT emp_dept60_ck
 ```
- 
+
 
 &emsp;&emsp;针对该视图执行如下的更新操作，将会显示错误，提示“视图WITH CHECK OPTION WHERE子句违规”。
 
- 
+
 ```
 UPDATE emp_dept60_view
 
@@ -328,7 +321,7 @@ SET department_id = 310
 
 WHERE employee_id = 207
 ```
- 
+
 
 &emsp;&emsp;其原因在于，创建视图时WHERE子句中要求部门编号为60的数据才会被选中。而通过UPDATE更新视图后，将部门编号更改为非60，即产生了视图不能通过WHERE子句选择的行，所以提示错误。
 
@@ -384,7 +377,7 @@ WHERE employee_id = 207
 
 &emsp;&emsp;用CREATE SEQUENCE语句可以定义一个序列，自动产生序列数，其语法形式如下：
 
- 
+
 ```
 CREATE SEQUENCE sequence
 
@@ -400,7 +393,7 @@ CREATE SEQUENCE sequence
 
 [{CACHE n| NOCACHE}];
 ```
- 
+
 
 &emsp;&emsp;sequence：序列的名字。
 
@@ -426,7 +419,7 @@ CREATE SEQUENCE sequence
 
 &emsp;&emsp;下面创建一个序列，命名为dept_deptid_seq，用于给部门表设置主键，创建序列的SQL语句如下（需要删除掉之前添加的部门编号大于270的部门）：
 
- 
+
 ```
 CREATE SEQUENCE dept_deptid_seq
 
@@ -440,22 +433,21 @@ NOCYCLE
 
 NOCACHE
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看Sequences文件夹，如图6.8所示，显示序列已经创建成功。
 
 
 
 
-<p align="center"><img src="./img/d6z/tu6.8.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.8.png" /></p>  
 <p align="center">图6.8  Sequences文件夹</p>  
-
 
 
 
 &emsp;&emsp;序列的相关信息被存储在数字字典中，可以通过访问数据字典视图USER_SEQUENCES来查看序列的相关信息，例如可以通过下面的SQL语句获得所有序列的序列名、最后值、最小值、最大值和步长，结果如图6.9所示。
 
- 
+
 ```
 SELECT sequence_name, last_number, min_value, max_value, increment_by
 
@@ -463,9 +455,8 @@ FROM user_sequences
 ```
 
 
-<p align="center"><img src="./img/d6z/tu6.9.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.9.png" /></p>  
 <p align="center">图6.9  获取序列信息</p>  
-
 
 
 
@@ -496,33 +487,32 @@ FROM user_sequences
 
 &emsp;&emsp;假设要重新在部门表中插入开发部（Development）这个部门，其部门经理编号为103，部门所在地编号为1700，使用序列值产生部门编号，其SQL语句如下：
 
- 
+
 ```
 INSERT INTO departments
 
 VALUES (dept_deptid_seq.NEXTVAL, 'Development', 103, 1700)
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，并提交事务，经确认，部门表中增加了表示开发部的一条记录，部门编号为280，如图6.10所示。
 
 
 
-<p align="center"><img src="./img/d6z/tu6.10.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.10.png" /></p>  
 <p align="center">图6.10  使用序列插入数据</p>  
-
 
 
 
 &emsp;&emsp;需要注意的是，此时dept_deptid_seq.CURRVAL的值为280。如果需要将这个新建部门的雇员信息插入雇员表employees中，则可以使用如下的SQL语句（需要删除之前添加的雇员编号大于107的雇员）：
 
- 
+
 ```
 INSERT INTO employees (employee_id, department_id, ...) 
 
 VALUES (employees_seq.NEXTVAL, dept_deptid_seq.CURRVAL, ...)
 ```
- 
+
 
 &emsp;&emsp;此时dept_deptid_seq.CURRVAL的值为280，代表的是开发部的雇员。在该SQL语句中，又使用了序列employees_seq，这是本数据库中原有的序列，在图6.9中可以了解到该序列的信息。
 
@@ -534,7 +524,7 @@ VALUES (employees_seq.NEXTVAL, dept_deptid_seq.CURRVAL, ...)
 
 &emsp;&emsp;修改序列的语法和创建序列类似，只是将CREATE改成了ALTER，且START WITH选项不可以修改，具体语法形式如下： 
 
- 
+
 ```
 ALTER SEQUENCE sequence
 
@@ -548,13 +538,13 @@ ALTER SEQUENCE sequence
 
 [{CACHE n| NOCACHE}];
 ```
- 
+
 
 &emsp;&emsp;修改序列的用户，必须是被修改序列的所有者或者用户具有ALTER权限，使用ALTER SEQUENCE修改序列，只有以后的序列值会受到影响，之前的不受影响。并且修改序列的部分选项不能使原有序列产生错误，例如不能将序列的最大值修改为小于当前的序列值。
 
 &emsp;&emsp;例如要修改刚才创建的序列dept_deptid_seq，将间隔改为20，并开启序列缓存，保存10个值，其SQL语句如下：
 
- 
+
 ```
 ALTER SEQUENCE dept_deptid_seq
 
@@ -562,14 +552,13 @@ INCREMENT BY 20
 
 CACHE 10
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看Sequences文件夹，右击如图6.8所示的dept_deptid_seq序列对象，并选择编辑，打开如图6.11所示的结果。从图中可以看出，间隔已经调整为20，且开启了保存10个值的序列缓存。
 
 
-<p align="center"><img src="./img/d6z/tu6.11.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.11.png" /></p>  
 <p align="center">图6.11  修改序列</p>  
-
 
 
 
@@ -636,9 +625,8 @@ CACHE 10
 
 
 
-<p align="center"><img src="./img/d6z/tu6.12.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.12.png" /></p>  
 <p align="center">图6.12  雇员表employees的索引</p>  
-
 
 
 
@@ -650,32 +638,31 @@ CACHE 10
 
 &emsp;&emsp;创建索引的语法形式如下：
 
- 
+
 ```
 CREATE  [UNIQUE]  INDEX index
 
 ON table(col1, col2…)
 ```
- 
+
 
 &emsp;&emsp;其中，UNIQUE表示建立的是唯一索引还是非唯一索引，index表示索引的名字，table表示该索引建立在哪个表上，col1和col2表示表中被索引的字段名称。
 
 &emsp;&emsp;为了改善雇员表employees中电话号码字段PHONE_NUMBER的查询速度，可以给雇员表的电话号码字段建立一个索引，其SQL语句如下：
 
- 
+
 ```
 CREATE INDEX emp_phone_number_ix
 
 ON employees(phone_number)
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看雇员表employees的Indexes选项卡，如图6.13所示，显示索引已经创建成功。
 
 
-<p align="center"><img src="./img/d6z/tu6.13.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.13.png" /></p>  
 <p align="center">图6.13  索引创建成功</p>  
-
 
 
 
@@ -684,32 +671,31 @@ ON employees(phone_number)
 
 &emsp;&emsp;上面创建的索引是针对字段的，下面创建一个基于函数的索引，其SQL语句如下：
 
- 
+
 ```
 CREATE INDEX emp_last_name_ix
 
 ON employees(LOWER(last_name))
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，再次打开Indexes选项卡，如图6.14所示，该索引创建成功，且Columns列里显示的是带函数的内容“LOWER(LAST_NAME)”。
 
 
 
-<p align="center"><img src="./img/d6z/tu6.14.png" /></p>  
+<p align="center"><img src="../img/d6z/tu6.14.png" /></p>  
 <p align="center">图6.14  基于函数的索引</p>  
-
 
 
 
 
 &emsp;&emsp;当用户针对雇员表执行下面的SQL语句时，该索引将起到提高查询速度的作用。
 
- 
+
 ```
 SELECT * FROM employees WHERE LOWER(last_name) = 'grant'
 ```
- 
+
 
 - 删除索引
 

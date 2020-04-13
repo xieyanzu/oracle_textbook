@@ -32,9 +32,8 @@ WHERE salary > (SELECT salary FROM employees WHERE last_name = 'Abel') AND depar
 &emsp;&emsp;该SQL语句首先执行“SELECT salary FROM employees WHERE last_name = 'Abel'”，获得结果值6000；之后再执行“SELECT last_name FROM employees WHERE salary > 6000 AND department_id = 90”，运行结果如图4.1所示。
 
 
-<p align="center"><img src="./img/d4z/tu4.1.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.1.png" /></p>  
 <p align="center">图4.1  子查询</p>  
-
 
 
 
@@ -71,9 +70,8 @@ WHERE department_id = (SELECT department_id FROM employees WHERE employee_id = 1
 
 
 
-<p align="center"><img src="./img/d4z/tu4.2.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.2.png" /></p>  
 <p align="center">图4.2  单行子查询</p>  
-
 
 
 
@@ -93,9 +91,8 @@ AND salary > (SELECT salary FROM employees WHERE employee_id = 105)
 
 
 
-<p align="center"><img src="./img/d4z/tu4.3.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.3.png" /></p>  
 <p align="center">图4.3  多个单行子查询</p>  
-
 
 
 
@@ -116,9 +113,8 @@ AND salary >= (SELECT AVG(salary) FROM employees)
 
 
 
-<p align="center"><img src="./img/d4z/tu4.4.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.4.png" /></p>  
 <p align="center">图4.4  加入组函数的单行子查询</p>  
-
 
 
 
@@ -144,14 +140,12 @@ WHERE salary IN (SELECT salary FROM employees WHERE department_id = 60)
 
 
 
-<p align="center"><img src="./img/d4z/tu4.5.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.5.png" /></p>  
 <p align="center">图4.5  多行子查询</p>  
 
 
-
-<p align="center"><img src="./img/d4z/tu4.6.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.6.png" /></p>  
 <p align="center">图4.6  子查询结果</p>  
-
 
 ​                                                         
 
@@ -193,9 +187,8 @@ WHERE salary < ANY(SELECT salary FROM employees WHERE department_id = 60)
 
 
 
-<p align="center"><img src="./img/d4z/tu4.7.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.7.png" /></p>  
 <p align="center">图4.7  ANY运算符使用</p>  
-
 
 
 
@@ -286,9 +279,8 @@ WHERE salary < (SELECT MAX(salary) FROM employees WHERE department_id = 60)
 
 
 
-<p align="center"><img src="./img/d4z/tu4.8.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.8.png" /></p>  
 <p align="center">图4.8  IT部门雇员信息</p>  
-
 
 
 
@@ -304,9 +296,8 @@ FROM employees WHERE department_id = 60
 
 
 
-<p align="center"><img src="./img/d4z/tu4.9.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.9.png" /></p>  
 <p align="center">图4.9  组函数使用</p>  
-
 
 
 
@@ -314,9 +305,8 @@ FROM employees WHERE department_id = 60
 
 
 
-<p align="center"><img src="./img/d4z/tu4.10.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.10.png" /></p>  
 <p align="center">图4.10  组函数使用</p>  
-
 
 
 
@@ -341,9 +331,8 @@ FROM employees
 
 
 
-<p align="center"><img src="./img/d4z/tu4.11.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.11.png" /></p>  
 <p align="center">图4.11  COUNT组函数使用</p>  
-
 
 
 
@@ -381,9 +370,8 @@ FROM employees GROUP BY department_id
 
 
 
-<p align="center"><img src="./img/d4z/tu4.12.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.12.png" /></p>  
 <p align="center">图4.12  GROUP BY使用</p>  
-
 
 
 
@@ -401,9 +389,8 @@ GROUP BY department_id ORDER BY MAX(salary) DESC
 
 
 
-<p align="center"><img src="./img/d4z/tu4.13.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.13.png" /></p>  
 <p align="center">图4.13  对分组结果进行排序</p>  
-
 
 
 
@@ -430,9 +417,8 @@ ORDER BY department_id, job_id
 
 
 
-<p align="center"><img src="./img/d4z/tu4.14.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.14.png" /></p>  
 <p align="center">图4.14  分组中再分组</p>  
-
 
 
 &emsp;&emsp;同样的，SELECT子句和ORDER BY子句中只能包括分组字段和组函数。
@@ -451,9 +437,8 @@ WHERE department_id IN(50,60,80,90) GROUP BY department_id
 
 
 
-<p align="center"><img src="./img/d4z/tu4.15.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.15.png" /></p>  
 <p align="center">图4.15  分组前使用WHERE子句约束行</p>  
-
 
 
 
@@ -475,9 +460,8 @@ GROUP BY department_id HAVING MAX(salary) > 12000
 
 
 
-<p align="center"><img src="./img/d4z/tu4.16.png" /></p>  
+<p align="center"><img src="../img/d4z/tu4.16.png" /></p>  
 <p align="center">图4.16  HAVING子句使用</p>  
-
 
 
 

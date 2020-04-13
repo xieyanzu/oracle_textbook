@@ -33,9 +33,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.1.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.1.png" /></p>  
 <p align="center">图2.1  EMPLOYEES表数据</p>  
-
 
 
 
@@ -43,9 +42,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.2.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.2.png" /></p>  
 <p align="center">图2.2  DEPARTMENTS表数据</p>  
-
 
 
 
@@ -53,9 +51,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.3.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.3.png" /></p>  
 <p align="center">图2.3  JOBS表数据</p>  
-
 
 
 
@@ -63,9 +60,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.4.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.4.png" /></p>  
 <p align="center">图2.4  LOCATIONS表数据</p>  
-
 
 
 
@@ -73,14 +69,12 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.5.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.5.png" /></p>  
 <p align="center"> 图2.5  COUNTRIES表数据 </p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.6.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.6.png" /></p>  
 <p align="center">图2.6  REGIONS表数据</p>  
-
 
 ​                               
 
@@ -88,9 +82,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.7.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.7.png" /></p>  
 <p align="center">图2.7  JOB_HISTORY表数据</p>  
-
 
 
 
@@ -104,9 +97,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.8.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.8.png" /></p>  
 <p align="center">图2.8  EMPLOYEES表结构</p>  
-
 
 
 
@@ -139,7 +131,7 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.9.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.9.png" /></p>  
 <p align="center">图2.9  General选项卡</p>  
 
 
@@ -147,8 +139,7 @@
 
 
 
-
-<p align="center"><img src="./img/d2z/tu2.10.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.10.png" /></p>  
 <p align="center">图2.10  Keys选项卡</p>  
 
 
@@ -156,8 +147,7 @@
 
 
 
-
-<p align="center"><img src="./img/d2z/tu2.11.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.11.png" /></p>  
 <p align="center">图2.11  Checks选项卡</p>  
 
 
@@ -165,10 +155,8 @@
 
 
 
-
-<p align="center"><img src="./img/d2z/tu2.12.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.12.png" /></p>  
 <p align="center">图2.12  Indexes选项卡</p>  
-
 
 
 
@@ -211,9 +199,8 @@
 
 
 
-<p align="center"><img src="./img/d2z/tu2.13.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.13.png" /></p>  
 <p align="center">图2.13   SELECT语句功能</p>  
-
 
 
 
@@ -251,36 +238,34 @@ SELECT * FROM DEPARTMENTS
 ```
 
 
-&emsp;&emsp;要想让上面的SQL语句在PL/SQL Dev中执行，可以通过单击PL/SQL Dev左上角第一个图标![img](./img/d2z/tubiao2.1.png)新建一个SQL Window，如图2.14所示。在打开的SQL Window中输入SQL语句（这里SQL语句使用小写，SQL是不区分大小写的），并以“;”结尾，单击左上角第二排第二个图标![img](./img/d2z/tubiao2.2.png)（或按F8键）执行该SQL语句，返回需要查询的结果集，如图2.15所示。由于窗口显示内容的限制，可能仅显示了部分数据，通过单击![img](./img/d2z/tubiao2.3.png)和![img](./img/d2z/tubiao2.4.png)图标，可以显示下一页和到最后页的数据。
+&emsp;&emsp;要想让上面的SQL语句在PL/SQL Dev中执行，可以通过单击PL/SQL Dev左上角第一个图标![img](../img/d2z/tubiao2.1.png)新建一个SQL Window，如图2.14所示。在打开的SQL Window中输入SQL语句（这里SQL语句使用小写，SQL是不区分大小写的），并以“;”结尾，单击左上角第二排第二个图标![img](../img/d2z/tubiao2.2.png)（或按F8键）执行该SQL语句，返回需要查询的结果集，如图2.15所示。由于窗口显示内容的限制，可能仅显示了部分数据，通过单击![img](../img/d2z/tubiao2.3.png)和![img](../img/d2z/tubiao2.4.png)图标，可以显示下一页和到最后页的数据。
 
 
 
-<p align="center"><img src="./img/d2z/tu2.14.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.14.png" /></p>  
 <p align="center">图2.14  新建一个SQL Window </p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.15.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.15.png" /></p>  
 <p align="center">图2.15  执行SELECT语句</p>  
-
 
 ​                        
 
 &emsp;&emsp;通过查询结果和之前对DEPARTMENTS表的了解，知道此表包括DEPARTMENT_ID、DEPARTMENT_NAME、MANAGER_ID和LOCATION_ID四个字段，如果仅想查询部门编号和部门名称这两个字段，可以编写如下的SQL语句（为了方便阅读，接下来编写的SQL语句中，SQL关键字将采用大写字母，非SQL关键字将采用小写字母，这也符合日常程序员编写SQL语句的习惯）。
 
- 
+
 ```
 SELECT department_id,department_name FROM departments
 ```
- 
+
 
 &emsp;&emsp;在SELECT子句中，所选择字段的显示顺序可以由程序员自己决定，例如想把部门名称字段显示在部门编号之前，则可以编写如下SQL语句：
 
- 
+
 ```
 SELECT department_name, department_id FROM departments
 ```
- 
+
 
 &emsp;&emsp;从现在开始，需要大量编写SQL语句了，在编写SQL语句之前，先了解一下作为软件开发人员，编写SQL语句应该遵循哪些规则。遵循了这些规则编写的SQL语句，容易阅读、容易编辑，但因为书籍篇幅问题，书中的SQL语句大多没有采用如下规则。
 
@@ -290,13 +275,13 @@ SELECT department_name, department_id FROM departments
 
 &emsp;&emsp;例如上面的SQL语句，按SQL语句需遵循的规则，应该写成：
 
- 
+
 ```
 SELECT department_name, department_id 
 
 FROM departments
 ```
- 
+
 
 ### 2.3.2  算术表达式  
 
@@ -308,29 +293,28 @@ FROM departments
 
 &emsp;&emsp;现在有这样的需求：过圣诞节了，公司决定给每个雇员发500元过节费，随薪水一起发放。现需要显示出每个员工的编号、名字和当月实发薪酬，可以编写如下SQL语句：
 
- 
+
 ```
 SELECT employee_id,first_name,salary+500 FROM employees
 ```
- 
+
 
 &emsp;&emsp;SQL语句中合成的计算列不是employees表中新的字段，显示的新列来源于对字段的计算而已。
 
 &emsp;&emsp;如果需要显示每个雇员的月薪以及年薪，可以通过月薪*12+500元过节费的方式计算年薪并显示，其SQL语句如下：
 
- 
+
 ```
 SELECT employee_id,first_name,salary, salary*12+500 FROM employees
 ```
- 
+
 
 &emsp;&emsp;部分显示结果如图2.16所示。
 
 
 
-<p align="center"><img src="./img/d2z/tu2.16.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.16.png" /></p>  
 <p align="center">图2.16  SQL算数表达式</p>  
-
 
 
 
@@ -342,26 +326,25 @@ SELECT employee_id,first_name,salary, salary*12+500 FROM employees
 
 &emsp;&emsp;还是上面显示雇员编号、名字、月薪和年薪的例子，这次要求做两点改进，一是只需要显示雇员名字和年薪两个字段的数据，二是雇员名字字段显示的标题为Name而不是FIRST_NAME，年薪字段的标题改为Yearly Salary，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name "Name",salary*12+500 "Yearly Salary" FROM employees
 ```
 
 
- 
+
 
 &emsp;&emsp;因为字段别名要求大小写敏感，而且带有空格，所以使用了双引号，部分显示结果如图2.17所示。
 
 
-<p align="center"><img src="./img/d2z/tu2.17.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.17.png" /></p>  
 <p align="center">图2.17  SQL字段别名</p>  
-
 
 
 
 &emsp;&emsp;也可以使用可选关键字AS表示别名，SQL语句如下，功能与之前的SQL语句没有差别，但为了阅读方便，推荐软件开发人员使用该关键字。
 
- 
+
 ```
 SELECT first_name AS "Name",salary*12+500 AS "Yearly Salary" FROM employees
 ```
@@ -372,11 +355,11 @@ SELECT first_name AS "Name",salary*12+500 AS "Yearly Salary" FROM employees
 
 &emsp;&emsp;继续调整上面的案例，如果想将first_name和last_name合并成一个字段显示，且字段标题设置为Name，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name || last_name AS "Name",salary*12+500 AS "Yearly Salary" FROM employees
 ```
- 
+
 
 &emsp;&emsp;部分显示结果如图2.18所示。
 
@@ -384,22 +367,20 @@ SELECT first_name || last_name AS "Name",salary*12+500 AS "Yearly Salary" FROM e
 
 
 
-<p align="center"><img src="./img/d2z/tu2.18.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.18.png" /></p>  
 <p align="center">图2.18  SQL连字运算符之非理想结果</p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.19.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.19.png" /></p>  
 <p align="center"> 图2.19  SQL连字运算符之理想结果</p>  
-
 
 ​                 
 
- 
+
 ```
 SELECT first_name || ' ' || last_name AS "Name",salary*12+500 AS "Yearly Salary" FROM employees
 ```
- 
+
 
 &emsp;&emsp;需要注意的是，如果连接的是数字，则可以不用单引号；如果是字符串或日期类型，则必须使用单引号；如果字符串常量中包含了单引号，则可以使用两个单引号表示一个单引号常量。
 
@@ -407,33 +388,31 @@ SELECT first_name || ' ' || last_name AS "Name",salary*12+500 AS "Yearly Salary"
 
 &emsp;&emsp;如果需要查询显示employees表中员工的部门编号，其SQL语句非常简单：
 
- 
+
 ```
 SELECT department_id FROM employees
 ```
- 
+
 
 &emsp;&emsp;部分显示结果如图2.20所示。可以看出，部门编号存在大量的重复，这说明SELECT语句默认显示所有的行，包括相同的行，如果想除去相同的行，需要使用DISTINCT关键字，具体SQL语句如下：
 
- 
+
 ```
 SELECT DISTINCT department_id FROM employees
 ```
- 
+
 
 &emsp;&emsp;结果如图2.21所示。
 
 
 
 
-<p align="center"><img src="./img/d2z/tu2.20.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.20.png" /></p>  
 <p align="center">图2.20  SELECT存在重复的行</p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.21.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.21.png" /></p>  
 <p align="center">图2.21  SQL DISTINCT关键字</p>  
-
 
 ​                            
 
@@ -477,11 +456,11 @@ SELECT DISTINCT department_id FROM employees
 
 &emsp;&emsp;继续操作employees表，如果仅需要查询部门编号为60的所有雇员，则可以使用如下SQL语句：
 
- 
+
 ```
 SELECT * FROM employees WHERE department_id = 60
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，按要求仅查询出了五个雇员的信息。
 
@@ -491,11 +470,11 @@ SELECT * FROM employees WHERE department_id = 60
 
 &emsp;&emsp;例如要查询departments表中部门名称为“IT”的部门信息，SQL语句应该是：
 
- 
+
 ```
 SELECT * FROM departments WHERE department_name = 'IT'
 ```
- 
+
 
 &emsp;&emsp;通过该SQL语句，正常查询出所需要的信息，如图2.22所示。但是如果把WHERE子句写成WHERE department_name = 'it'，执行SQL，没有行返回。
 
@@ -505,25 +484,23 @@ SELECT * FROM departments WHERE department_name = 'IT'
 
 &emsp;&emsp;回到employees表，如果希望查询出薪水大于等于12000元的雇员的名字和薪水，则可以用下面的SQL语句：
 
- 
+
 ```
 SELECT first_name, salary FROM employees WHERE salary >= 12000
 ```
- 
+
 
 执行SQL语句，结果如图2.23所示。
 
 
 
 
-<p align="center"><img src="./img/d2z/tu2.22.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.22.png" /></p>  
 <p align="center">图2.22  SQL WHERE子句 </p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.23.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.23.png" /></p>  
 <p align="center">图2.23  WHERE子句比较条件</p>  
-
 
 ​                                      
 
@@ -535,11 +512,11 @@ SELECT first_name, salary FROM employees WHERE salary >= 12000
 
 &emsp;&emsp;使用BETWEEN条件可以查询显示上下限之间的行。例如希望查询出雇员表中薪水在6000～12000元的雇员的名字和薪水，可以用下面的SQL语句：
 
- 
+
 ```
 SELECT first_name, salary FROM employees WHERE salary BETWEEN 6000 AND 12000
 ```
- 
+
 
 &emsp;&emsp;BETWEEN…AND…本质上是由Oracle转变为一对AND条件：(a >= 下限) AND(a <= 上限)，所以使用BETWEEN…AND…并没有性能的提高，只是逻辑上简单而已。
 
@@ -547,19 +524,19 @@ SELECT first_name, salary FROM employees WHERE salary BETWEEN 6000 AND 12000
 
 &emsp;&emsp;IN条件也称为成员条件，用以查询出所选字段中符合指定的一组值中的一个。例如希望查询出雇员表中部门编号是60或90的雇员信息，可以用下面的SQL语句：
 
- 
+
 ```
 SELECT * FROM employees WHERE department_id IN(60,90)
 ```
- 
+
 
 &emsp;&emsp;在IN条件中可以使用任何数据类型，下面的例子从employees表中查询雇员的名字、薪水和职位编号字段，且仅查询职位编号是AD_VP、IT_PROG或FI_ACCOUNT的雇员，SQL语句如下：
 
- 
+
 ```
 SELECT job_id, first_name, salary FROM employees WHERE job_id IN('AD_VP','IT_PROG','FI_ACC OUNT')
 ```
- 
+
 
 &emsp;&emsp;同样的，IN(value1,value2,value3)本质上是由Oracle转变为一组OR条件：a = value1 OR a = value2 OR a = value3，所以使用IN 条件也没有得到性能的提高。
 
@@ -567,30 +544,29 @@ SELECT job_id, first_name, salary FROM employees WHERE job_id IN('AD_VP','IT_PRO
 
 &emsp;&emsp;假设希望搜索employees里所有以D开头的雇员的名字和薪水信息，这时候就需要用到LIKE条件。LIKE条件查询通常也称为通配符查询，可以使用两个通配符来构造需要匹配的字符模板，其中“%”表示零个或多个字符，“_”表示一个字符，这里提到的字符既可以是文字也可以是数字。上面的需求可以用如下的SQL语句实现：
 
- 
+
 ```
 SELECT first_name, salary FROM employees WHERE first_name LIKE 'D%'
 ```
- 
+
 
 &emsp;&emsp;执行SQL语句，结果显示了雇员名字中以D开头的9个工程师的名字和薪水。
 
 &emsp;&emsp;“%”和“_”通配符可以被组合使用，例如LIKE '%s_' 表示匹配倒数第二个位置字符为s的字符串。不过，当确实需要匹配“%”和“_”这两个字符的时候，可以使用ESCAPE选项，该选项指定换码符是什么。如果想要搜索employees表里job_id包含“AD_”的雇员职位编号、名字和薪水信息，可以用下面的SQL语句：
 
- 
+
 ```
 SELECT job_id, first_name, salary FROM employees WHERE job_id LIKE '%AD$_%' ESCAPE '$' 
 ```
- 
+
 
 &emsp;&emsp;其中ESCAPE选项指定美元符“$”为换码符，即不将美元符后面的“_”当作通配符看待。执行SQL语句，结果如图2.24所示。
 
 
 
 
-<p align="center"><img src="./img/d2z/tu2.24.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.24.png" /></p>  
 <p align="center">图2.24 “%”和“_”通配符组合使用</p>  
-
 
 
 
@@ -600,20 +576,19 @@ SELECT job_id, first_name, salary FROM employees WHERE job_id LIKE '%AD$_%' ESCA
 
 &emsp;&emsp;如果要查询没有佣金的雇员的职位编号、名字和佣金百分比，用下面的SQL语句：
 
- 
+
 ```
 SELECT job_id,first_name,commission_pct FROM employees WHERE commission_pct IS NULL
 ```
- 
+
 
 &emsp;&emsp;部分显示结果如图2.25所示。
 
 
 
 
-<p align="center"><img src="./img/d2z/tu2.25.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.25.png" /></p>  
 <p align="center">图2.25  NULL条件使用</p>  
-
 
 
 
@@ -623,15 +598,15 @@ SELECT job_id,first_name,commission_pct FROM employees WHERE commission_pct IS N
 
 &emsp;&emsp;如果要从雇员表中查询出部门编号为50，且薪水大于等于5000元的雇员全部信息，SQL语句如下：
 
- 
+
 ```
 SELECT * FROM employees WHERE department_id = 50 AND salary >= 5000
 ```
- 
+
 
 &emsp;&emsp;关于逻辑条件中的NOT运算符，需要注意的是，它通常需要和其他比较运算符一起使用，通常有IN、BETWEEN、LIKE和NULL。
 
- 
+
 ```
 ...WHERE job_id NOT IN ('ST_CLERK', 'AD_VP'，'SA_REP') 
 
@@ -641,7 +616,7 @@ SELECT * FROM employees WHERE department_id = 50 AND salary >= 5000
 
 ...WHERE commission_pct IS NOT NULL
 ```
- 
+
 
 - 优先规则
 
@@ -709,11 +684,11 @@ SELECT * FROM employees WHERE department_id = 50 AND salary >= 5000
 
 &emsp;&emsp;要在一个不明确顺序的查询结果中对行进行排序，可以使用ORDER BY子句，它必须位于SQL语句的最后。指定一个表达式，或者一个字段名，作为排序条件。ORDER BY子句的语法形式如下：
 
- 
+
 ```
 ORDER BY {column, expr} [ASC|DESC]
 ```
- 
+
 
 &emsp;&emsp;其中ORDER BY {column, expr}指定需要排序的字段或表达式，ASC以升序排列，DESC以降序排列，默认以升序排列。
 
@@ -729,34 +704,32 @@ ORDER BY {column, expr} [ASC|DESC]
 
 &emsp;&emsp;如果要查询出雇员表的职位编号、名字和薪水信息，且按薪水从低到高的顺序进行排列显示，其SQL语句如下：
 
- 
+
 ```
 SELECT job_id,first_name,salary FROM employees ORDER BY salary
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图2.26所示。
 
 &emsp;&emsp;如果要查询出雇员表的职位编号、名字、薪水和雇佣日期信息，且以雇佣日期降序进行排列，其SQL语句如下：
 
- 
+
 ```
 SELECT job_id,first_name,salary,hire_date FROM employees ORDER BY hire_date DESC
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图2.27所示。
 
 
 
-<p align="center"><img src="./img/d2z/tu2.26.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.26.png" /></p>  
 <p align="center">图2.26  ORDER BY子句使用</p>  
 
 
-
-<p align="center"><img src="./img/d2z/tu2.27.png" /></p>  
+<p align="center"><img src="../img/d2z/tu2.27.png" /></p>  
 <p align="center">图2.27  ORDER BY子句降序排列</p>  
-
 
 ​                         
 
@@ -764,11 +737,11 @@ SELECT job_id,first_name,salary,hire_date FROM employees ORDER BY hire_date DESC
 
 &emsp;&emsp;上面我们使用了字段名进行排序，在ORDER BY子句中，不仅可以使用字段，还可以使用字段别名进行排序。将上面的案例进行些许的调整，看如何使用字段别名进行排序。
 
- 
+
 ```
 SELECT job_id,first_name,salary,hire_date AS hdate FROM employees ORDER BY hdate DESC
 ```
- 
+
 
 &emsp;&emsp;该案例中，给hire_date字段设定别名为hdate，在ORDER BY子句中对别名hdate进行降序排序，排序结果没有发生变化。
 
@@ -778,17 +751,16 @@ SELECT job_id,first_name,salary,hire_date AS hdate FROM employees ORDER BY hdate
 
 &emsp;&emsp;针对雇员表，需要显示雇员的职位编号、名字和薪水信息。先用职位编号顺序排序，再用薪水降序排序，其SQL语句如下，部分显示结果如图2.28所示。
 
- 
+
 ```
 SELECT job_id,first_name,salary FROM employees ORDER BY job_id, salary DESC
 ```
- 
 
 
 
-<p align="center"><img src="./img/d2z/tu2.28.png" /></p>  
+
+<p align="center"><img src="../img/d2z/tu2.28.png" /></p>  
 <p align="center">图2.28  多重排列</p>  
-
 
 
 

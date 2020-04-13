@@ -50,9 +50,8 @@ SELECT * FROM departments WHERE department_id = 280
 
 
 
-<p align="center"><img src="./img/d5z/tu5.1.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.1.png" /></p>  
 <p align="center">图5.1  INSERT语句使用</p>  
-
 
 
 
@@ -75,9 +74,8 @@ INSERT INTO departments VALUES (280, 'Development', 103, 1700)
 &emsp;&emsp;在本书第2章，介绍了如何在PL/SQL Dev中查看表的表结构。接下来先看一下部门表结构，如图5.2所示。
 
 
-<p align="center"><img src="./img/d5z/tu5.2.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.2.png" /></p>  
 <p align="center">图5.2  部门表结构</p>  
-
 
 
 &emsp;&emsp;从图5.2中可以看出，部门表中经理编号和所在地编号是允许为空的。那么如何插入一个带空值的行呢？有两种方法，一种是隐式插入，另一种是显式插入。
@@ -156,9 +154,8 @@ SELECT * FROM employees WHERE employee_id IN(207, 208, 209)
 
 
 
-<p align="center"><img src="./img/d5z/tu5.3.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.3.png" /></p>  
 <p align="center">图5.3  插入日期值</p>  
-
 
 
 
@@ -188,16 +185,14 @@ FROM employees WHERE department_id = 60
 ```
 
 
-<p align="center"><img src="./img/d5z/tu5.4.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.4.png" /></p>  
 <p align="center">图5.4  it_emp表结构</p>  
 
 
 
 
-
-<p align="center"><img src="./img/d5z/tu5.5.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.5.png" /></p>  
 <p align="center">图5.5  it_emp表内容</p>  
-
 
 
 
@@ -256,9 +251,8 @@ SELECT * FROM departments WHERE department_id IN(60,280)
 
 
 
-<p align="center"><img src="./img/d5z/tu5.6.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.6.png" /></p>  
 <p align="center">图5.6  UPDATE更新多列</p>  
-
 
 
 
@@ -314,9 +308,8 @@ SELECT * FROM departments WHERE department_id > 270
 
 
 
-<p align="center"><img src="./img/d5z/tu5.7.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.7.png" /></p>  
 <p align="center">图5.7  DELETE语句使用结果</p>  
-
 
 
 
@@ -417,9 +410,8 @@ SELECT employee_id, last_name,salary FROM employees WHERE employee_id = 209
 
 
 
-<p align="center"><img src="./img/d5z/tu5.8.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.8.png" /></p>  
 <p align="center">图5.8  事务控制</p>  
-
 
 
 
@@ -570,9 +562,8 @@ SELECT table_name FROM user_tables
 &emsp;&emsp;执行该SQL语句，运行结果如图5.9所示。
 
 
-<p align="center"><img src="./img/d5z/tu5.9.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.9.png" /></p>  
 <p align="center">图5.9  获取用户拥有的表的名称</p>  
-
 
 
 
@@ -590,9 +581,8 @@ SELECT table_name,table_type FROM user_catalog
 
 
 
-<p align="center"><img src="./img/d5z/tu5.10.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.10.png" /></p>  
 <p align="center">图5.10  获取用户拥有的数据库对象</p>  
-
 
 
 
@@ -641,9 +631,8 @@ CREATE TABLE depts
 
 
 
-<p align="center"><img src="./img/d5z/tu5.11.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.11.png" /></p>  
 <p align="center">图5.11  创建表的表结构</p>  
-
 
 
 
@@ -653,9 +642,8 @@ CREATE TABLE depts
 
 
 
-<p align="center"><img src="./img/d5z/tu5.12.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.12.png" /></p>  
 <p align="center">图5.12  新建表</p>  
-
 
 
 
@@ -665,9 +653,8 @@ CREATE TABLE depts
 
 
 
-<p align="center"><img src="./img/d5z/tu5.13.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.13.png" /></p>  
 <p align="center">图5.13  新建表</p>  
-
 
 
 
@@ -675,9 +662,8 @@ CREATE TABLE depts
 
 
 
-<p align="center"><img src="./img/d5z/tu5.14.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.14.png" /></p>  
 <p align="center">图5.14  新建表</p>  
-
 
 
 
@@ -716,9 +702,8 @@ AS
 
 
 
-<p align="center"><img src="./img/d5z/tu5.15.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.15.png" /></p>  
 <p align="center">图5.15  用子查询新建表</p>  
-
 
 
 
@@ -777,9 +762,8 @@ ALTER TABLE depts
 
 
 
-<p align="center"><img src="./img/d5z/tu5.16.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.16.png" /></p>  
 <p align="center">图5.16  修改表添加新字段</p>  
-
 
 
 
@@ -791,21 +775,20 @@ ALTER TABLE depts
 
 &emsp;&emsp;例如发现原先设定的depts表中部门所在地字段dept_loc的字符长度为30不够使用，需要调整为50，则其SQL语句如下：
 
- 
+
 ```
 ALTER TABLE depts
 
 ​    MODIFY(dept_loc VARCHAR(50))
 
-``` 
+```
 
 &emsp;&emsp;执行该SQL语句之后，查询该表的表结构，结果如图5.17所示。
 
 
 
-<p align="center"><img src="./img/d5z/tu5.17.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.17.png" /></p>  
 <p align="center">图5.17  修改表修改字段</p>  
-
 
 
 
@@ -815,13 +798,13 @@ ALTER TABLE depts
 
 &emsp;&emsp;例如要删除刚刚创建的部门编制人数字段num_limit，其SQL语句如下：
 
- 
+
 ```
 ALTER TABLE depts
 
 ​    DROP(num_limit)
 
-``` 
+```
 
 &emsp;&emsp;再次查看该表的表结构时，部门编制人数字段num_limit已被删除。
 
@@ -831,19 +814,19 @@ ALTER TABLE depts
 
 &emsp;&emsp;DROP TABLE语句用于删除Oracle表，只有表的创建者或具有删除任何表权限的用户才可以删除表。在删除一个表时，数据库丢失表中所有的数据，并且所有与其相关的索引也被删除（视图和同义词被保留但已无效），未决的事务会被提交。删除表的语法形式如下：
 
- 
+
 ```
 DROP TABLE table
 ```
- 
+
 
 &emsp;&emsp;假设现在需要删除之前创建的depts_temp2表，其SQL语句如下：
 
- 
+
 ```
 DROP TABLE depts_temp2
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，depts_temp2表被删除。
 
@@ -851,17 +834,17 @@ DROP TABLE depts_temp2
 
 &emsp;&emsp;执行RENAME语句，可以更改一个表、视图、序列或同义词的名字，其语法形式如下：
 
- 
+
 ```
 RENAME old_name TO new_name
 ```
- 
+
 
 - 截断表
 
 &emsp;&emsp;使用TRUNCATE TABLE语句可以删除表中所有的行，并释放该表所使用的存储空间。DELETE语句也可以从表中删除所有的行，但它不能释放存储空间。相比而言，TRUNCATE TABLE语句更快一些，因为TRUNCATE语句是数据定义语句，直接提交，不会产生回滚信息，并且不会触发表的删除触发器。截断表的语法形式如下：
 
- 
+
 ```
 TRUNCATE TABLE table
 ```
@@ -922,7 +905,7 @@ TRUNCATE TABLE table
 
 &emsp;&emsp;下面给出了在创建表的同时定义约束的语法：
 
- 
+
 ```
 CREATE TABLE [schema.]table
 
@@ -934,7 +917,7 @@ CREATE TABLE [schema.]table
 
 ​    [table_constraint])
 ```
- 
+
 
 &emsp;&emsp;其中col1_constraint是一个给col1字段定义的完整性约束，而table_constraint是作为表table定义的完整性约束。
 
@@ -944,7 +927,7 @@ CREATE TABLE [schema.]table
 
 &emsp;&emsp;其SQL语句如下：
 
- 
+
 ```
 CREATE TABLE depts_temp3
 
@@ -960,23 +943,21 @@ CREATE TABLE depts_temp3
 
 ​    );
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看该表的表结构和键，如图5.18和图5.19所示。
 
 
 
-<p align="center"><img src="./img/d5z/tu5.18.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.18.png" /></p>  
 <p align="center">图5.18  创建表时定义约束</p>  
 
 
 
 
 
-
-<p align="center"><img src="./img/d5z/tu5.19.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.19.png" /></p>  
 <p align="center">图5.19  创建表时定义主键</p>  
-
 
 
 
@@ -984,7 +965,7 @@ CREATE TABLE depts_temp3
 
 &emsp;&emsp;NOT NULL约束又称非空约束。NOT NULL约束只能定义在字段级别，不能定义在表级别。上面创建depts_temp3表的SQL语句中定义了两个NOT NULL约束，并且都是由系统产生约束名。如果需要指定DEPT_NAME字段的NOT NULL约束的名字为dept3_name_nn，其SQL语句如下（之前需要执行DROP TABLE depts_temp3删除表）：
 
- 
+
 ```
 CREATE TABLE depts_temp3
 
@@ -1000,19 +981,18 @@ CREATE TABLE depts_temp3
 
 ​      );
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，再通过下面的SQL语句（注意DEPTS_TEMP3必须大写），从USER_CONSTRAINTS视图中获取关于depts_temp3表的约束信息，结果如图5.20所示。
 
- 
+
 ```
 SELECT * FROM user_constraints WHERE table_name = 'DEPTS_TEMP3'
 ```
 
 
-<p align="center"><img src="./img/d5z/tu5.20.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.20.png" /></p>  
 <p align="center">图5.20  定义NOT NULL约束</p>  
-
 
 
 
@@ -1024,13 +1004,13 @@ SELECT * FROM user_constraints WHERE table_name = 'DEPTS_TEMP3'
 
 &emsp;&emsp;如果要给depts_temp3表增加一个部门描述的字段dept_desc，且此字段是唯一键，键名为dept3_desc_uk，SQL语句如下：
 
- 
+
 ```
 ALTER TABLE depts_temp3
 
 ​    ADD(dept_desc VARCHAR(100) CONSTRAINT dept3_desc_uk UNIQUE)
 ```
- 
+
 
 &emsp;&emsp;该段SQL语句采用了在添加字段的同时给该字段定义约束的形式。执行该SQL语句，通过PL/SQL Dev查看该表的表结构和键，发现dept_desc字段被添加，且增加了一个唯一键约束。
 
@@ -1048,7 +1028,7 @@ ALTER TABLE depts_temp3
 
 &emsp;&emsp;现在要创建一个临时雇员表emps，字段包括雇员编号emp_id、姓氏last_name、薪水salary和部门编号dept_id，其中部门编号dept_id是外键，引用depts_temp3表中的部门编号dept_id。
 
- 
+
 ```
 CREATE TABLE emps
 
@@ -1066,15 +1046,14 @@ CREATE TABLE emps
 
 ​    );
 
-``` 
+```
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看该表的键，如图5.21所示。
 
 
 
-<p align="center"><img src="./img/d5z/tu5.21.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.21.png" /></p>  
 <p align="center">图5.21  主外键约束</p>  
-
 
 
 
@@ -1084,21 +1063,20 @@ CREATE TABLE emps
 
 &emsp;&emsp;假设要求临时雇员表emps中的salary字段的值必须大于等于零，则可以通过下面的SQL语句，给emps中的salary字段添加约束。
 
- 
+
 ```
 ALTER TABLE emps
 
 ​    ADD CONSTRAINT emps_salary_min CHECK(salary >= 0)
 ```
- 
+
 
 &emsp;&emsp;该段SQL语句没有采用创建表时添加约束的形式，而是在创建表以后直接添加约束。其语法形式和修改表字段的语法形式类似，只是这里操作的是约束而不是字段。执行该SQL语句，之后通过PL/SQL Dev查看该表的Checks选项卡，其结果如图5.22所示。
 
 
 
-<p align="center"><img src="./img/d5z/tu5.22.png" /></p>  
+<p align="center"><img src="../img/d5z/tu5.22.png" /></p>  
 <p align="center">图5.22  CHECK约束</p>  
-
 
 
 
@@ -1106,13 +1084,13 @@ ALTER TABLE emps
 
 &emsp;&emsp;除了在创建表时给字段或表创建约束外，也可以直接给表添加、删除、启用或禁用约束。上面的例子就是采用了直接给表添加约束的形式。给表直接添加约束的语法形式如下：
 
- 
+
 ```
 ALTER TABLE table 
 
 ​    ADD [CONSTRAINT cname]  type(column)
 ```
- 
+
 
 &emsp;&emsp;其中cname是约束名，type是约束类型，column是受影响的字段名。约束名在语法中是一个可选项，如果不命名约束，系统会产生一个约束名，不过还是建议命名约束。
 
@@ -1120,35 +1098,35 @@ ALTER TABLE table
 
 &emsp;&emsp;删除约束的语法形式如下：
 
- 
+
 ```
 ALTER TABLE table
 
 ​    DROP PRIMARY KEY | UNIQUE(column) | CONSTRAINT cname [CASCADE]
 ```
- 
+
 
 &emsp;&emsp;为了删除约束，可以先从USER_CONSTRAINTS数据字典视图中确定约束的名字，然后使用带DROP子句的ALTER TABLE语句进行删除。DROP子句的CASCADE选项将会导致任何与其相依赖的约束也被删除。
 
 &emsp;&emsp;例如要删除depts_temp3表中的dept3_desc_uk约束，其SQL语句如下：
 
- 
+
 ```
 ALTER TABLE depts_temp3
 
 ​    DROP CONSTRAINT dept3_desc_uk
 ```
- 
+
 
 &emsp;&emsp;例如要删除depts_temp3表中的主键约束（dept_id），并且删除相关联的emps表中dept_id字段上的外键约束，SQL语句如下：
 
- 
+
 ```
 ALTER TABLE depts_temp3
 
 ​    DROP PRIMARY KEY CASCADE
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，之后通过PL/SQL Dev查看depts_temp3表的主键和emps表的外键，主外键均被删除。
 
@@ -1158,23 +1136,23 @@ l 启用或禁用约束
 
 &emsp;&emsp;禁用约束的语法形式如下：
 
- 
+
 ```
 ALTER TABLE table 
 
 ​    DISABLE CONSTRAINT cname  [CASCADE]
 ```
- 
+
 
 &emsp;&emsp;启用约束的语法形式如下：
 
- 
+
 ```
 ALTER TABLE table
 
 ​    ENABLE CONSTRAINT cname 
 ```
- 
+
 
 
 

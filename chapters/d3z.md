@@ -29,13 +29,11 @@
 
 
 
-<p align="center"><img src="./img/d3z/tu3.1.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.1.png" /></p>  
 <p align="center">图3.1  SQL函数分类 </p>  
 
-
-<p align="center"><img src="./img/d3z/tu3.2.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.2.png" /></p>  
 <p align="center">图3.2  单行函数分类</p>  
-
 ​                                            
 
 ## 3.2  字符、数字、日期函数
@@ -100,9 +98,8 @@ WHERE SUBSTR(job_id,4)  =  'REP'
 
 
 
-<p align="center"><img src="./img/d3z/tu3.3.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.3.png" /></p>  
 <p align="center">图3.3  单行字符函数综合使用</p>  
-
 
 
 ### 3.2.2  数字函数  
@@ -127,9 +124,8 @@ SELECT ROUND(123.45678),ROUND(123.45678,2),ROUND(123.45678,-1) FROM dual
 ```
 
 
-<p align="center"><img src="./img/d3z/tu3.4.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.4.png" /></p>  
 <p align="center">图3.4  ROUND函数的使用</p>  
-
 
 
 &emsp;&emsp;这个案例中的ROUND函数很简单，这里不做解释，需要指出的是，该SQL语句中出现了一个dual表，对于这个表，需要读者有所了解。dual表的所有者是用户SYS，并且可以被所有的用户访问。它只包含一列DUMMY和带有值X的一行。dual表通常用于在没有目标表的情况下，为了达到SELECT语法完整性要求（SELECT子句必须包括FROM子句），而使用的一个不需要从表中真实取数值的表。
@@ -176,9 +172,8 @@ WHERE department_id = 60
 
 
 
-<p align="center"><img src="./img/d3z/tu3.5.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.5.png" /></p>  
 <p align="center">图3.5  SYSDATE函数的使用</p>  
-
 
 
 &emsp;&emsp;日期函数对Oracle日期类型进行操作，下面列举了一些常用的日期函数，如表3.5所示，除了MONTHS_BETWEEN返回一个数字值，所有日期函数都返回一个日期数据类型。
@@ -227,9 +222,8 @@ WHERE hire_date BETWEEN '1- 1月-07' AND '30- 6月-07'
 
 
 
-<p align="center"><img src="./img/d3z/tu3.6.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.6.png" /></p>  
 <p align="center">图3.6  日期函数的使用</p>  
-
 
 
 &emsp;&emsp;ROUND和TRUNC函数用于日期时，这些函数按指定的格式化模板四舍五入或截断，默认到日，也可以四舍五入或截断到月或年。再来看一些示例，如表3.7所示。
@@ -409,9 +403,8 @@ WHERE department_id = 60
 
 
 
-<p align="center"><img src="./img/d3z/tu3.7.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.7.png" /></p>  
 <p align="center">图3.7  对日期使用TO_CHAR函数</p>  
-
 
 
 ### 3.4.2  对数字使用TO_CHAR函数  
@@ -459,9 +452,8 @@ WHERE department_id = 90
 
 
 
-<p align="center"><img src="./img/d3z/tu3.8.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.8.png" /></p>  
 <p align="center">图3.8  对数字使用TO_CHAR函数</p>  
-
 
 
 ### 3.4.3  TO_NUMBER函数  
@@ -549,9 +541,8 @@ WHERE hire_date = TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY')
 
 
 
-<p align="center"><img src="./img/d3z/tu3.9.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.9.png" /></p>  
 <p align="center">图3.9  TO_DATE函数</p>  
-
 
 
 &emsp;&emsp;同样是上面的需求，可以换一个SQL语句的写法，执行结果一样。
@@ -636,9 +627,8 @@ WHERE department_id IN('80','90')
 
 
 
-<p align="center"><img src="./img/d3z/tu3.10.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.10.png" /></p>  
 <p align="center">图3.10  NVL函数</p>  
-
 
 
 
@@ -672,9 +662,8 @@ WHERE department_id IN('80','90')
 
 
 
-<p align="center"><img src="./img/d3z/tu3.11.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.11.png" /></p>  
 <p align="center">图3.11  NVL2函数</p>  
-
 
 
 ### 3.6.3  COALESCE函数  
@@ -717,12 +706,11 @@ WHERE department_id IN('80','90')
 
 
 
-<p align="center"><img src="./img/d3z/tu3.12.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.12.png" /></p>  
 <p align="center">图3.12  COALESCE函数</p>  
 
 
 
- 
 
 
 
@@ -794,9 +782,8 @@ WHERE employees.job_id = jobs.job_id
 
 
 
-<p align="center"><img src="./img/d3z/tu3.13.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.13.png" /></p>  
 <p align="center">图3.13  等值连接</p>  
-
 
 
 ### 3.8.2  表别名  
@@ -841,9 +828,8 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id
 
 
 
-<p align="center"><img src="./img/d3z/tu3.14.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.14.png" /></p>  
 <p align="center">图3.14  多表等值连接</p>  
-
 
 
 &emsp;&emsp;分析该多表连接，其核心表是employees表，分别通过job_id和jobs表关联连接（其中jobs表中的job_id字段是主键，employees表中的job_id字段是外键），通过department_id和departments表关联连接（其中departments表中的department_id字段是主键，employees表中的department_id字段是外键）。
@@ -864,9 +850,8 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id AND d.location_i
 
 
 
-<p align="center"><img src="./img/d3z/tu3.15.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.15.png" /></p>  
 <p align="center">图3.15  多表连接示意图</p>  
-
 
 
 ### 3.8.4  自然连接、USING子句和ON子句  
@@ -960,13 +945,11 @@ WHERE e.department_id = d.department_id
 
 
 
-<p align="center"><img src="./img/d3z/tu3.16.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.16.png" /></p>  
 <p align="center">图3.16  自然连接</p>  
 
-
-<p align="center"><img src="./img/d3z/tu3.17.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.17.png" /></p>  
 <p align="center">图3.17  等值连接</p>  
-
 ​                                              
 
 &emsp;&emsp;通过查看这两个表的表结构后发现，两表中不仅有一个department_id字段名和类型相同，还有一个manager_id字段名和类型相同。所以在自然连接时，等价于对这两个字段同时进行了等值连接，所以该自然连接等价的等值连接，其SQL语句如下：
@@ -1035,13 +1018,11 @@ WHERE e.manager_id=b.employee_id
 
 
 
-<p align="center"><img src="./img/d3z/tu3.18.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.18.png" /></p>  
 <p align="center">图3.18  员工分类表结构</p>  
 
-
-<p align="center"><img src="./img/d3z/tu3.19.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.19.png" /></p>  
 <p align="center"> 图3.19  员工分类表内容</p>  
-
 ​                              
 
 &emsp;&emsp;从图3.18和图3.19可以看出，公司将员工分为A、B、C、D四类，分类依据为雇员的雇佣日期。现在需要查询出雇员的名字、薪水和所属分类，其SQL语句如下：
@@ -1060,9 +1041,8 @@ WHERE e.hire_date BETWEEN eg.hire_start AND eg.hire_end
 
 
 
-<p align="center"><img src="./img/d3z/tu3.20.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.20.png" /></p>  
 <p align="center">图3.20  非等值内连接</p>  
-
 
 
 ### 3.9.2  左外连接、右外连接、全外连接、笛卡儿积  
@@ -1087,9 +1067,8 @@ ON (e.department_id = d.department_id)
 
 
 
-<p align="center"><img src="./img/d3z/tu3.21.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.21.png" /></p>  
 <p align="center">图3.21  左外连接</p>  
-
 
 
 &emsp;&emsp;从图3.21中可以看出，左连接在内连接的基础上，将左表（employees）中未匹配的行也查询出来，右表中相应字段为空。
@@ -1128,9 +1107,8 @@ USING(department_id)
 
 
 
-<p align="center"><img src="./img/d3z/tu3.22.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.22.png" /></p>  
 <p align="center">图3.22  右外连接</p>  
-
 
 
 &emsp;&emsp;用“(+)”代替右外连接，SQL语句的具体写法如下：
@@ -1163,9 +1141,8 @@ USING(department_id)
 
 
 
-<p align="center"><img src="./img/d3z/tu3.23.png" /></p>  
+<p align="center"><img src="../img/d3z/tu3.23.png" /></p>  
 <p align="center">图3.23  全连接</p>  
-
 
 
 - 笛卡儿积

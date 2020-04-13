@@ -23,29 +23,29 @@
 
 &emsp;&emsp;创建用户的语法形式如下：
 
- 
+
 ```
 CREATE USER user
 
 IDENTIFIED BY password
 ```
- 
+
 
 &emsp;&emsp;其中user和password就是该用户的用户名和密码。例如通过下面的SQL语句，创建一个用户名为jacky的用户，密码为jacky123456。
 
- 
+
 ```
 CREATE USER jacky 
 
 IDENTIFIED BY jacky123456
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句（SYS账户），之后通过PL/SQL Dev查看Users文件夹，如图7.1所示，显示jacky用户创建成功。
 
 &emsp;&emsp;数据库管理员可以使用下面的语法形式给用户重置密码，用户也可以用此语法修改自己的密码。
 
- 
+
 ```
 ALTER USER user 
 
@@ -59,18 +59,17 @@ IDENTIFIED BY password
 
 
 
-
 ### 7.1.2  系统权限  
 
 &emsp;&emsp;创建了用户jacky之后，数据库管理员就可以给这个用户授予指定的系统权限。给一个用户授权的简要语法形式如下：
 
- 
+
 ```
 GRANT privilege1[,privilege2…]
 
 TO user | role | PUBLIC
 ```
- 
+
 
 &emsp;&emsp;其中privilege1、privilege2…表示要授予的权限，user表示用户的名字，role表示角色（后面会介绍）名字，PUBLIC表示每一个用户都被授权。
 
@@ -88,13 +87,13 @@ TO user | role | PUBLIC
 
 &emsp;&emsp;下面的SQL语句实现了将前四个权限授予给jacky用户的目的。
 
- 
+
 ```
 GRANT create session, create table, create view, create sequence
 
 TO jacky
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，相关系统权限被授予jacky用户。在图7.1所示的界面中，右击jacky用户，选择Edit选项，在弹出的窗口中选择System privileges（系统权限）选项卡，结果如图7.2所示，四个权限已经授予了jacky用户，可以使用jacky用户访问数据库了。
 
@@ -103,7 +102,6 @@ TO jacky
 
 <p align="center"><img src="./img/d7z/tu7.2.png" /></p>  
 <p align="center">图7.2  授予系统权限</p>  
-
 
 
 
@@ -117,15 +115,15 @@ TO jacky
 
 &emsp;&emsp;角色必须由数据库管理员创建，数据库管理员为用户指定角色，创建角色的语法如下：
 
- 
+
 ```
 CREATE ROLE role
 ```
- 
+
 
 &emsp;&emsp;其中role为角色名，数据库管理员可以使用GRANT语句将权限授予角色，也可以给用户指定角色。下面的SQL语句分别实现了创建角色、将权限授予角色和给用户指定角色。
 
- 
+
 ```
 CREATE ROLE developer;
 
@@ -133,7 +131,7 @@ GRANT create table, create view, create sequence, create procedure TO developer;
 
 GRANT developer TO jacky;
 ```
- 
+
 
 &emsp;&emsp;执行SQL语句，通过PL/SQL Dev查看Roles文件夹，找到developer角色，右击developer角色，选择Edit选项，在弹出的窗口中单击打开System privileges选项卡，如图7.3所示，确定developer角色拥有被授予的四个权限。再单击打开用户jacky的Role privileges选项卡，确定jacky用户被指定为developer角色，如图7.4所示。
 
@@ -143,10 +141,8 @@ GRANT developer TO jacky;
 <p align="center">图7.3  授予角色权限</p>  
 
 
-
 <p align="center"><img src="./img/d7z/tu7.4.png" /></p>  
 <p align="center">图7.4  给用户指定角色</p>  
-
 
 ​                                            
 
@@ -175,7 +171,7 @@ GRANT developer TO jacky;
 
 &emsp;&emsp;给一个用户授权对象权限的语法形式如下：
 
- 
+
 ```
 GRANT object_priv[(columnlist)]
 
@@ -185,13 +181,13 @@ TO user | role | PUBLIC
 
 [WITH GRANT OPTION]
 ```
- 
+
 
 &emsp;&emsp;其中，object_priv表示将被授予的对象权限，可以包括多个对象权限，用逗号隔开。也可以不输入具体的对象权限，直接输入ALL，表示授予该对象所能拥有的所有权限。columnlist表示被指定授权的字段（表和视图中的）的列表，object表示被授权的对象，user表示用户的名字，role表示角色名字，PUBLIC表示每一个用户都被授权，WITH GRANT OPTION表示允许被授予权限的人再授予对象权限给其他用户和角色。
 
 &emsp;&emsp;假设现在需要给jacky用户授予针对雇员表employees的查询和插入权限，因为雇员表的所有者是HR用户，所以用HR用户身份访问Oracle数据库，完成对jacky用户的授权工作。具体的授权SQL语句如下：
 
- 
+
 ```
 GRANT select, insert
 
@@ -199,17 +195,17 @@ ON employees
 
 TO jacky
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，给jacky用户授予了相关权限，通过PL/SQL Dev查看jacky用户的对象权限（用HR用户身份查看），如图7.5所示。
 
 &emsp;&emsp;接下来使用jacky用户登录数据库，执行下面的SQL语句：
 
- 
+
 ```
 SELECT * FROM employees
 ```
- 
+
 
 
 
@@ -218,24 +214,23 @@ SELECT * FROM employees
 
 
 
-
 &emsp;&emsp;提示“表或视图不存在”，什么原因呢？不是刚刚给jacky用户授予了查询employees表的权限吗？其原因在于，在数据库中，方案（schema）是管理数据库对象的逻辑结构，一个数据库对象的全称应该是“方案名.对象名”（默认情况下方案名等于用户的名字），之前不使用方案名的原因是用户操作的数据库对象是本用户的对象，方案名可以省略。而现在是用jacky用户访问数据库，需要操作HR用户的employees对象，所以必须写全名，故正确的SQL语句如下（执行完后会获得对应的数据）：
 
- 
+
 ```
 SELECT * FROM hr.employees
 ```
- 
+
 
 &emsp;&emsp;仍然使用jacky用户访问数据库，如果执行的是更新或删除语句，则会提示“权限不足”。另外，在访问数据库对象时，总是带着方案名显然让人觉得不舒服，可以创建一个同义词（SYNONYM，需要有创建同义词的权限），通过同义词进行访问。具体的SQL语句如下：
 
- 
+
 ```
 CREATE SYNONYM emps FOR hr.employees;
 
 SELECT * FROM emps;
 ```
- 
+
 
 &emsp;&emsp;表7.2列出了部分已授予权限的相关视图，可以通过这些视图了解权限授予的情况。注意使用什么用户身份访问数据库，查询的就是该用户相关权限信息。
 
@@ -288,7 +283,7 @@ FROM jacky
 
 &emsp;&emsp;执行该SQL语句，针对雇员表的插入权限被撤销。此操作是撤销对象权限，接下来的SQL语句实现了撤销jacky用户创建序列的系统权限的功能。需要注意的是，执行此SQL语句需要用系统管理员账户。
 
- 
+
 ```
 REVOKE create sequence
 
@@ -350,7 +345,7 @@ FROM jacky
 
 &emsp;&emsp;子程序的程序结构如下：
 
- 
+
 ```
 <header>
 
@@ -368,7 +363,7 @@ EXCEPTION（可选）
 
 END;
 ```
- 
+
 
 &emsp;&emsp;程序结构中前两行是子程序说明部分，其中header确定PL/SQL子程序的类型（过程或函数）、名称和参数列表，如果是函数的话，还会有RETURN子句。
 
@@ -382,7 +377,7 @@ END;
 
 &emsp;&emsp;创建过程的语法形式如下：
 
- 
+
 ```
 CREATE [OR REPLACE] PROCEDURE pname
 
@@ -400,7 +395,7 @@ BEGIN
 
 END [pname]
 ```
- 
+
 
 &emsp;&emsp;语法解释如下：
 
@@ -424,10 +419,9 @@ END [pname]
 
 
 
-
 &emsp;&emsp;假设现在要创建这样的过程，实现的功能是要给指定的（通过雇员编号指定）雇员加薪，如果雇员编号在200以内加薪10%，雇员编号大于等于200则加薪15%，创建存储过程的SQL语句如下（用HR用户身份创建）：
 
- 
+
 ```
 CREATE OR REPLACE PROCEDURE raise_salary
 
@@ -467,7 +461,7 @@ BEGIN
 
 END raise_salary;
 ```
- 
+
 
 - 调用过程
 
@@ -480,10 +474,8 @@ END raise_salary;
 <p align="center">图7.7  Procedures文件夹 </p>  
 
 
-
 <p align="center"><img src="./img/d7z/tu7.8.png" /></p>  
 <p align="center">图7.8  调用过程</p>  
-
 
 ​                                   
 
@@ -531,7 +523,7 @@ DROP PROCEDURE raise_salary;
 
 &emsp;&emsp;创建函数的语法形式如下：
 
- 
+
 ```
 CREATE [OR REPLACE] FUNCTION fname
 
@@ -551,13 +543,13 @@ BEGIN
 
 END [fname]
 ```
- 
+
 
 &emsp;&emsp;其中必须注意的是，在IS | AS之前要确定返回值类型，在PL/SQL Block块中需要有效的返回语句。
 
 &emsp;&emsp;假设要创建一个通过雇员编号获取部门经理编号的函数，其SQL语句如下（用HR用户身份创建）：
 
- 
+
 ```
 CREATE OR REPLACE FUNCTION get_manager_id
 
@@ -579,7 +571,7 @@ RETURN v_manager_id;
 
 END get_manager_id;
 ```
- 
+
 
 - 调用函数
 
@@ -593,14 +585,13 @@ END get_manager_id;
 
 
 
-
 &emsp;&emsp;不仅可以通过这种方式调用函数，还可以用如下SELECT语句调用函数：
 
- 
+
 ```
 SELECT get_manager_id(207) FROM dual
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，显示结果为103。
 
@@ -751,7 +742,7 @@ end;
 
 &emsp;&emsp;创建针对表的语句触发器的语法形式如下：
 
- 
+
 ```
 CREATE [OR REPLACE] TRIGGER tname
 
@@ -763,13 +754,13 @@ timing
 
 trigger_body
 ```
- 
+
 
 &emsp;&emsp;其中，tname表示触发器名字，timing表示触发时间，event1、event2和event3表示触发事件，table表示针对的表，trigger_body表示触发器体，具体的内容可以和表7.5对应。
 
 &emsp;&emsp;例如需要创建这样一个触发器，只能在周一到周五的9:00到18:00才可以针对部门表departments进行DML操作。需要说明的是，下面创建触发器的SQL语句中，RAISE_ APPLICATION_ERROR是一个内建过程，它返回一个错误给用户，并导致PL/SQL块失败。当一个数据库触发器失败时，触发语句会自动回滚。
 
- 
+
 ```
 CREATE OR REPLACE TRIGGER dml_depts_time
 
@@ -791,11 +782,11 @@ END IF;
 
 END dml_depts_time;
 ```
- 
+
 
 &emsp;&emsp;编译该触发器，通过PL/SQL Dev查看Triggers文件夹，可以看到刚编译的dml_depts_time触发器。为了验证触发器是否可以使用，选择在非工作时间，执行下面的SQL语句更新部门表的数据，执行结果如图7.10所示，触发器提示失败。
 
- 
+
 ```
 UPDATE departments
 
@@ -810,12 +801,11 @@ WHERE department_id = 60
 <p align="center">图7.10  语句触发器提示失败</p>  
 
 
-
 - 创建和测试行触发器
 
 &emsp;&emsp;创建针对表的行触发器的语法形式如下：
 
- 
+
 ```
 CREATE [OR REPLACE] TRIGGER tname
 
@@ -833,13 +823,13 @@ FOR EACH ROW
 
 trigger_body
 ```
- 
+
 
 &emsp;&emsp;和语句触发器不同的是，行触发器中增加的REFERENCING OLD AS old | NEW AS new表示声明当前行新、老值的别名，默认别名是old和new，FOR EACH ROW表示此触发器为行触发器，WHEN（condition）表示触发器的约束。
 
 &emsp;&emsp;例如需要创建这样一个行触发器，当更改了雇员表中某行的职位编号字段或部门编号字段后，自动在职位变迁表job_history中增加一行记录，记录该雇员的职位（包括部门）变迁情况。创建行触发器的SQL语句如下：
 
- 
+
 ```
 CREATE OR REPLACE TRIGGER update_job_history
 
@@ -859,11 +849,11 @@ VALUES(:old.employee_id, :old.hire_date, sysdate, :old.job_id, :old.department_i
 
 END;
 ```
- 
+
 
 &emsp;&emsp;编译该触发器。为了验证该触发器是否起作用，执行下面的SQL语句（更新两行）并提交事务，打开职位变迁表job_history，自动增加了两行记录，如图7.11所示。
 
- 
+
 ```
 UPDATE employees
 
@@ -878,7 +868,6 @@ WHERE employee_id IN (106, 107)
 
 <p align="center"><img src="./img/d7z/tu7.11.png" /></p>  
 <p align="center">图7.11  行触发器执行结果</p>  
-
 
 
 
@@ -935,7 +924,7 @@ WHERE employee_id IN (106, 107)
 
 &emsp;&emsp;D．user
 
-2  作为程序开发人员，常被授予的系统权限包括    、    、    、    、    。
+2  作为程序开发人员，常被授予的系统权限包括 \_\_\_\_\_\_、\_\_\_\_\_\_ 、\_\_\_\_\_\_、\_\_\_\_\_\_、\_\_\_\_\_\_。
 
 3  授予和撤销权限的关键字分别是\_\_\_\_\_\_和\_\_\_\_\_\_\_    。
 

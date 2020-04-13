@@ -33,10 +33,8 @@
 <p align="center">图3.1  SQL函数分类 </p>  
 
 
-
 <p align="center"><img src="./img/d3z/tu3.2.png" /></p>  
 <p align="center">图3.2  单行函数分类</p>  
-
 
 ​                                            
 
@@ -88,7 +86,7 @@
 
 &emsp;&emsp;现在需要从雇员表中获取雇员编号、姓名（包括first_name和last_name，字段标题为Name）、EMAIL、EMAIL长度、EMAIL中@符号的位置信息，且仅获取职位编号从第四个字符开始，之后的字符串是REP的雇员，其SQL语句如下：
 
- 
+
 ```
 SELECT employee_id, CONCAT(first_name || ' ', last_name) AS "Name", EMAIL,LENGTH (EMAIL), INSTR (EMAIL, '@') 
 
@@ -96,7 +94,7 @@ FROM employees
 
 WHERE SUBSTR(job_id,4)  =  'REP'
 ```
- 
+
 
 &emsp;&emsp;执行SQL语句，部分显示结果如图3.3所示，因为EMAIL字段仅保存了@符号之前的内容，未保存@符号及之后的域名，所以EMAIL中@符号的位置信息结果均为0。
 
@@ -104,7 +102,6 @@ WHERE SUBSTR(job_id,4)  =  'REP'
 
 <p align="center"><img src="./img/d3z/tu3.3.png" /></p>  
 <p align="center">图3.3  单行字符函数综合使用</p>  
-
 
 
 
@@ -124,7 +121,7 @@ WHERE SUBSTR(job_id,4)  =  'REP'
 
 &emsp;&emsp;先看下面这个SQL语句，执行该SQL语句的结果如图3.4所示。
 
- 
+
 ```
 SELECT ROUND(123.45678),ROUND(123.45678,2),ROUND(123.45678,-1) FROM dual
 ```
@@ -132,7 +129,6 @@ SELECT ROUND(123.45678),ROUND(123.45678,2),ROUND(123.45678,-1) FROM dual
 
 <p align="center"><img src="./img/d3z/tu3.4.png" /></p>  
 <p align="center">图3.4  ROUND函数的使用</p>  
-
 
 
 
@@ -156,17 +152,17 @@ SELECT ROUND(123.45678),ROUND(123.45678,2),ROUND(123.45678,-1) FROM dual
 
 &emsp;&emsp;日期函数SYSDATE，它返回当前数据库服务器的日期和时间（在SQL Server中使用GETDATE()方法）。可以执行如下的SQL语句，获取数据库服务器的日期：
 
- 
+
 ```
 SELECT SYSDATE FROM dual
 ```
- 
+
 
 &emsp;&emsp;既然Oracle数据库以数字方式存储日期，也就可以用算术运算符对日期类型进行计算。在日期上加或减一个数，得到的是增加或减少该天数后的日期类型，而用两个日期类型相减，得到的是这两个日期相差的天数。
 
 &emsp;&emsp;例如想知道雇员表中，部门编号为60的雇员，截止到今天共工作了多少周，则可以使用如下的SQL语句（获得工作周的基本思路是用今天的日期减去雇佣日期，除以7后的结果就是工作周。不过此时的工作周带有小数，为了显示整数，所以在该结果的基础上，使用了ROUND函数进行了四舍五入）：
 
- 
+
 ```
 SELECT first_name || ' ' || last_name AS "Name",ROUND((SYSDATE-hire_date)/7) AS "Weeks"
 
@@ -174,7 +170,7 @@ FROM employees
 
 WHERE department_id = 60
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，运行结果如图3.5所示。
 
@@ -182,7 +178,6 @@ WHERE department_id = 60
 
 <p align="center"><img src="./img/d3z/tu3.5.png" /></p>  
 <p align="center">图3.5  SYSDATE函数的使用</p>  
-
 
 
 
@@ -218,7 +213,7 @@ WHERE department_id = 60
 
 &emsp;&emsp;接下来结合雇员表看一个稍微复杂点的例子。假设在中文系统中，要查询所有受雇日期在2007年1月1日到2007年6月30日的雇员，需要查询的信息包括雇员编号、雇佣日期、已雇佣的月数、三个月试用期结束日期、提交入职资料日期（雇佣日后下一周的周一）、首月结薪日期（到受雇月最后一天）的信息，其SQL语句如下：
 
- 
+
 ```
 SELECT employee_id AS "员工编号", hire_date AS "入职日期", MONTHS_BETWEEN (SYSDATE, hire_date) AS "雇佣月数", ADD_MONTHS (hire_date, 3)  AS "试用期结束日期", NEXT_DAY (hire_date, '星期一') AS "资料提交日期", LAST_DAY(hire_date) AS "首月结薪日期"
 
@@ -226,7 +221,7 @@ FROM employees
 
 WHERE hire_date BETWEEN '1- 1月-07' AND '30- 6月-07'
 ```
- 
+
 
 &emsp;&emsp;执行SQL语句，结果如图3.6所示。
 
@@ -234,7 +229,6 @@ WHERE hire_date BETWEEN '1- 1月-07' AND '30- 6月-07'
 
 <p align="center"><img src="./img/d3z/tu3.6.png" /></p>  
 <p align="center">图3.6  日期函数的使用</p>  
-
 
 
 
@@ -312,19 +306,19 @@ WHERE hire_date BETWEEN '1- 1月-07' AND '30- 6月-07'
 
 &emsp;&emsp;之前，所有 Oracle 日期值默认都以 DD-MON-RR 格式显示，现在用TO_CHAR函数，将日期从默认格式转换为指定的格式，其语法形式如下：
 
- 
+
 ```
 TO_CHAR(date[, 'fmt'])
 ```
- 
+
 
 &emsp;&emsp;在使用该方法时，需要注意：格式模板必须放在单引号中，并且是大小写敏感的，格式模板可以包括任意日期格式元素。先来看一个例子，直接认识一下如何对日期使用TO_CHAR函数，其SQL语句如下：
 
- 
+
 ```
 SELECT TO_CHAR(SYSDATE,'YYYY/MM/DD,HH24-MI-SS') FROM dual
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，结果为2013/06/17,15-44-06。在这个例子中，'YYYY/MM/DD,HH24- MI-SS' 即格式模板，格式模板中的YYYY、MI这些称为格式元素。下面列举了日期格式的部分常用元素，如表3.8所示，其中“结果”一列是针对值为2013/06/17,15-44-06的日期类型按相应格式元素输出的结果。
 
@@ -364,19 +358,19 @@ SELECT TO_CHAR(SYSDATE,'YYYY/MM/DD,HH24-MI-SS') FROM dual
 
 &emsp;&emsp;fm元素的作用就是用来删除填补的空或者前导0，对下面两个例子进行比较，就能很快明白。
 
- 
+
 ```
 SELECT TO_CHAR(SYSDATE,'YYYY/MM/DD,HH24-MI-SS') FROM dual
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，结果为2013/06/17,15-44-06。
 
- 
+
 ```
 SELECT TO_CHAR(SYSDATE,'fmYYYY/MM/DD,HH24-MI-SS') FROM dual
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，结果为2013/6/17,15-44-6。
 
@@ -401,7 +395,7 @@ SELECT TO_CHAR(SYSDATE,'fmYYYY/MM/DD,HH24-MI-SS') FROM dual
 
 &emsp;&emsp;假设现在需要显示雇员表中的雇员名字和雇佣日期，且雇佣日期以“Seventh of 6月 2013 15:44:6”格式显示，仅查询部门编号为60的雇员信息，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name, TO_CHAR(hire_date, 'fmDdspth "of" Mon YYYY fmHH24:MI:SS') AS "雇佣日期" 
 
@@ -409,7 +403,7 @@ FROM employees
 
 WHERE department_id = 60
 ```
- 
+
 
 &emsp;&emsp;该SQL语句中还同时演示了sp和th元素的使用，执行SQL语句，显示结果如图3.7所示。
 
@@ -420,16 +414,15 @@ WHERE department_id = 60
 
 
 
-
 ### 3.4.2  对数字使用TO_CHAR函数  
 
 &emsp;&emsp;当数字与字符串混用且输出是字符串时，应该使用TO_CHAR函数将数字转换为需要的字符串（VARCHAR2），其语法形式如下：
 
- 
+
 ```
 TO_CHAR(number[, 'fmt'])
 ```
- 
+
 
 &emsp;&emsp;表3.10列举了将数字转换为字符时，一些常用的格式元素，其中“结果”一列是针对“输入”类的数据，按格式元素输出的结果。
 
@@ -452,7 +445,7 @@ TO_CHAR(number[, 'fmt'])
 
 &emsp;&emsp;假设需要显示雇员表中的雇员名字和薪水，且薪水以“$17,000.00”格式显示，仅查询部门编号为90的雇员信息，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name AS "姓名", TO_CHAR(salary, '$99,999.99') AS "薪水" 
 
@@ -460,7 +453,7 @@ FROM employees
 
 WHERE department_id = 90
 ```
- 
+
 
 &emsp;&emsp;执行SQL语句，显示结果如图3.8所示。
 
@@ -471,16 +464,15 @@ WHERE department_id = 90
 
 
 
-
 ### 3.4.3  TO_NUMBER函数  
 
 &emsp;&emsp;在使用SQL语言的数据类型转换过程中，不可能总是向字符类型转换，有时也需要将字符串转换成数字，这时候就需要使用TO_NUMBER函数，这个函数的语法形式如下：
 
- 
+
 ```
 TO_NUMBER(char[, 'fmt'])
 ```
- 
+
 
 &emsp;&emsp;如表3.11所示，通过一些简单的示例，介绍TO_NUMBER这个函数的使用，其中最后一个示例是先将一个日期类型转换成一个字符类型，再将字符类型转换为数字类型。
 
@@ -504,32 +496,32 @@ TO_NUMBER(char[, 'fmt'])
 
 &emsp;&emsp;将字符类型转换为日期类型，需要使用TO_DATE函数，这个函数的语法形式如下：
 
- 
+
 ```
 TO_DATE(char[, 'fmt'])
 ```
- 
+
 
 &emsp;&emsp;来看一个不带格式模板的简单例子：
 
- 
+
 ```
 SELECT TO_DATE('17-JUN-13') FROM dual
 ```
- 
+
 
 &emsp;&emsp;该SQL语句在PL/SQL Dev上执行，显示的结果是2013/6/17，表明成功转换成日期类型。
 
 &emsp;&emsp;TO_DATE函数的格式模板中可以有一个fx元素，该元素指示对需要转换的字符类型和TO_DATE函数的格式模板必须精确匹配，包括标点符号和空格。来看一个精确匹配的例子：
 
- 
+
 ```
 SELECT  TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY') FROM dual
 ```
 
 &emsp;&emsp;PL/SQL Dev上执行的结果是2006/1/3，成功转换成日期类型。稍稍调整上面的SQL语句如下（其中第一行是将字符类型中天数的“03”调整为“3”，第二行是将格式模板的“YYYY”后增加了一个空格，第三行是将格式模板的“DD”和“YYYY”之后原来的逗号改成了分号）：
 
- 
+
 ```
 SELECT  TO_DATE('Jan 3, 2006', 'fxMon DD, YYYY') FROM dual
 
@@ -537,13 +529,13 @@ SELECT  TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY ') FROM dual
 
 SELECT  TO_DATE('Jan 03, 2006', 'fxMon DD; YYYY') FROM dual
 ```
- 
+
 
 &emsp;&emsp;分别执行这三条SQL语句时都会报错，不能进行转换，可去掉fx这个元素，也就是说不需要再精确匹配。再次执行这三条SQL语句，都能正常显示出2006/1/3的结果。
 
 &emsp;&emsp;假设需要查询雇员表中雇佣日期为2006年1月3日的雇员，显示雇员的名字和雇佣日期信息，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name, hire_date
 
@@ -551,7 +543,7 @@ FROM employees
 
 WHERE hire_date = TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY')
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，显示结果如图3.9所示。
 
@@ -562,10 +554,9 @@ WHERE hire_date = TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY')
 
 
 
-
 &emsp;&emsp;同样是上面的需求，可以换一个SQL语句的写法，执行结果一样。
 
- 
+
 ```
 SELECT first_name, hire_date
 
@@ -573,7 +564,7 @@ FROM employees
 
 WHERE TO_CHAR(hire_date,'YY/MM/DD') = '06/01/03'
 ```
- 
+
 
 &emsp;&emsp;比较这两个SQL语句，其中第一个在WHERE子句中是将字符类型转换为日期类型，然后将两个日期类型进行比较；而第二个SQL语句则是将日期类型转换为字符类型，将两个字符类型进行比较，其结果是一样的。
 
@@ -621,17 +612,17 @@ WHERE TO_CHAR(hire_date,'YY/MM/DD') = '06/01/03'
 
 &emsp;&emsp;NVL函数就是用一个实际的值替换一个空值，其语法形式如下：
 
- 
+
 ```
 NVL(expr, value)
 ```
- 
+
 
 &emsp;&emsp;其中expr是可能包含空值的字段名或表达式，而value是要替换的实际值。可以使用 NVL 函数来转换任何数据类型，即expr可以是任何数据类型，但返回值通常必须和expr的数据类型相同。
 
-&emsp;&emsp;在第2章中，使用过算术运算符计算过年薪，当时年薪的计算方式为“月薪*12+过节费500”。实际上这样的年薪计算方式是有问题的，因为在公司中，有一部分雇员是按照刚才的方式发放全年薪酬的，还有一些雇员需要发放佣金，其佣金数额为月薪*12*佣金百分比。对于能发佣金的雇员，其佣金百分比字段有数值，而对于没有佣金的雇员，佣金百分比字段为空。所以，公司雇员的年薪计算方式应为“月薪*12+过节费500+月薪*12*佣金百分比”，没有佣金的雇员佣金百分比按0计算。其中，没有佣金的雇员佣金百分比按0计算转换为SQL语句即NVL(commission_pct,0)。要重新计算、显示雇员的年薪，其SQL语句如下（只查询出部门编号为80或90的雇员）：
+&emsp;&emsp;在第2章中，使用过算术运算符计算过年薪，当时年薪的计算方式为“月薪\*12+过节费500”。实际上这样的年薪计算方式是有问题的，因为在公司中，有一部分雇员是按照刚才的方式发放全年薪酬的，还有一些雇员需要发放佣金，其佣金数额为月薪\*12\*佣金百分比。对于能发佣金的雇员，其佣金百分比字段有数值，而对于没有佣金的雇员，佣金百分比字段为空。所以，公司雇员的年薪计算方式应为“月薪\*12+过节费500+月薪\*12\*佣金百分比”，没有佣金的雇员佣金百分比按0计算。其中，没有佣金的雇员佣金百分比按0计算转换为SQL语句即NVL(commission_pct,0)。要重新计算、显示雇员的年薪，其SQL语句如下（只查询出部门编号为80或90的雇员）：
 
- 
+
 ```
 SELECT first_name AS "名字",(salary*12) + 500 + (salary*12*NVL(commission_pct,0)) AS "年薪", commission_pct AS "佣金比例"
 
@@ -639,7 +630,7 @@ FROM employees
 
 WHERE department_id IN('80','90')
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.10所示。
 
@@ -653,22 +644,21 @@ WHERE department_id IN('80','90')
 
 
 
-
 ### 3.6.2  NVL2函数  
 
 &emsp;&emsp;NVL2函数是在NVL函数的基础上再推进了一步，其语法形式如下：
 
- 
+
 ```
 NVL2(expr, value1, value2)
 ```
- 
+
 
 &emsp;&emsp;该函数的作用在于检查第一个参数，如果该参数的值不为空，则该函数返回第二个参数的值，否则返回第三个参数的值。
 
 &emsp;&emsp;继续调整计算年薪的案例。假设过节费不再是固定值500，而是根据雇员薪酬发放方式以及底薪的不同确定过节费。其中针对没有佣金的雇员，过节费为底薪的50%，而有佣金的雇员，过节费为底薪的30%。那么过节费的数额就可以通过采用NVL2函数来确定，具体形式为NVL2(commission_pct, salary*30%, salary*50%)。重新计算、显示部门编号为80或90的雇员的年薪，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name AS "名字",NVL2(commission_pct, salary*0.3, salary*0.5) AS "过节费",(salary*12) + NVL2(commission_pct, salary*0.3, salary*0.5) + (salary*12*NVL(commission_pct, 0)) AS "年薪",commission_pct AS "佣金比例"
 
@@ -676,7 +666,7 @@ FROM employees
 
 WHERE department_id IN('80','90')
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.11所示。
 
@@ -687,22 +677,21 @@ WHERE department_id IN('80','90')
 
 
 
-
 ### 3.6.3  COALESCE函数  
 
 &emsp;&emsp;COALESCE函数比NVL函数功能强大，它能够接受多个交替的值，其语法形式如下：
 
- 
+
 ```
 COALESCE (expr1, expr2… exprn)
 ```
- 
+
 
 &emsp;&emsp;该函数的作用是，如果expr1为非空，则返回expr1的值；如果expr1为空，则返回expr2的值，依次类推，如果前面的表达式都为空，则返回exprn的值。
 
 &emsp;&emsp;现在有这样的需求，针对雇员表进行查询，显示的结果需要有这样一列数据，如果该雇员是有佣金的雇员，则该列显示该雇员的佣金百分比，否则显示该雇员经理的编号，如果该雇员没有佣金，且没有管理他的经理，则该雇员是老板，该列显示“老板”即可，其SQL语句如下：
 
- 
+
 ```
 SELECT first_name,COALESCE(commission_pct, manager_id,'老板') AS COALESCE列 
 
@@ -710,11 +699,11 @@ FROM employees
 
 WHERE department_id IN('80','90')
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，提示数据类型不一致，应为NUMBER，但实际返回CHAR。探其原因，COALESCE函数的第一、第二个表达式都是数字类型，而第三个表达式的值“老板”是字符型的，数据类型不一致，所以报错。解决的方法很简单，将第一、第二个表达式的数字类型都强制性地转换成字符型即可，其SQL语句如下： 
 
- 
+
 ```
 SELECT first_name,COALESCE (TO_CHAR(commission_pct) , TO_CHAR (manager_id) ,'老板') AS COALESCE列 
 
@@ -722,7 +711,7 @@ FROM employees
 
 WHERE department_id IN('80','90')
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.12所示。
 
@@ -730,7 +719,6 @@ WHERE department_id IN('80','90')
 
 <p align="center"><img src="./img/d3z/tu3.12.png" /></p>  
 <p align="center">图3.12  COALESCE函数</p>  
-
 
 
 
@@ -774,7 +762,7 @@ WHERE department_id IN('80','90')
 
 &emsp;&emsp;当需要的数据需从多个表中查询得到时，需要采用多表连接查询，其语法形式如下：
 
- 
+
 ```
 SELECT  table1.column,  table2.column
 
@@ -782,7 +770,7 @@ FROM  table1,  table2
 
 WHERE  table1.column1  =  table2.column2
 ```
- 
+
 
 &emsp;&emsp;其中SELECT子句中可选择多个表的多个字段，FROM子句中表明字段来自多个表，而WHERE子句为连接条件，table1.column1=table2.column2即具体的连接条件。
 
@@ -792,7 +780,7 @@ WHERE  table1.column1  =  table2.column2
 
 &emsp;&emsp;为了确定一个雇员的职位信息，需要比较employees表中的job_id字段和jobs表中的 job_id 字段的值，当两个表中job_id 字段的值相等时，才可连接出雇员的具体职位信息，完成该案例的等值连接SQL语句如下：
 
- 
+
 ```
 SELECT employees.first_name, jobs.job_title, employees.salary
 
@@ -800,7 +788,7 @@ FROM employees, jobs
 
 WHERE employees.job_id = jobs.job_id
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.13所示。
 
@@ -808,7 +796,6 @@ WHERE employees.job_id = jobs.job_id
 
 <p align="center"><img src="./img/d3z/tu3.13.png" /></p>  
 <p align="center">图3.13  等值连接</p>  
-
 
 
 
@@ -820,7 +807,7 @@ WHERE employees.job_id = jobs.job_id
 
 &emsp;&emsp;修改上面的SQL语句，给employees表起别名为e，给jobs表起别名为j，修改完的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, j.job_title, e.salary
 
@@ -828,7 +815,7 @@ FROM employees e, jobs j
 
 WHERE e.job_id = j.job_id
 ```
- 
+
 
 &emsp;&emsp;两段SQL语句相比，使用了表别名的看起来更简单、易读。
 
@@ -840,7 +827,7 @@ WHERE e.job_id = j.job_id
 
 &emsp;&emsp;解决方法就是使用多个连接条件，进行多表的等值连接，具体SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, j.job_title,d.department_name, e.salary
 
@@ -848,7 +835,7 @@ FROM employees e, jobs j,departments d
 
 WHERE e.job_id = j.job_id AND e.department_id = d.department_id
 ```
- 
+
 
 &emsp;&emsp;在SQL语句的WHERE子句里，用AND将两个连接条件结合起来。执行该SQL语句，部分显示结果如图3.14所示。
 
@@ -859,12 +846,11 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id
 
 
 
-
 &emsp;&emsp;分析该多表连接，其核心表是employees表，分别通过job_id和jobs表关联连接（其中jobs表中的job_id字段是主键，employees表中的job_id字段是外键），通过department_id和departments表关联连接（其中departments表中的department_id字段是主键，employees表中的department_id字段是外键）。
 
 &emsp;&emsp;如果还需要在对employees表进行查询时显示雇员所在的城市，该如何实现呢？通过分析，employees表中没有和城市相关联的字段，但和employees表关联的departments表中有所在地编号（location_id），而通过location_id可关联到locations表，该表中有城市的信息。所以，可以继续在departments表上进行多表等值连接，其SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, j.job_title,d.department_name, l.city, e.salary
 
@@ -872,7 +858,7 @@ FROM employees e, jobs j,departments d,locations l
 
 WHERE e.job_id = j.job_id AND e.department_id = d.department_id AND d.location_id = l.location_id
 ```
- 
+
 
 &emsp;&emsp;为了更好地介绍多表连接，图3.15显示了四个表之间的关系。
 
@@ -883,14 +869,13 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id AND d.location_i
 
 
 
-
 ### 3.8.4  自然连接、USING子句和ON子句  
 
 &emsp;&emsp;如果两个表中，有相同的字段名且字段的数据类型相同，则可以使用Oracle的自然连接实现两表之间的等值连接，自然连接是一种特殊的等值连接。
 
 &emsp;&emsp;在第3.8.2节中，实现employees表和jobs表的等值连接的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, j.job_title, e.salary
 
@@ -898,11 +883,11 @@ FROM employees e, jobs j
 
 WHERE e.job_id = j.job_id
 ```
- 
+
 
 &emsp;&emsp;这两个表都用相同的字段名job_id，且这两个字段的数据数型都是VARCHAR2类型，满足自然连接的条件。可以将上面的SQL语句调整如下，用自然连接（NATURAL JOIN）的方式完成等值连接。
 
- 
+
 ```
 SELECT e.first_name, j.job_title, e.salary
 
@@ -910,7 +895,7 @@ FROM employees e
 
 NATURAL JOIN jobs j
 ```
- 
+
 
 &emsp;&emsp;在使用自然连接的时候需要注意，如果两个表中的字段名相同，但数据类型不同，用自然连接会返回一个错误。
 
@@ -920,7 +905,7 @@ NATURAL JOIN jobs j
 
  
 
- 
+
 ```
 SELECT e.first_name, j.job_title, e.salary
 
@@ -928,13 +913,13 @@ FROM employees e JOIN jobs j
 
 USING(job_id)
 ```
- 
+
 
 &emsp;&emsp;另外有一点需要注意的是，不管是自然连接还是使用USING子句，在使用连接字段时，都不能在前面加上表的前缀，因为此时这个字段已经是连接字段，不再属于某个单独的表。
 
 &emsp;&emsp;除了可以用USING子句指定连接字段外，还可以使用ON子句完成类似的功能，上面使用USING子句的SQL语句，等价的使用ON子句的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, j.job_title, e.salary
 
@@ -942,13 +927,13 @@ FROM employees e JOIN jobs j
 
 ON (e.job_id = j.job_id)
 ```
- 
+
 
 &emsp;&emsp;ON子句比USING子句更为灵活，因为USING子句里只有一个字段名，也就是只有两个表中都有相同的字段名时，才能使用USING子句指定连接字段。而ON子句和等值连接一样，用于连接的两个字段，其字段名可以不同。
 
 &emsp;&emsp;上面介绍了自然连接、USING子句和ON子句，接下来继续给employees表和departments表建立自然连接，其SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, d.department_name, e.salary
 
@@ -956,11 +941,11 @@ FROM employees e
 
 NATURAL JOIN departments d
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，返回32条记录，如图3.16所示。该自然连接等价的等值连接的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, d.department_name, e.salary   
 
@@ -968,7 +953,7 @@ FROM employees e,departments d
 
 WHERE e.department_id = d.department_id
 ```
- 
+
 
 &emsp;&emsp;执行等值连接SQL语句，却返回了106条记录，如图3.17所示。这说明这两段SQL语句不等价，但问题出在哪里呢？
 
@@ -979,16 +964,14 @@ WHERE e.department_id = d.department_id
 <p align="center">图3.16  自然连接</p>  
 
 
-
 <p align="center"><img src="./img/d3z/tu3.17.png" /></p>  
 <p align="center">图3.17  等值连接</p>  
-
 
 ​                                              
 
 &emsp;&emsp;通过查看这两个表的表结构后发现，两表中不仅有一个department_id字段名和类型相同，还有一个manager_id字段名和类型相同。所以在自然连接时，等价于对这两个字段同时进行了等值连接，所以该自然连接等价的等值连接，其SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, d.department_name, e.salary   
 
@@ -996,13 +979,13 @@ FROM employees e,departments d
 
 WHERE e.department_id = d.department_id AND e.manager_id = d.manager_id
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，返回和自然连接一样的32条记录。
 
 &emsp;&emsp;之前的自然连接都是在两个表之间的，接下来的SQL语句实现了employees表、departments表和locations表之间的自然连接，也称为三向连接：
 
- 
+
 ```
 SELECT e.first_name, d.department_name, l.city, e.salary    
 
@@ -1012,11 +995,11 @@ NATURAL JOIN departments d
 
 NATURAL JOIN locations l
 ```
- 
+
 
 &emsp;&emsp;其等价等值连接的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, d.department_name, l.city, e.salary    
 
@@ -1024,7 +1007,7 @@ FROM employees e,departments d,locations l
 
 WHERE e.department_id = d.department_id AND e.manager_id = d.manager_id AND d.location_id = l.location_id
 ```
- 
+
 
 ### 3.8.5  自关联 
 
@@ -1056,16 +1039,14 @@ WHERE e.manager_id=b.employee_id
 <p align="center">图3.18  员工分类表结构</p>  
 
 
-
 <p align="center"><img src="./img/d3z/tu3.19.png" /></p>  
 <p align="center"> 图3.19  员工分类表内容</p>  
-
 
 ​                              
 
 &emsp;&emsp;从图3.18和图3.19可以看出，公司将员工分为A、B、C、D四类，分类依据为雇员的雇佣日期。现在需要查询出雇员的名字、薪水和所属分类，其SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, e.salary, eg.e_grade 
 
@@ -1073,7 +1054,7 @@ FROM employees e,egrade eg
 
 WHERE e.hire_date BETWEEN eg.hire_start AND eg.hire_end
 ```
- 
+
 
 &emsp;&emsp;这段SQL语句的比较条件是判断日期是否在一个范围内，不是“=”，所以不是等值连接，其返回的结果仅为满足比较条件的行，所以该连接是非等值内连接。执行该SQL语句，部分显示结果如图3.20所示。
 
@@ -1084,14 +1065,13 @@ WHERE e.hire_date BETWEEN eg.hire_start AND eg.hire_end
 
 
 
-
 ### 3.9.2  左外连接、右外连接、全外连接、笛卡儿积  
 
 - 左外连接
 
 &emsp;&emsp;左外连接又称左连接，指在两个表之间的连接，返回内连接的结果，同时还返回左表中未匹配的行，右表中相应字段置空。接下来对employees表和departments表进行左连接， employees表作为左表，departments表作为右表，使用左连接的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, e.department_id, d.department_name
 
@@ -1101,7 +1081,7 @@ LEFT OUTER JOIN departments d
 
 ON (e.department_id = d.department_id) 
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.21所示。
 
@@ -1112,12 +1092,11 @@ ON (e.department_id = d.department_id)
 
 
 
-
 &emsp;&emsp;从图3.21中可以看出，左连接在内连接的基础上，将左表（employees）中未匹配的行也查询出来，右表中相应字段为空。
 
 &emsp;&emsp;上面是一种左连接的写法，看起来略微有些复杂，下面的SQL语句同样完成了上面左连接的功能，不过在书写和阅读上都容易许多。
 
- 
+
 ```
 SELECT e.first_name, e.department_id, d.department_name
 
@@ -1125,7 +1104,7 @@ FROM employees e,departments d
 
 WHERE e.department_id = d.department_id(+)
 ```
- 
+
 
 &emsp;&emsp;这段SQL语句和等值连接类似，只是在等号的某一边加上了一个“(+)”，这个“(+)”应该被放置在不需要增加未匹配的行的表的一侧。采用“(+)”进行外连接，不存在左表和右表之分，并且不可以在比较条件的两边都放“(+)”。
 
@@ -1133,7 +1112,7 @@ WHERE e.department_id = d.department_id(+)
 
 &emsp;&emsp;右外连接又称右连接，和左连接正好相反。接下来仍然对employees表和departments表进行右连接，employees表作为左表，departments表作为右表，使用右连接的SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, department_id, d.department_name
 
@@ -1143,7 +1122,7 @@ RIGHT OUTER JOIN departments d
 
 USING(department_id)
 ```
- 
+
 
 &emsp;&emsp;执行该SQL语句，部分显示结果如图3.22所示。
 
@@ -1154,10 +1133,9 @@ USING(department_id)
 
 
 
-
 &emsp;&emsp;用“(+)”代替右外连接，SQL语句的具体写法如下：
 
- 
+
 ```
 SELECT e.first_name, e.department_id, d.department_name
 
@@ -1165,13 +1143,13 @@ FROM employees e,departments d
 
 WHERE d.department_id = e.department_id(+)
 ```
- 
+
 
 - 全外连接
 
 &emsp;&emsp;所谓全外连接，也称全连接，是指两个表在返回内连接结果的基础上，还返回左表及右表中未匹配的行，右表及左表中相应字段置空，其SQL语句如下：
 
- 
+
 ```
 SELECT e.first_name, department_id, d.department_name
 
@@ -1187,7 +1165,6 @@ USING(department_id)
 
 <p align="center"><img src="./img/d3z/tu3.23.png" /></p>  
 <p align="center">图3.23  全连接</p>  
-
 
 
 

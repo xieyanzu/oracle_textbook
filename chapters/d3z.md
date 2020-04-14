@@ -31,10 +31,10 @@
 
 <p align="center"><img src="../img/d3z/tu3.1.png" /></p>  
 <p align="center">图3.1  SQL函数分类 </p>  
-
 <p align="center"><img src="../img/d3z/tu3.2.png" /></p>  
 <p align="center">图3.2  单行函数分类</p>  
-​                                            
+
+
 
 ## 3.2  字符、数字、日期函数
 
@@ -58,7 +58,7 @@
 | LOWER(input)                                | 将输入字符值全部转换为小写                                   |
 | UPPER(input)                                | 将输入字符值全部转换为大写                                   |
 | INITCAP(input)                              | 将每个单词的首字母值转换为大写，其他值为小写                 |
-| CONCAT(input1,input2)                       | 连接第一个字符值到第二个字符值，等价于连接运算符“\|\|”       |
+| CONCAT(input1,input2)                       | 连接第一个字符值到第二个字符值，等价于连接运算符"&#124;&#124;"       |
 | SUBSTR(input,m[, n])                        | 获取字符值中指定的字符，从m位置开始，取n个字符长度，如果n被忽略，则取到字符值结尾处 |
 | LENGTH(input)                               | 返回字符值的字符数                                           |
 | INSTR(input, char [,m] [, n] )              | 返回在字符值中查找字符串char的数字位置。参数m作为查找的开始，参数n代表第n次发现。m和n的默认值是1，即默认从开始位置查找，并且报告第一个发现的位置 |
@@ -100,6 +100,7 @@ WHERE SUBSTR(job_id,4)  =  'REP'
 
 <p align="center"><img src="../img/d3z/tu3.3.png" /></p>  
 <p align="center">图3.3  单行字符函数综合使用</p>  
+
 
 
 ### 3.2.2  数字函数  
@@ -224,7 +225,6 @@ WHERE hire_date BETWEEN '1- 1月-07' AND '30- 6月-07'
 
 <p align="center"><img src="../img/d3z/tu3.6.png" /></p>  
 <p align="center">图3.6  日期函数的使用</p>  
-
 
 &emsp;&emsp;ROUND和TRUNC函数用于日期时，这些函数按指定的格式化模板四舍五入或截断，默认到日，也可以四舍五入或截断到月或年。再来看一些示例，如表3.7所示。
 
@@ -406,7 +406,6 @@ WHERE department_id = 60
 <p align="center"><img src="../img/d3z/tu3.7.png" /></p>  
 <p align="center">图3.7  对日期使用TO_CHAR函数</p>  
 
-
 ### 3.4.2  对数字使用TO_CHAR函数  
 
 &emsp;&emsp;当数字与字符串混用且输出是字符串时，应该使用TO_CHAR函数将数字转换为需要的字符串（VARCHAR2），其语法形式如下：
@@ -454,7 +453,6 @@ WHERE department_id = 90
 
 <p align="center"><img src="../img/d3z/tu3.8.png" /></p>  
 <p align="center">图3.8  对数字使用TO_CHAR函数</p>  
-
 
 ### 3.4.3  TO_NUMBER函数  
 
@@ -544,7 +542,6 @@ WHERE hire_date = TO_DATE('Jan 03, 2006', 'fxMon DD, YYYY')
 <p align="center"><img src="../img/d3z/tu3.9.png" /></p>  
 <p align="center">图3.9  TO_DATE函数</p>  
 
-
 &emsp;&emsp;同样是上面的需求，可以换一个SQL语句的写法，执行结果一样。
 
 
@@ -630,10 +627,6 @@ WHERE department_id IN('80','90')
 <p align="center"><img src="../img/d3z/tu3.10.png" /></p>  
 <p align="center">图3.10  NVL函数</p>  
 
-
-
-
-
 ### 3.6.2  NVL2函数  
 
 &emsp;&emsp;NVL2函数是在NVL函数的基础上再推进了一步，其语法形式如下：
@@ -664,7 +657,6 @@ WHERE department_id IN('80','90')
 
 <p align="center"><img src="../img/d3z/tu3.11.png" /></p>  
 <p align="center">图3.11  NVL2函数</p>  
-
 
 ### 3.6.3  COALESCE函数  
 
@@ -708,10 +700,6 @@ WHERE department_id IN('80','90')
 
 <p align="center"><img src="../img/d3z/tu3.12.png" /></p>  
 <p align="center">图3.12  COALESCE函数</p>  
-
-
-
-
 
 
 
@@ -785,7 +773,6 @@ WHERE employees.job_id = jobs.job_id
 <p align="center"><img src="../img/d3z/tu3.13.png" /></p>  
 <p align="center">图3.13  等值连接</p>  
 
-
 ### 3.8.2  表别名  
 
 &emsp;&emsp;为了提高性能、避免字段名冲突，在多表连接查询的SELECT子句中，应该以“表名.字段名”的方式命名。不过按照此规则编写，如果是在所选字段比较多的情况下，SELECT子句往往冗长，可以使用表别名解决这个问题。
@@ -831,7 +818,6 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id
 <p align="center"><img src="../img/d3z/tu3.14.png" /></p>  
 <p align="center">图3.14  多表等值连接</p>  
 
-
 &emsp;&emsp;分析该多表连接，其核心表是employees表，分别通过job_id和jobs表关联连接（其中jobs表中的job_id字段是主键，employees表中的job_id字段是外键），通过department_id和departments表关联连接（其中departments表中的department_id字段是主键，employees表中的department_id字段是外键）。
 
 &emsp;&emsp;如果还需要在对employees表进行查询时显示雇员所在的城市，该如何实现呢？通过分析，employees表中没有和城市相关联的字段，但和employees表关联的departments表中有所在地编号（location_id），而通过location_id可关联到locations表，该表中有城市的信息。所以，可以继续在departments表上进行多表等值连接，其SQL语句如下：
@@ -852,7 +838,6 @@ WHERE e.job_id = j.job_id AND e.department_id = d.department_id AND d.location_i
 
 <p align="center"><img src="../img/d3z/tu3.15.png" /></p>  
 <p align="center">图3.15  多表连接示意图</p>  
-
 
 ### 3.8.4  自然连接、USING子句和ON子句  
 
@@ -950,7 +935,8 @@ WHERE e.department_id = d.department_id
 
 <p align="center"><img src="../img/d3z/tu3.17.png" /></p>  
 <p align="center">图3.17  等值连接</p>  
-​                                              
+
+
 
 &emsp;&emsp;通过查看这两个表的表结构后发现，两表中不仅有一个department_id字段名和类型相同，还有一个manager_id字段名和类型相同。所以在自然连接时，等价于对这两个字段同时进行了等值连接，所以该自然连接等价的等值连接，其SQL语句如下：
 
@@ -1023,7 +1009,8 @@ WHERE e.manager_id=b.employee_id
 
 <p align="center"><img src="../img/d3z/tu3.19.png" /></p>  
 <p align="center"> 图3.19  员工分类表内容</p>  
-​                              
+
+
 
 &emsp;&emsp;从图3.18和图3.19可以看出，公司将员工分为A、B、C、D四类，分类依据为雇员的雇佣日期。现在需要查询出雇员的名字、薪水和所属分类，其SQL语句如下：
 
@@ -1043,7 +1030,6 @@ WHERE e.hire_date BETWEEN eg.hire_start AND eg.hire_end
 
 <p align="center"><img src="../img/d3z/tu3.20.png" /></p>  
 <p align="center">图3.20  非等值内连接</p>  
-
 
 ### 3.9.2  左外连接、右外连接、全外连接、笛卡儿积  
 
@@ -1069,7 +1055,6 @@ ON (e.department_id = d.department_id)
 
 <p align="center"><img src="../img/d3z/tu3.21.png" /></p>  
 <p align="center">图3.21  左外连接</p>  
-
 
 &emsp;&emsp;从图3.21中可以看出，左连接在内连接的基础上，将左表（employees）中未匹配的行也查询出来，右表中相应字段为空。
 
@@ -1110,7 +1095,6 @@ USING(department_id)
 <p align="center"><img src="../img/d3z/tu3.22.png" /></p>  
 <p align="center">图3.22  右外连接</p>  
 
-
 &emsp;&emsp;用“(+)”代替右外连接，SQL语句的具体写法如下：
 
 
@@ -1143,7 +1127,6 @@ USING(department_id)
 
 <p align="center"><img src="../img/d3z/tu3.23.png" /></p>  
 <p align="center">图3.23  全连接</p>  
-
 
 - 笛卡儿积
 

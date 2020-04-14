@@ -1,0 +1,695 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第八章    备份、恢复和SQL优化 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="d7z.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="d1z.html">
+            
+                <a href="d1z.html">
+            
+                    
+                    第一章    关系型数据库Oracle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="d2z.html">
+            
+                <a href="d2z.html">
+            
+                    
+                    第二章    查询和排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="d3z.html">
+            
+                <a href="d3z.html">
+            
+                    
+                    第三章    单行函数和多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="d4z.html">
+            
+                <a href="d4z.html">
+            
+                    
+                    第四章    子查询和组函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="d5z.html">
+            
+                <a href="d5z.html">
+            
+                    
+                    第五章    操作数据和管理表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="d6z.html">
+            
+                <a href="d6z.html">
+            
+                    
+                    第六章    视图、序列和索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="d7z.html">
+            
+                <a href="d7z.html">
+            
+                    
+                    第七章    访问控制和其他数据库对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="d8z.html">
+            
+                <a href="d8z.html">
+            
+                    
+                    第八章    备份、恢复和SQL优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第八章    备份、恢复和SQL优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x672C;&#x7AE0;&#x7B80;&#x4ECB;">&#x672C;&#x7AE0;&#x7B80;&#x4ECB;</h2>
+<p>&#x2003;&#x2003;&#x672C;&#x7AE0;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x6559;&#x6750;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x7AE0;&#xFF0C;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x3001;SQL&#x4F18;&#x5316;&#x7B49;&#x77E5;&#x8BC6;&#x3002;&#x4ECE;&#x5F00;&#x53D1;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BB2;&#xFF0C;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4E86;&#x89E3;&#x5185;&#x5BB9;&#xFF0C;&#x800C;SQL&#x4F18;&#x5316;&#x8981;&#x9760;&#x8BFB;&#x8005;&#x5728;&#x5E73;&#x65E5;&#x7684;&#x5B66;&#x4E60;&#x3001;&#x5DE5;&#x4F5C;&#x4E2D;&#x4E0D;&#x65AD;&#x79EF;&#x7D2F;&#xFF0C;&#x672C;&#x7AE0;&#x4F1A;&#x4ECE;&#x5B8F;&#x89C2;&#x65B9;&#x9762;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h2 id="81--&#x6570;&#x636E;&#x5E93;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x6982;&#x8FF0;">8.1  &#x6570;&#x636E;&#x5E93;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x6982;&#x8FF0;</h2>
+<p>&#x2003;&#x2003;&#x786C;&#x4EF6;&#x3001;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x90FD;&#x53EF;&#x80FD;&#x635F;&#x574F;&#x6216;&#x5D29;&#x6E83;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x6216;&#x6570;&#x636E;&#x7EF4;&#x62A4;&#x4EBA;&#x5458;&#x4E5F;&#x4E0D;&#x53EF;&#x80FD;&#x6C38;&#x8FDC;&#x4E0D;&#x72AF;&#x9519;&#x8BEF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x5C31;&#x663E;&#x5F97;&#x683C;&#x5916;&#x91CD;&#x8981;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5907;&#x4EFD;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x6570;&#x636E;&#x5E93;&#x590D;&#x5236;&#x5230;&#x8F6C;&#x50A8;&#x8BBE;&#x5907;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x6062;&#x590D;&#xFF0C;&#x5C31;&#x662F;&#x5F53;&#x53D1;&#x751F;&#x6545;&#x969C;&#x540E;&#xFF0C;&#x5229;&#x7528;&#x5DF2;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;&#x6839;&#x636E;&#x51FA;&#x73B0;&#x6545;&#x969C;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x6062;&#x590D;&#x5206;&#x4E3A;&#x5B9E;&#x4F8B;&#x6062;&#x590D;&#x548C;&#x4ECB;&#x8D28;&#x6062;&#x590D;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5B9E;&#x4F8B;&#x6062;&#x590D;&#xFF1A;&#x5F53;Oracle&#x5B9E;&#x4F8B;&#x51FA;&#x73B0;&#x610F;&#x5916;&#x540E;&#xFF08;&#x5982;&#x610F;&#x5916;&#x6389;&#x7535;&#xFF0C;&#x540E;&#x53F0;&#x8FDB;&#x7A0B;&#x6545;&#x969C;&#x7B49;&#xFF09;&#xFF0C;Oracle&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x7684;&#x6062;&#x590D;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4ECB;&#x8D28;&#x6062;&#x590D;&#xFF1A;&#x5F53;&#x5B58;&#x653E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4ECB;&#x8D28;&#x51FA;&#x73B0;&#x6545;&#x969C;&#x65F6;&#x6240;&#x505A;&#x7684;&#x6062;&#x590D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3001;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6216;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x4E0D;&#x80FD;&#x8BFB;&#x6216;&#x4E0D;&#x80FD;&#x5199;&#x65F6;&#xFF0C;&#x6240;&#x8FDB;&#x884C;&#x7684;&#x6062;&#x590D;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x2003;&#x2003;DBA&#x7684;&#x4E3B;&#x8981;&#x804C;&#x8D23;&#x4E4B;&#x4E00;&#xFF0C;&#x5C31;&#x662F;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5E93;&#x548C;&#x5728;&#x6570;&#x636E;&#x5E93;&#x53D1;&#x751F;&#x6545;&#x969C;&#x65F6;&#x9AD8;&#x6548;&#x3001;&#x5B89;&#x5168;&#x5730;&#x6062;&#x590D;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5907;&#x4EFD;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x903B;&#x8F91;&#x5907;&#x4EFD;&#x3001;&#x7269;&#x7406;&#x5907;&#x4EFD;&#xFF08;&#x51B7;&#x5907;&#x4EFD;&#x3001;&#x70ED;&#x5907;&#x4EFD;&#xFF09;&#x7B49;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#xFF1B;&#x6062;&#x590D;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x5B8C;&#x5168;&#x6062;&#x590D;&#x3001;&#x4E0D;&#x5B8C;&#x5168;&#x6062;&#x590D;&#x548C;RMAN&#x6062;&#x590D;&#x7B49;&#x3002;</p>
+<h3 id="811--&#x903B;&#x8F91;&#x5907;&#x4EFD;">8.1.1  &#x903B;&#x8F91;&#x5907;&#x4EFD;</h3>
+<p>&#x2003;&#x2003;&#x903B;&#x8F91;&#x5907;&#x4EFD;&#x662F;&#x6307;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x5BF9;&#x8C61;&#x5BFC;&#x51FA;&#x5230;&#x4E00;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5BFC;&#x5165;/&#x5BFC;&#x51FA;&#x5DE5;&#x5177;IMPDP/EXPDP&#x6216;IMP/EXP&#x3002;&#x7531;&#x4E8E;&#x903B;&#x8F91;&#x5907;&#x4EFD;&#x5177;&#x6709;&#x5E73;&#x53F0;&#x65E0;&#x5173;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x903B;&#x8F91;&#x5907;&#x4EFD;&#x5E38;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x8FC1;&#x79FB;&#x7684;&#x4E3B;&#x8981;&#x624B;&#x6BB5;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x672C;&#x8282;&#x4EE5;IMP/EXP&#x5DE5;&#x5177;&#x4E3A;&#x4F8B;&#xFF0C;&#x8BB2;&#x89E3;&#x5BFC;&#x5165;&#x53CA;&#x5BFC;&#x51FA;&#x7684;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x3002;&#x9996;&#x5148;&#x5F3A;&#x8C03;&#xFF0C;IMP&#x6216;EXP&#x5DE5;&#x5177;&#x662F;&#x76F4;&#x63A5;&#x5728;CMD&#x4E2D;&#x901A;&#x8FC7;&#x540C;&#x540D;&#x7684;IMP&#x6216;EXP&#x547D;&#x4EE4;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x767B;&#x5F55;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<ul>
+<li>&#x5BFC;&#x51FA;&#x5DE5;&#x5177;EXP</li>
+</ul>
+<p>&#x2003;&#x2003;&#x4F7F;&#x7528;EXP&#x6267;&#x884C;&#x5BFC;&#x51FA;&#x64CD;&#x4F5C;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x2003;&#x2003;&#xFF08;1&#xFF09;&#x8868;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x51FA;&#x6307;&#x5B9A;&#x7684;&#x8868;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>EXP  &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;  file:/&#x6587;&#x4EF6;&#x540D;.dmp  log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log  
+
+tables=&#x8868;&#x540D;1,&#x8868;&#x540D;2,&#x2026;,&#x8868;&#x540D;n
+</code></pre><p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#xFF0C;&#x82E5;&#x9700;&#x8981;&#x5BFC;&#x51FA;scott&#x7528;&#x6237;&#x7684;emp&#x548C;dept&#x8868;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>EXP  scott/tiger@127.0.0.1/orcl  file:/back/bk.dmp  log=d:/back/logfile.log  tables=emp,dept
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x672C;&#x673A;&#x4E2D;scott&#x7528;&#x6237;&#x7684;emp&#x8868;&#x548C;dept&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;f:/back/bk.dmp&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x65E5;&#x5FD7;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;&#x5728;&#x540C;&#x76EE;&#x5F55;&#x4E2D;&#x7684;logfile.log&#x6587;&#x4EF6;&#x91CC;&#x3002;</p>
+<p>&#x2003;&#x2003;&#xFF08;2&#xFF09;&#x7528;&#x6237;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x51FA;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>EXP  &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;  file:/&#x6587;&#x4EF6;&#x540D;.dmp   log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log
+</code></pre><p>&#x2003;&#x2003;&#xFF08;3&#xFF09;&#x5168;&#x5E93;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x51FA;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x4F7F;&#x7528;DBA&#x7684;&#x89D2;&#x8272;&#x6267;&#x884C;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>EXP  &#x7BA1;&#x7406;&#x5458;&#x7528;&#x6237;&#x540D;/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;   file:/&#x6587;&#x4EF6;&#x540D;.dmp   log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log  full=y
+</code></pre><ul>
+<li>&#x5BFC;&#x5165;&#x5DE5;&#x5177;IMP</li>
+</ul>
+<p>&#x2003;&#x2003;&#x6267;&#x884C;&#x4E86;&#x5BFC;&#x51FA;&#x64CD;&#x4F5C;&#x4EE5;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;IMP&#x5DE5;&#x5177;&#x6267;&#x884C;&#x5BFC;&#x5165;&#x64CD;&#x4F5C;&#x3002;&#x4E0E;&#x5BFC;&#x51FA;&#x64CD;&#x4F5C;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x5BFC;&#x5165;&#x64CD;&#x4F5C;&#x4E5F;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x2003;&#x2003;&#xFF08;1&#xFF09;&#x8868;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x5165;&#x6307;&#x5B9A;&#x7684;&#x8868;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>IMP  &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;A/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;   file:/&#x6587;&#x4EF6;&#x540D;.dmp   log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log  
+
+tables=&#x8868;&#x540D;1,&#x8868;&#x540D;2,&#x2026;,&#x8868;&#x540D;n   fromuser=&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;B  touser=&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;A  
+
+commit=y  ignore=y
+</code></pre><p>&#x2003;&#x2003;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x7528;&#x6237;B&#x4E2D;&#x7528;tables&#x6307;&#x5B9A;&#x7684;&#x8868;&#x5BFC;&#x5165;&#x7528;&#x6237;A&#x4E2D;&#x3002;</p>
+<p>&#x2003;&#x2003;&#xFF08;2&#xFF09;&#x7528;&#x6237;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x5165;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>IMP  &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;A/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;   file:/&#x6587;&#x4EF6;&#x540D;.dmp   log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log  
+
+   fromuser=&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;B  touser=&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;A   commit=y   ignore=y
+</code></pre><p>&#x2003;&#x2003;&#xFF08;3&#xFF09;&#x5168;&#x5E93;&#x65B9;&#x5F0F;&#x3002;&#x5BFC;&#x5165;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x4F7F;&#x7528;DBA&#x7684;&#x89D2;&#x8272;&#x6267;&#x884C;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>IMP  &#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;&#x540D;A/&#x5BC6;&#x7801;@IP&#x5730;&#x5740;/&#x5B9E;&#x4F8B;&#x540D;   file:/&#x6587;&#x4EF6;&#x540D;.dmp   log=/&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;.log 
+
+full=y  ignore=y   destroy=y
+</code></pre><p>&#x2003;&#x2003;&#x5176;&#x4E2D;destroy=y&#x8868;&#x793A;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5BFC;&#x5165;&#x65F6;&#x53D1;&#x73B0;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x5220;&#x9664;&#x540E;&#x91CD;&#x65B0;&#x5BFC;&#x5165;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x53E6;&#x4E00;&#x79CD;&#x5BFC;&#x5165;/&#x5BFC;&#x51FA;&#x65B9;&#x5F0F;IMPDP/EXPDP&#xFF0C;&#x662F;&#x4ECE;Oracle10g&#x8D77;&#x5F15;&#x5165;&#x7684;&#x65B0;&#x65B9;&#x5F0F;&#xFF0C;&#x79F0;&#x4E3A;&#x6570;&#x636E;&#x6CF5;&#xFF08;Data Pump&#xFF09;&#x3002;&#x7B80;&#x5355;&#x5730;&#x8BB2;&#xFF0C;IMPDP/EXPDP&#x91C7;&#x7528;&#x4E86;&#x5E76;&#x884C;&#x5730;&#x8FDB;&#x884C;&#x5BFC;&#x5165;/&#x5BFC;&#x51FA;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;IMP/EXP&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#x3002;</p>
+<h3 id="812--&#x51B7;&#x5907;&#x4EFD;&#x53CA;&#x6062;&#x590D;">8.1.2  &#x51B7;&#x5907;&#x4EFD;&#x53CA;&#x6062;&#x590D;</h3>
+<p>&#x2003;&#x2003;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#xFF0C;&#x7269;&#x7406;&#x5907;&#x4EFD;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x51B7;&#x5907;&#x4EFD;&#x548C;&#x70ED;&#x5907;&#x4EFD;&#x3002;&#x51B7;&#x5907;&#x4EFD;&#x53C8;&#x79F0;&#x8131;&#x673A;&#x5907;&#x4EFD;&#xFF0C;&#x662F;&#x6307;&#x5728;&#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x540E;&#x8FDB;&#x884C;&#x7684;&#x5907;&#x4EFD;&#xFF1B;&#x800C;&#x70ED;&#x5907;&#x4EFD;&#x4E5F;&#x79F0;&#x4E3A;&#x8054;&#x673A;&#x5907;&#x4EFD;&#xFF0C;&#x662F;&#x5728;&#x6570;&#x636E;&#x5E93;&#x8FD0;&#x884C;&#x7684;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x5907;&#x4EFD;&#xFF0C;&#x4F46;&#x70ED;&#x5907;&#x4EFD;&#x5B58;&#x5728;&#x7740;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x7B49;&#x98CE;&#x9669;&#x3002;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x5907;&#x4EFD;&#x7684;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x5927;&#x591A;&#x91C7;&#x7528;&#x51B7;&#x5907;&#x4EFD;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x51B7;&#x5907;&#x4EFD;&#x5B9E;&#x8D28;&#x5C31;&#x662F;&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x7684;&#x590D;&#x5236;&#xFF1A;&#x5728;&#x6570;&#x636E;&#x5E93;&#x5173;&#x95ED;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5173;&#x952E;&#x6027;&#x6587;&#x4EF6;&#xFF08;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x3001;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x3001;&#x8054;&#x673A;&#x6587;&#x4EF6;&#x7B49;&#xFF09;&#x590D;&#x5236;&#x5230;&#x53E6;&#x5916;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x51B7;&#x5907;&#x4EFD;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x77E5;&#x9053;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x8FD9;&#x4E9B;&#x4F4D;&#x7F6E;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;SYS&#x8D26;&#x6237;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x51B7;&#x5907;&#x4EFD;&#x7684;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;SYS&#x767B;&#x5F55;&#x6570;&#x636E;&#x5E93;</li>
+</ul>
+<pre><code>SQLPLUS sys/change_on_install AS SYSDBA
+</code></pre><ul>
+<li>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code>SELECT * FROM v$controlfile;
+</code></pre><ul>
+<li>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code>SELECT * FROM v$logfile;
+</code></pre><ul>
+<li>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code>SELECT * FROM v$datafile;
+</code></pre><ul>
+<li>&#x67E5;&#x8BE2;pfile&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</li>
+</ul>
+<pre><code>SHOW PARAMETER pfile;
+</code></pre><ul>
+<li>&#x8BB0;&#x5F55;&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E4B;&#x540E;&#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;</li>
+</ul>
+<pre><code>SHUTDOWN immediate
+</code></pre><ul>
+<li><p>&#x6839;&#x636E;&#x8BB0;&#x5F55;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5C06;&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x5907;&#x4EFD;&#x76EE;&#x5F55;&#x4E2D;</p>
+</li>
+<li><p>&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;</p>
+</li>
+</ul>
+<p>&#x200B;       </p>
+<pre><code>STARTUP
+</code></pre><p>&#x2003;&#x2003;&#x51B7;&#x5907;&#x4EFD;&#x5B8C;&#x6210;&#x4EE5;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8FDB;&#x884C;&#x6062;&#x590D;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5148;&#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E4B;&#x524D;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x518D;&#x590D;&#x5236;&#x56DE;&#x539F;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x91CD;&#x542F;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#x3002;</p>
+<h3 id="813--rman">8.1.3  RMAN</h3>
+<p>&#x2003;&#x2003;RMAN&#xFF08;Recovery Manager&#xFF0C;&#x6062;&#x590D;&#x7BA1;&#x7406;&#x5668;&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x5907;&#x4EFD;&#x548C;&#x6062;&#x590D;&#x6570;&#x636E;&#x7684;Oracle&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x2003;&#x2003;RMAN&#x80FD;&#x591F;&#x5907;&#x4EFD;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x6216;&#x67D0;&#x4E9B;&#x6570;&#x636E;&#x5E93;&#x90E8;&#x4EF6;&#xFF08;&#x5982;&#x8868;&#x7A7A;&#x95F4;&#x3001;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x3001;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x3001;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#x3001;Spfile&#x53C2;&#x6570;&#x6587;&#x4EF6;&#x7B49;&#xFF09;&#x3002;RMAN&#x4E5F;&#x5141;&#x8BB8;&#x8FDB;&#x884C;&#x589E;&#x91CF;&#x6570;&#x636E;&#x5757;&#x7EA7;&#x522B;&#x7684;&#x5907;&#x4EFD;&#xFF0C;&#x4F46;&#x589E;&#x91CF;RMAN&#x5907;&#x4EFD;&#x662F;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x53EA;&#x5907;&#x4EFD;&#x81EA;&#x4E0A;&#x6B21;&#x5907;&#x4EFD;&#x4EE5;&#x6765;&#x6709;&#x53D8;&#x5316;&#x7684;&#x90A3;&#x4E9B;&#x6570;&#x636E;&#x5757;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x901A;&#x8FC7;RMAN&#x63D0;&#x4F9B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x4E0E;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x8F6F;&#x4EF6;&#xFF08;&#x5982;VERITAS&#x7B49;&#xFF09;&#x5BF9;&#x63A5;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x4F9B;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x529F;&#x80FD;&#x3002;&#x6B64;&#x5916;&#xFF0C;RMAN&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5176;&#x4ED6;&#x66F4;&#x591A;&#x529F;&#x80FD;&#xFF0C;&#x5982;&#x6570;&#x636E;&#x5E93;&#x7684;&#x514B;&#x9686;&#x7B49;&#x3002;   </p>
+<p>&#x2003;&#x2003;&#x4F7F;&#x7528;RMAN&#x6709;Nocatalog&#x548C;Catalog&#x4E24;&#x79CD;&#x5907;&#x4EFD;&#x53CA;&#x6062;&#x590D;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x2003;&#x2003;Nocatalog&#x65B9;&#x5F0F;&#xFF1A;&#x7528;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;catalog&#x79E6;&#x6842;&#x5CAD;1(&#x76EE;&#x5F55;)&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x5907;&#x4EFD;&#x90FD;&#x8981;&#x5F80;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x5199;&#x5F88;&#x591A;&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#xFF0C;&#x56E0;&#x6B64;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x4F1A;&#x6709;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x2003;&#x2003;Catalog&#x65B9;&#x5F0F;&#xFF1A;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x76EE;&#x5F55;&#x5E76;&#x5EFA;&#x7ACB;&#x6062;&#x590D;&#x76EE;&#x5F55;&#xFF0C;&#x5373;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#x5199;&#x5230;&#x6062;&#x590D;&#x76EE;&#x5F55;&#x91CC;&#x9762;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x672C;&#x8282;&#x4EE5;Nocatalog&#x65B9;&#x5F0F;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x4F7F;&#x7528;RMAN&#x8FDB;&#x884C;&#x5907;&#x4EFD;&#x4E0E;&#x6062;&#x590D;&#x7684;&#x57FA;&#x672C;&#x6B65;&#x9AA4;&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;Nocatalog&#x65B9;&#x5F0F;&#x5907;&#x4EFD;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x2003;&#x2003;&#xFF08;1&#xFF09;&#x67E5;&#x770B;&#x662F;&#x5426;&#x5F00;&#x542F;&#x5F52;&#x6863;&#x6A21;&#x5F0F;</p>
+<p>&#x2003;&#x2003;&#x4EE5;SYSDBA&#x89D2;&#x8272;&#x767B;&#x5F55;&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>ARCHIVELOG LIST ;
+</code></pre><p>&#x2003;&#x2003;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x6570;&#x636E;&#x5E93;&#x5904;&#x4E8E;&#x975E;&#x5F52;&#x6863;&#x6A21;&#x5F0F;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x6539;&#x4E3A;&#x5F52;&#x6863;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x2460; &#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#xFF08;&#x786E;&#x4FDD;&#x4ECD;&#x7136;&#x5904;&#x4E8E;SYSDBA&#x89D2;&#x8272;&#xFF09;</p>
+<pre><code>SHUTDOWN immediate;
+</code></pre><p>&#x2003;&#x2003;&#x2461; &#x5C06;&#x6570;&#x636E;&#x5E93;&#x542F;&#x52A8;&#x5230;MOUNT&#x6A21;&#x5F0F;</p>
+<p>&#x200B;       </p>
+<pre><code>START mount;
+</code></pre><p>&#x2003;&#x2003;&#x2462; &#x8C03;&#x6574;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5F52;&#x6863;&#x6A21;&#x5F0F;</p>
+<pre><code>ALTER DATABASE archivelog;
+</code></pre><p>&#x2003;&#x2003;&#x2463; &#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;</p>
+<pre><code>ALTER DATABASE OPEN;
+</code></pre><p>&#x2003;&#x2003;&#x2464; &#x786E;&#x8BA4;&#x6570;&#x636E;&#x5E93;&#x5DF2;&#x5904;&#x4E8E;&#x5F52;&#x6863;&#x6A21;&#x5F0F;</p>
+<p>&#x200B;       </p>
+<pre><code>ARCHIVELOG LIST ;
+</code></pre><p>&#x2003;&#x2003;&#xFF08;2&#xFF09;&#x8BBE;&#x7F6E;&#x5907;&#x4EFD;&#x65F6;&#x95F4;</p>
+<p>&#x2003;&#x2003;&#x901A;&#x8FC7;&#x53C2;&#x6570;control_file_record_keep_time&#x8BBE;&#x7F6E;&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#x7684;&#x4FDD;&#x5B58;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x5929;&#xFF09;&#xFF0C;&#x8D85;&#x65F6;&#x540E;&#x5C31;&#x81EA;&#x52A8;&#x6E05;&#x9664;&#x6389;&#x4EE5;&#x524D;&#x7684;&#x5907;&#x4EFD;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code>ALTER SYSTEM SET control_file_record_keep_time = &#x5929;&#x6570; SCOPE=BOTH ;
+</code></pre><p>&#x2003;&#x2003;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x67E5;&#x770B;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code>SHOW PARAMETER CONTROL ;
+</code></pre><ul>
+<li>&#x4F7F;&#x7528;Nocatalog&#x65B9;&#x5F0F;&#x6062;&#x590D;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x2003;&#x2003;&#xFF08;1&#xFF09;&#x5EFA;&#x7ACB;Oracle&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF08;&#x5305;&#x62EC;init&#x6216;sp&#x6587;&#x4EF6;&#xFF09;</p>
+<p>&#x2003;&#x2003;&#xFF08;2&#xFF09;&#x5C06;&#x5907;&#x4EFD;&#x7684;&#x63A7;&#x5236;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;init&#x6587;&#x4EF6;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;</p>
+<p>&#x2003;&#x2003;&#xFF08;3&#xFF09;&#x8FDB;&#x5165;MOUNT&#x6A21;&#x5F0F;</p>
+<p>&#x2003;&#x2003;&#xFF08;4&#xFF09;&#x4F7F;&#x7528;RMAN&#xFF0C;&#x6062;&#x590D;datafile&#x6587;&#x4EF6;</p>
+<p>&#x2003;&#x2003;&#xFF08;5&#xFF09;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#xFF0C;&#x6253;&#x5F00;resetlogs&#x6587;&#x4EF6;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>ALTER DATABASE OPEN resetlogs;
+</code></pre><p>&#x2003;&#x2003;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x4F1A;&#x6709;&#x4E13;&#x4E1A;&#x7684;&#x4EBA;&#x5458;&#x6765;&#x64CD;&#x4F5C;RMAN&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7B80;&#x5355;&#x4E86;&#x89E3;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="82--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">8.2  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;81&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;8.1&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;60&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002; </p>
+<p>&#x5DE5;&#x5177;&#xFF1A;CMD&#x547D;&#x4EE4;&#xFF0C;SQL Plus&#x547D;&#x4EE4;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x9700;&#x8981;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x8EAB;&#x4EFD;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5B8C;&#x6210;&#x76F8;&#x5173;&#x6743;&#x9650;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<h2 id="83--sql&#x4F18;&#x5316;">8.3  SQL&#x4F18;&#x5316;</h2>
+<p>&#x2003;&#x2003;&#x968F;&#x7740;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x7CFB;&#x7EDF;&#x7684;&#x54CD;&#x5E94;&#x901F;&#x5EA6;&#x5C31;&#x6210;&#x4E3A;&#x76EE;&#x524D;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x6700;&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x4E4B;&#x4E00;&#x3002;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;&#x4E2D;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x9762;&#x5C31;&#x662F;SQL&#x8BED;&#x53E5;&#x7684;&#x4F18;&#x5316;&#x3002;&#x5BF9;&#x4E8E;&#x5927;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x52A3;&#x8D28;SQL&#x8BED;&#x53E5;&#x548C;&#x4F18;&#x8D28;SQL&#x8BED;&#x53E5;&#x4E4B;&#x95F4;&#x7684;&#x901F;&#x5EA6;&#x5DEE;&#x522B;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x4E0A;&#x767E;&#x500D;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#xFF0C;&#x4E0D;&#x662F;&#x7B80;&#x5355;&#x5730;&#x80FD;&#x5B9E;&#x73B0;&#x5176;&#x529F;&#x80FD;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x800C;&#x662F;&#x8981;&#x5199;&#x51FA;&#x9AD8;&#x8D28;&#x91CF;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x7684;&#x53EF;&#x7528;&#x6027;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Oracle&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x6765;&#x66F4;&#x5FEB;&#x5730;&#x904D;&#x5386;&#x8868;&#xFF0C;&#x4F18;&#x5316;&#x5668;&#x4E3B;&#x8981;&#x6839;&#x636E;&#x5B9A;&#x4E49;&#x7684;&#x7D22;&#x5F15;&#x6765;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x5728;SQL&#x8BED;&#x53E5;&#x7684;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x5199;&#x7684;SQL&#x4EE3;&#x7801;&#x4E0D;&#x5408;&#x7406;&#xFF0C;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x4F18;&#x5316;&#x5668;&#x5FFD;&#x7565;&#x7D22;&#x5F15;&#x800C;&#x4F7F;&#x7528;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x52A3;&#x8D28;SQL&#x8BED;&#x53E5;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x7F16;&#x5199;SQL&#x8BED;&#x53E5;&#x65F6;&#x5E94;&#x6E05;&#x695A;&#x4F18;&#x5316;&#x5668;&#x6839;&#x636E;&#x4F55;&#x79CD;&#x539F;&#x5219;&#x6765;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#xFF0C;&#x8FD9;&#x6709;&#x52A9;&#x4E8E;&#x5199;&#x51FA;&#x9AD8;&#x6027;&#x80FD;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;</p>
+<h3 id="831--&#x4E0D;&#x8981;&#x8BA9;oracle&#x505A;&#x5F97;&#x592A;&#x591A;">8.3.1  &#x4E0D;&#x8981;&#x8BA9;Oracle&#x505A;&#x5F97;&#x592A;&#x591A;</h3>
+<p>&#x2003;&#x2003;Oracle&#x505A;&#x5F97;&#x8D8A;&#x591A;&#xFF0C;&#x6027;&#x80FD;&#x635F;&#x8017;&#x5C31;&#x8D8A;&#x5927;&#x3002;&#x7F16;&#x5199;SQL&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x529B;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x635F;&#x8017;&#xFF0C;&#x5E38;&#x89C1;&#x65B9;&#x6CD5;&#x6709;&#x4EE5;&#x4E0B;&#x4E94;&#x79CD;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x590D;&#x6742;&#x7684;&#x591A;&#x8868;&#x5173;&#x8054;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5148;&#x6765;&#x770B;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>SELECT &#x2026;
+
+FROM user_files uf, df_money_files dm, cw_charge_record cc
+
+WHERE uf.user_no = dm.user_no
+
+AND dm.user_no = cc.user_no
+
+AND &#x2026;
+
+AND NOT EXISTS(SELECT &#x2026;)
+</code></pre><p>&#x2003;&#x2003;&#x50CF;&#x8FD9;&#x6837;&#x70E6;&#x7410;&#x7684;SQL&#x8BED;&#x53E5;&#x662F;&#x5F88;&#x96BE;&#x4F18;&#x5316;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x7F16;&#x5199;SQL&#x65F6;&#xFF0C;&#x8981;&#x907F;&#x514D;&#x590D;&#x6742;&#x7684;&#x591A;&#x8868;&#x5173;&#x8054;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x201C;*&#x201D;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5F53;&#x4F7F;&#x7528;SELECT&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5217;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;SELECT <em>&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x4F4E;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x56E0;&#x4E3A;Oracle&#x5728;&#x89E3;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x5C06;&#x201C;</em>&#x201D;&#x4F9D;&#x6B21;&#x8F6C;&#x6362;&#x6210;&#x6240;&#x6709;&#x7684;&#x5217;&#x540D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x662F;&#x901A;&#x8FC7;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5B57;&#x5178;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5C06;&#x8017;&#x8D39;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x56E0;&#x6B64;&#x5EFA;&#x8BAE;&#x67E5;&#x8BE2;&#x65F6;&#x53EA;&#x63D0;&#x53D6;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5217;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x522B;&#x540D;&#xFF0C;&#x4F7F;&#x7528;&#x522B;&#x540D;&#x80FD;&#x591F;&#x52A0;&#x5FEB;&#x89E3;&#x6790;&#x901F;&#x5EA6;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#x7684;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5E26;&#x6709;DISTINCT&#x3001;UNION&#x3001;MINUS&#x3001;INTERSECT&#x3001;ORDER BY&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x4F1A;&#x542F;&#x52A8;SQL&#x5F15;&#x64CE;&#x53BB;&#x6267;&#x884C;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#x7684;&#x6392;&#x5E8F;&#x529F;&#x80FD;&#x3002;&#x5176;&#x4E2D;&#xFF0C; DISTINCT&#x9700;&#x8981;&#x4E00;&#x6B21;&#x6392;&#x5E8F;&#x64CD;&#x4F5C;, &#x800C;&#x5176;&#x4ED6;&#x7684;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E24;&#x6B21;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;UNION&#x67E5;&#x8BE2;&#xFF0C;&#x5E76;&#x4E14;&#x8FDE;&#x63A5;&#x7684;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#x90FD;&#x5E26;&#x6709;GROUP BY&#x5B50;&#x53E5;&#xFF0C;&#x800C;GROUP BY&#x4F1A;&#x89E6;&#x53D1;&#x5D4C;&#x5165;&#x6392;&#x5E8F;&#xFF08;NESTED SORT&#xFF09;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#x90FD;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;UNION&#x65F6;&#x53C8;&#x4F1A;&#x518D;&#x6267;&#x884C;&#x552F;&#x4E00;&#x6392;&#x5E8F;&#xFF08;SORT UNIQUE&#xFF09;&#xFF0C;&#x800C;&#x4E14;&#x552F;&#x4E00;&#x6392;&#x5E8F;&#x53EA;&#x80FD;&#x5728;&#x524D;&#x9762;&#x7684;&#x5D4C;&#x5165;&#x6392;&#x5E8F;&#x7ED3;&#x675F;&#x540E;&#x624D;&#x80FD;&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x5D4C;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x6DF1;&#x5EA6;&#x4F1A;&#x5927;&#x5927;&#x5F71;&#x54CD;&#x67E5;&#x8BE2;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E00;&#x822C;&#x6765;&#x8BB2;&#xFF0C;&#x5E26;&#x6709;UNION&#x3001;MINUS&#x3001;INTERSECT&#x7684;SQL&#x8BED;&#x53E5;&#x90FD;&#x5E94;&#x8BE5;&#x6539;&#x5199;&#x4E3A;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;&#x3002;</p>
+<ul>
+<li>&#x7528;EXISTS&#x66FF;&#x6362;DISTINCT</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5F53;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E00;&#x5BF9;&#x591A;&#x8868;&#x4FE1;&#x606F;&#x7684;&#x67E5;&#x8BE2;&#x65F6;&#xFF08;&#x6BD4;&#x5982;&#x90E8;&#x95E8;&#x8868;&#x548C;&#x96C7;&#x5458;&#x8868;&#xFF09;&#xFF0C;&#x907F;&#x514D;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;DISTINCT&#x3002;&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x7528;EXISTS&#x66FF;&#x6362;&#xFF0C;EXISTS&#x4F1A;&#x4F7F;&#x67E5;&#x8BE2;&#x66F4;&#x4E3A;&#x8FC5;&#x901F;&#xFF0C;&#x56E0;&#x4E3A;RDBMS&#x6838;&#x5FC3;&#x6A21;&#x5757;&#x5C06;&#x5728;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#x540E;&#xFF0C;&#x7ACB;&#x523B;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F4E;&#x6548;&#xFF1A;</p>
+<pre><code>SELECT DISTINCT DEPT_NO, DEPT_NAME
+
+FROM DEPT D, EMP E
+
+WHERE D.DEPT_NO = E.DEPT_NO
+</code></pre><p>&#x2003;&#x2003;&#x9AD8;&#x6548;&#xFF1A;</p>
+<pre><code>SELECT DEPT_NO, DEPT_NAME
+
+FROM DEPT D
+
+WHERE EXISTS (SELECT &#x2018;X&#x2019;
+
+&#x200B;                FROM EMP E
+
+&#x200B;                WHERE E.DEPT_NO = D.DEPT_NO);
+</code></pre><ul>
+<li>&#x7528;UNION ALL&#x66FF;&#x6362;UNION</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5F53;SQL &#x8BED;&#x53E5;&#x4F7F;&#x7528;UNION&#x62FC;&#x63A5;&#x4E24;&#x4E2A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x96C6;&#x5408;&#x65F6;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x7ED3;&#x679C;&#x96C6;&#x5408;&#x4F1A;&#x5148;&#x4EE5;UNION-ALL&#x7684;&#x65B9;&#x5F0F;&#x88AB;&#x5408;&#x5E76;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8F93;&#x51FA;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x524D;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;&#x5982;&#x679C;&#x7528;UNION ALL&#x66FF;&#x4EE3;UNION&#xFF0C;&#x8FD9;&#x6837;&#x6392;&#x5E8F;&#x5C31;&#x4E0D;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x4E86;&#xFF0C;&#x6548;&#x7387;&#x5C31;&#x4F1A;&#x56E0;&#x6B64;&#x5F97;&#x5230;&#x63D0;&#x9AD8;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F4E;&#x6548;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT ACCT_NUM, BALANCE_AMT
+
+FROM DEBIT_TRANSACTIONS
+
+WHERE TRAN_DATE = &apos;21-DEC-85&apos;
+
+UNION
+
+SELECT ACCT_NUM, BALANCE_AMT
+
+FROM DEBIT_TRANSACTIONS
+
+WHERE TRAN_DATE = &apos;21-DEC-85&apos;
+</code></pre><p>&#x2003;&#x2003;&#x9AD8;&#x6548;&#xFF1A;</p>
+<pre><code>SELECT ACCT_NUM, BALANCE_AMT
+
+FROM DEBIT_TRANSACTIONS
+
+WHERE TRAN_DATE = &apos;21-DEC-85&apos;
+
+UNION ALL
+
+SELECT ACCT_NUM, BALANCE_AMT
+
+FROM DEBIT_TRANSACTIONS
+
+WHERE TRAN_DATE = &apos;21-DEC-85&apos;
+</code></pre><h3 id="832--&#x7ED9;&#x4F18;&#x5316;&#x5668;&#x66F4;&#x660E;&#x786E;&#x7684;&#x547D;&#x4EE4;">8.3.2  &#x7ED9;&#x4F18;&#x5316;&#x5668;&#x66F4;&#x660E;&#x786E;&#x7684;&#x547D;&#x4EE4;</h3>
+<p>&#x2003;&#x2003;&#x53D1;&#x9001;&#x7ED9;&#x4F18;&#x5316;&#x5668;&#x7684;&#x547D;&#x4EE4;&#x8D8A;&#x660E;&#x786E;&#xFF0C;&#x6267;&#x884C;&#x6548;&#x7387;&#x5C31;&#x8D8A;&#x9AD8;&#x3002;&#x4F18;&#x5316;&#x5668;&#x662F;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5E76;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x7684;&#x5462;&#xFF1F;&#x53EF;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x516D;&#x70B9;&#x3002;</p>
+<ul>
+<li>&#x81EA;&#x52A8;&#x9009;&#x62E9;&#x7D22;&#x5F15;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x8868;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7D22;&#x5F15;&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#xFF0C;&#x5176;&#x4ED6;&#x662F;&#x975E;&#x552F;&#x4E00;&#x6027;&#x7684;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;Oracle&#x5C06;&#x4F7F;&#x7528;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#x800C;&#x5B8C;&#x5168;&#x5FFD;&#x7565;&#x975E;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>SELECT ENAME
+
+FROM EMP
+
+WHERE EMPNO = 2326  
+
+AND DEPTNO = 20 ;
+</code></pre><p>&#x2003;&#x2003;&#x5047;&#x5B9A;&#x53EA;&#x6709;EMPNO&#x4E0A;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x552F;&#x4E00;&#x6027;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x552F;&#x4E00;&#x6027;&#x7D22;&#x5F15;&#x5C06;&#x7528;&#x6765;&#x68C0;&#x7D22;&#x8BB0;&#x5F55;&#x3002;</p>
+<p> &#x907F;&#x514D;&#x5728;&#x7D22;&#x5F15;&#x5217;&#x4E0A;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x6216;&#x8BA1;&#x7B97;&#x5217;</p>
+<p>&#x2003;&#x2003;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7D22;&#x5F15;&#x5217;&#x662F;&#x51FD;&#x6570;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6216;&#x5B58;&#x5728;&#x5217;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x4F18;&#x5316;&#x5668;&#x5C06;&#x4E0D;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x800C;&#x4F7F;&#x7528;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F4E;&#x6548;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT &#x2026;
+
+FROM DEPT
+
+WHERE SAL* 12 &gt; 25000;
+</code></pre><p>&#x2003;&#x2003;&#x9AD8;&#x6548;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT &#x2026;
+
+FROM DEPT
+
+WHERE SAL&gt; 25000/12;
+</code></pre><ul>
+<li>&#x907F;&#x514D;&#x5728;&#x7D22;&#x5F15;&#x5217;&#x4E0A;&#x4F7F;&#x7528;NOT</li>
+</ul>
+<p>&#x2003;&#x2003;&#x4E0E;&#x7B2C;&#xFF08;2&#xFF09;&#x70B9;&#x76F8;&#x540C;&#xFF0C;&#x5728;&#x7D22;&#x5F15;&#x5217;&#x4E2D;&#x4F7F;&#x7528;NOT&#x4E5F;&#x4F1A;&#x4F7F;&#x5F97;&#x4F18;&#x5316;&#x5668;&#x8FDB;&#x884C;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x5373;&#x5F53;Oracle&#x9047;&#x5230;NOT&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x505C;&#x6B62;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x8F6C;&#x800C;&#x6267;&#x884C;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F4E;&#x6548;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT &#x2026;
+
+FROM DEPT
+
+WHERE NOT DEPT_CODE = 0;
+</code></pre><p>&#x2003;&#x2003;&#x9AD8;&#x6548;&#xFF1A;</p>
+<pre><code>SELECT &#x2026;
+
+FROM DEPT
+
+WHERE DEPT_CODE &gt; 0;
+</code></pre><ul>
+<li>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x524D;&#x7F6E;&#x901A;&#x914D;&#x7B26;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7D22;&#x5F15;&#x5217;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4EE5;&#x901A;&#x914D;&#x7B26;&#x5F00;&#x59CB;&#xFF0C;&#x7D22;&#x5F15;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT USER_NO, USER_NAME, ADDRESS
+
+FROM USER_FILES
+
+WHERE USER_NO LIKE  &apos;%109204421&apos;;
+</code></pre><p>&#x2003;&#x2003;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Oracle&#x5C06;&#x8FDB;&#x884C;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x4F7F;&#x7528;IS NULL</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;IS NULL&#x6216;IS NOT NULL&#xFF0C;&#x90A3;&#x4E48;&#x4F18;&#x5316;&#x5668;&#x4E5F;&#x662F;&#x4F1A;&#x5FFD;&#x7565;&#x7D22;&#x5F15;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x51FA;&#x73B0;&#x7D22;&#x5F15;&#x5217;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5F53;&#x6BD4;&#x8F83;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;Oracle&#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x5217;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5982;&#x4E0B;&#xFF0C;&#x5047;&#x8BBE;USER_NO&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x7684;&#x7D22;&#x5F15;&#x5217;&#x3002;</p>
+<pre><code>SELECT USER_NO,USER_NAME,ADDRESS
+
+FROM USER_FILES
+
+WHERE USER_NO = 109204421
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x4E2A;&#x8BED;&#x53E5;&#x4F1A;&#x88AB;Oracle&#x8F6C;&#x6362;&#x4E3A;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT USER_NO,USER_NAME,ADDRESS
+
+FROM USER_FILES
+
+WHERE TO_NUMBER(USER_NO) = 109204421
+</code></pre><p>&#x2003;&#x2003;&#x5185;&#x90E8;&#x53D1;&#x751F;&#x4E86;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x7528;&#x5230;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;Oracle&#x5BF9;&#x6240;&#x7F16;&#x5199;&#x7684;SQL&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x9690;&#x5F0F;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x6700;&#x597D;&#x628A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x663E;&#x5F0F;&#x8868;&#x73B0;&#x51FA;&#x6765;&#x3002;&#x5E76;&#x4E14;&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x5B57;&#x7B26;&#x548C;&#x6570;&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x65F6;&#xFF0C;Oracle&#x4F1A;&#x4F18;&#x5148;&#x5C06;&#x6570;&#x503C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x3002;</p>
+<h3 id="833--&#x51CF;&#x5C11;&#x8BBF;&#x95EE;&#x6B21;&#x6570;">8.3.3  &#x51CF;&#x5C11;&#x8BBF;&#x95EE;&#x6B21;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5F53;&#x6267;&#x884C;&#x6BCF;&#x6761;SQL&#x8BED;&#x53E5;&#x65F6;&#xFF0C;Oracle&#x90FD;&#x5728;&#x5185;&#x90E8;&#x6267;&#x884C;&#x4E86;&#x8BB8;&#x591A;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982;&#x89E3;&#x6790;SQL&#x8BED;&#x53E5;&#x3001;&#x4F30;&#x7B97;&#x7D22;&#x5F15;&#x7684;&#x5229;&#x7528;&#x7387;&#x3001;&#x7ED1;&#x5B9A;&#x53D8;&#x91CF;&#x3001;&#x8BFB;&#x6570;&#x636E;&#x5757;&#x7B49;&#x3002;&#x7531;&#x6B64;&#x53EF;&#x89C1;&#xFF0C;&#x51CF;&#x5C11;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x5C31;&#x80FD;&#x51CF;&#x5C11;Oracle&#x7684;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x91CF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;DECODE&#x51FD;&#x6570;&#x907F;&#x514D;&#x91CD;&#x590D;&#x626B;&#x63CF;&#x76F8;&#x540C;&#x8BB0;&#x5F55;&#x6216;&#x91CD;&#x590D;&#x8FDE;&#x63A5;&#x76F8;&#x540C;&#x7684;&#x8868;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT  COUNT(*)&#xFF0C;SUM(SAL)
+
+FROM EMP
+
+WHERE DEPT_NO = 0020
+
+AND ENAME LIKE &#x2018;SMITH%&#x2019;;
+
+   SELECT COUNT(*)&#xFF0C;SUM(SAL)
+
+   FROM EMP
+
+   WHERE DEPT_NO = 0030
+
+&#x200B;               AND ENAME LIKE&#x3000;&#x2018;SMITH%&#x2019;;
+</code></pre><p>&#x2003;&#x2003;&#x53EF;&#x4EE5;&#x7528;DECODE&#x51FD;&#x6570;&#x9AD8;&#x6548;&#x5730;&#x5F97;&#x5230;&#x76F8;&#x540C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT COUNT(DECODE(DEPT_NO,0020,&#x2019;X&#x2019;,NULL)) D0020_COUNT,
+
+&#x200B;        COUNT(DECODE(DEPT_NO,0030,&#x2019;X&#x2019;,NULL)) D0030_COUNT,
+
+&#x200B;        SUM(DECODE(DEPT_NO,0020,SAL,NULL)) D0020_SAL,
+
+&#x200B;        SUM(DECODE(DEPT_NO,0030,SAL,NULL)) D0030_SAL
+
+FROM EMP 
+
+WHERE ENAME LIKE &#x2018;SMITH%&#x2019;;
+</code></pre><h3 id="834--&#x7EC6;&#x8282;&#x4E0A;&#x7684;&#x5F71;&#x54CD;">8.3.4  &#x7EC6;&#x8282;&#x4E0A;&#x7684;&#x5F71;&#x54CD;</h3>
+<p>&#x2003;&#x2003;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x7684;&#x8FDE;&#x63A5;&#x987A;&#x5E8F;&#x3001;ORDER BY&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x975E;&#x7D22;&#x5F15;&#x9879;&#x3001;&#x7528;WHERE&#x66FF;&#x6362;HAVING&#x8BED;&#x53E5;&#x3001;&#x7528;&gt;=&#x66FF;&#x4EE3;&gt;&#x7B49;&#x7EC6;&#x8282;&#xFF0C;&#x90FD;&#x53EF;&#x80FD;&#x5F71;&#x54CD;Oracle&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<ul>
+<li>WHERE&#x5B50;&#x53E5;&#x4E2D;&#x7684;&#x8FDE;&#x63A5;&#x987A;&#x5E8F;</li>
+</ul>
+<p>&#x2003;&#x2003;Oracle&#x91C7;&#x7528;&#x81EA;&#x4E0B;&#x800C;&#x4E0A;&#x7684;&#x987A;&#x5E8F;&#x89E3;&#x6790;WHERE&#x5B50;&#x53E5;&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x539F;&#x7406;, &#x5F53;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x8868;&#x94FE;&#x63A5;&#x65F6;&#xFF0C;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x6392;&#x5728;&#x6700;&#x540E;&#x7684;&#x8868;&#x5E94;&#x5F53;&#x662F;&#x8FD4;&#x56DE;&#x884C;&#x6570;&#x53EF;&#x80FD;&#x6700;&#x5C11;&#x7684;&#x8868;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x4ECE;emp&#x8868;&#x67E5;&#x5230;&#x7684;&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x5C11;&#x6216;&#x8BE5;&#x8868;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x6BD4;&#x8F83;&#x786E;&#x5B9A;&#xFF0C;&#x80FD;&#x5927;&#x5927;&#x7F29;&#x5C0F;&#x67E5;&#x8BE2;&#x8303;&#x56F4;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x6700;&#x7CBE;&#x786E;&#x7684;&#x90E8;&#x5206;&#x653E;&#x5728;WHERE&#x5B50;&#x53E5;&#x7684;&#x6700;&#x540E;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT * FROM emp e, dept d
+
+WHERE d.deptno&gt;10 AND e.deptno=30 ;
+</code></pre><p>&#x2003;&#x2003;&#x5982;&#x679C;dept&#x8868;&#x8FD4;&#x56DE;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x8F83;&#x591A;&#xFF0C;&#x90A3;&#x4E48;&#x4E0A;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4F1A;&#x6BD4;&#x4E0B;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x5FEB;&#x5F97;&#x591A;&#xFF1A;</p>
+<p>&#x200B;       </p>
+<pre><code>SELECT * FROM emp e,dept d
+
+WHERE e.deptno=30 AND d.deptno&gt;10 ;
+</code></pre><ul>
+<li>ORDER BY&#x5B50;&#x53E5;</li>
+</ul>
+<p>&#x2003;&#x2003;ORDER BY&#x8BED;&#x53E5;&#x5BF9;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x5217;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x51FD;&#x6570;&#x52A0;&#x5165;&#x5217;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5728;ORDER BY&#x8BED;&#x53E5;&#x4E2D;&#x5B58;&#x5728;&#x975E;&#x7D22;&#x5F15;&#x9879;&#x6216;&#x5217;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x8BA1;&#x7B97;&#xFF0C;&#x90FD;&#x5C06;&#x964D;&#x4F4E;&#x67E5;&#x8BE2;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x2003;&#x2003;SQL&#x4F18;&#x5316;&#x7684;&#x7EC6;&#x8282;&#x8F83;&#x591A;&#xFF0C;&#x9664;&#x4E86;&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x7684;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x5E73;&#x65E5;&#x7684;&#x5B66;&#x4E60;&#x5DE5;&#x4F5C;&#x4E2D;&#x591A;&#x603B;&#x7ED3;&#x3001;&#x591A;&#x79EF;&#x7D2F;&#x3002;</p>
+<h2 id="84--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">8.4  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;83&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;8.3&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;60&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002; </p>
+<p>&#x5DE5;&#x5177;&#xFF1A;PL/SQL Dev</p>
+<h2 id="85--&#x672C;&#x7AE0;&#x7EC3;&#x4E60;">8.5  &#x672C;&#x7AE0;&#x7EC3;&#x4E60;</h2>
+<p>1  &#x5907;&#x4EFD;&#x6709;&#x54EA;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#xFF1F;</p>
+<p>2  &#x8FDB;&#x884C;&#x51B7;&#x5907;&#x4EFD;&#x7684;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x51B7;&#x5907;&#x4EFD;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>3  &#x4F7F;&#x7528;EXP&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x5BFC;&#x51FA;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x6709;&#x54EA;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#xFF1F;</p>
+<p>4  &#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FDB;&#x884C;SQL&#x4F18;&#x5316;&#xFF1F;</p>
+<p>5  UNION ALL&#x4E0E;UNION&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;</p>
+<p>6  &#x51FA;&#x4E86;&#x672C;&#x7AE0;&#x4ECB;&#x7ECD;&#x7684;&#x4EE5;&#x5916;&#xFF0C;&#x4F60;&#x8FD8;&#x77E5;&#x9053;&#x54EA;&#x4E9B;SQL&#x4F18;&#x5316;&#x7684;&#x77E5;&#x8BC6;&#xFF1F;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="d7z.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第七章    访问控制和其他数据库对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第八章    备份、恢复和SQL优化","level":"1.9","depth":1,"previous":{"title":"第七章    访问控制和其他数据库对象","level":"1.8","depth":1,"path":"chapters/d7z.md","ref":"chapters/d7z.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapters/d8z.md","mtime":"2020-04-13T16:57:30.002Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T03:37:44.572Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

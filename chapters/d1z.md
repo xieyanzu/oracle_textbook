@@ -197,6 +197,12 @@
 
 <p align="center"><img src="../img/d1z/tu1.1.png" /></p>  
 <p align="center">图1.1  Oracle 11g下载页面</p>  
+
+
+
+
+
+
 &emsp;&emsp;下载前，需要注册一个Oracle网站用户并使用这个用户登录Oracle网站。成功登录并找到Oracle 11g的下载页面后，首先需要选择接收OTN许可协议，否则不能下载Oracle数据库。根据要求，选择Microsoft Windows（32位）这个Oracle 11g的版本进行下载，需要下载两个文件，合计大小约为2.1GB。安装文件比较大，需要耐心等候。
 
 &emsp;&emsp;也可以单击“查看全部”按钮，能够看到Oracle公司为Microsoft Windows（32位）平台提供的全部下载资料，如图1.2所示（截取部分内容）。内容不仅包括需要下载的两个文件，还包括安装指南、通用文档、客户端库、Oracle数据库示例等资料，可以按需下载。
@@ -205,6 +211,8 @@
 
 <p align="center"><img src="../img/d1z/tu1.2.png" /></p>  
 <p align="center">图1.2  Oracle 11g下载全部资料</p>  
+
+
 ### 1.5.2  Oracle 11g安装步骤  
 
 &emsp;&emsp;下载完成后，将两个压缩包解压到同一目录，然后单击该目录下的setup.exe文件进行安装。需要提醒大家的是，在安装Oracle之前，最好将本机IP地址设定为固定IP，避免安装结束之后出现不必要的问题。具体安装步骤如下。
@@ -215,78 +223,103 @@
 
 <p align="center"><img src="../img/d1z/tu1.3.png" /></p>  
 <p align="center">图1.3  Oracle 11g安装步骤1</p>  
+
+
 &emsp;&emsp;（2）等待片刻之后，会出现如图1.4所示的启动画面。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.4.png" /></p>  
 <p align="center">图1.4  Oracle 11g安装步骤2</p>  
+
+
 &emsp;&emsp;（3）稍许等待，进入如图1.5所示的安装画面。取消默认选中的“我希望通过My Oracle Support接收安全更新。”复选框，然后单击“下一步”按钮继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.5.png" /></p>  
 <p align="center">图1.5  Oracle 11g安装步骤3</p>  
+
+
 &emsp;&emsp;（4）出现“选择安装选项”对话框，如图1.6所示。保持默认选择“创建和配置数据库”单选按钮，单击“下一步”按钮继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.6.png" /></p>  
 <p align="center">图1.6  Oracle 11g安装步骤4</p>  
+
+
 &emsp;&emsp;（5）出现“系统类”对话框，如图1.7所示。默认选择“桌面类”单选按钮，单击“下一步”按钮继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.7.png" /></p>  
 <p align="center">图1.7  Oracle 11g安装步骤5</p>  
+
+
 &emsp;&emsp;（6）出现“典型安装配置”对话框，如图1.8所示。设置Oracle基目录、软件位置和数据库文件位置，选择数据库版本（企业版）和字符集（保持默认值）。同时要设置全局数据库名，本次安装时如图1.8所示，全局数据库名设置为orcl11，需要记住；最后还需要设置管理口令，其格式要求至少包含一个大写字母、一个小写字母和一个数字，否则会提示警告信息。单击“下一步”按钮继续，如果管理口令的设置不符合Oracle建议的标准，安装过程中会再一次弹出一个对话框，提示管理口令不符合要求，是否继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.8.png" /></p>  
 <p align="center">图1.8  Oracle 11g安装步骤6</p>  
+
+
 &emsp;&emsp;（7）出现“执行先决条件检查”对话框，如图1.9所示。安装程序为确保目标环境能满足所选Oracle产品的最低安装和配置要求，执行条件检查。检查完成后，单击“下一步”按钮继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.9.png" /></p>  
 <p align="center">图1.9  Oracle 11g安装步骤7</p>  
+
+
 &emsp;&emsp;（8）出现“概要”对话框，如图1.10所示。该概要总结了之前对Oracle 11g安装的设置信息，如果安装者发现存在问题，可以通过单击“后退”按钮进行更改；如果没有发现问题，则单击“完成”按钮，开始Oracle 11g的安装。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.10.png" /></p>  
 <p align="center">图1.10  Oracle 11g安装步骤8</p>  
+
+
 &emsp;&emsp;（9）出现“安装产品”对话框，安装画面如图1.11所示，需要等待一段时间。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.11.png" /></p>  
 <p align="center">图1.11  Oracle 11g安装步骤9</p>  
+
+
 &emsp;&emsp;（10）安装产品结束之后，出现“复制数据库文件”对话框，如图1.12所示。该过程需要完成复制数据库文件，创建并启动Oracle实例和创建数据库的工作。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.12.png" /></p>  
 <p align="center">图1.12  Oracle 11g安装步骤10</p>  
+
+
 &emsp;&emsp;（11）数据库创建完成之后，出现“确定”对话框，如图1.13所示。在该对话框中，有一个重要的工作就是给数据库默认账户解锁，并设置账户口令，单击“口令管理”按钮继续。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.13.png" /></p>  
 <p align="center">图1.13  Oracle 11g安装步骤1</p>  
+
+
 &emsp;&emsp;（12）出现“口令管理”对话框，如图1.14所示。Oracle数据库系统提供了多个默认账户，这些默认账户具有不同的数据库对象、角色权限和系统权限等。从图1.14中可以看出，用对号标识的数据库账户处于锁定状态，不能使用。对于解锁的账户，需要设置账户口令，本次安装解锁了HR、SYSTEM、SYS和SCOTT四个账户，并设置了不同的密码，其中解锁HR账户的目的是之后需要通过使用该账户登录Oracle数据库，访问其中的人力资源相关表，达到演示SQL语句作用的目的。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.14.png" /></p>  
 <p align="center">图1.14  Oracle 11g安装步骤12</p>  
+
+
 &emsp;&emsp;（13）最后出现“完成”对话框，提示Oracle数据库安装成功，如图1.15所示，并告知可以通过指定的URL访问Oracle企业管理器数据库控制台。单击“关闭”按钮，安装程序会自动打开一个浏览器窗口，访问企业管理器，使用SYS或SYSTEM账户（HR和SCOTT账户不具备相关权限）登录企业管理器，可以对Oracle数据库进行管理。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.15.png" /></p>  
 <p align="center">图1.15  Oracle 11g安装步骤13</p>  
+
 
 
 ### 1.5.3  Oracle数据库启动与关闭  
@@ -299,12 +332,19 @@
 
 <p align="center"><img src="../img/d1z/tu1.16.png" /></p>  
 <p align="center">图1.16 “服务”程序界面</p>  
+
+
+
+
 &emsp;&emsp;在弹出的“OracleServiceORCL11的属性”对话框中（见图1.17），单击“停止”或“暂停”按钮，可以将Oracle数据库服务置于停止或暂停状态，之后再单击“启动”或“恢复”按钮，可以重新启动Oracle数据库。将“启动类型”由“自动”改为“手动”，则Oracle数据库服务不会再随着Windows启动而启动，如果想启动Oracle数据库服务，单击“启动”按钮即可。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.17.png" /></p>  
 <p align="center">图1.17 “OracleServiceORCL11的属性”对话框</p>  
+
+
+
 
 
 &emsp;&emsp;OracleServiceORCL11是数据库的主服务，此服务必须启动才能使用Oracle。此外，如果要使用PL/SQL Developer等客户端工具访问数据库，就还需要启动Oracle监听服务：OracleOraDb11g_home1TNSListener。
@@ -358,6 +398,8 @@
 
 <p align="center"><img src="../img/d1z/tu1.18.png" /></p>  
 <p align="center">图1.18  登录Oracle企业管理器</p>  
+
+
 &emsp;&emsp;OEM是一个基于Java框架开发的集成化管理工具，采用Web应用方式实现对Oracle运行环境的安全管理。可以对单个Oracle数据库进行管理，包括系统监控、性能诊断与优化、系统维护、对象管理、存储数据、安全管理、作业管理、数据备份和恢复数据移植等，也可对多个Oracle数据库进行集中管理。作为数据库管理员，可以从任何地方通过特定的网络地址访问OEM，并对数据库和其他服务进行各种管理和监控操作。
 
 &emsp;&emsp;访问OEM的URL地址为https://hostname:port/em ，其中hostname为主机名或主机IP地址，port为端口号，默认为1158。如果通过该URL 不能访问OEM，则需检查与Oracle相关的服务是否开启。
@@ -371,11 +413,15 @@
 <p align="center"><img src="../img/d1z/tu1.19.png" /></p>  
 <p align="center">图1.19  Oracle企业管理器</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.20.png" /></p>  
 <p align="center">图1.20  OEM“方案”页面</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.21.png" /></p>  
 <p align="center">图1.21  OEM“服务器”页面</p>  
+
+
 ### 1.7.2  SQL*Plus  
 
 &emsp;&emsp;SQL\*Plus是Oracle数据库中执行SQL语句的主要工具之一，它是Oracle公司为执行SQL语句以及编写、处理PL/SQL语言程序（PL/SQL是过程化SQL语言，它是Oracle数据库对SQL语句的扩展，在普通SQL语句的使用上增加了编程语言的特点。PL/SQL是把数据操作和查询语句组织在PL/SQL代码的过程性单元中，通过逻辑判断、循环等操作实现复杂的功能或者计算的程序语言）而提供的一种开发环境。在SQL\*Plus中，可以运行DML、DDL等标准的SQL语句，也可以运行Oracle一些特有的命令，如connect、exit等。
@@ -386,11 +432,15 @@
 
 <p align="center"><img src="../img/d1z/tu1.22.png" /></p>  
 <p align="center">图1.22  SQL*Plus界面</p>  
+
+
 &emsp;&emsp;当出现SQL>提示符后，直接输入SQL语句，用“;”表示SQL语句结束，按Enter键即可执行SQL语句。系统默认的HR账号可以访问若干个表，其中包括地区表REGIONS，在SQL*Plus中执行SELECT * FROM REGIONS语句的结果如图1.23所示。
 
 
 <p align="center"><img src="../img/d1z/tu1.23.png" /></p>  
 <p align="center">图1.23  使用SQL*Plus执行SQL语句</p>  
+
+
 &emsp;&emsp;SQL\*Plus作为一款历史悠久的Oracle工具，具有的功能主要包括：执行SQL和PL/SQL语句，执行、生成SQL脚本，数据库的维护（如启动、关闭等），数据导出，用户管理和权限维护等。
 
 &emsp;&emsp;除了以用户名、密码的验证方式登录外，SYS账户还可以使用DBA角色登录数据库：打开CMD命令，直接输入SQLPLUS / AS SYSDBA即可登录，如图1.24所示。
@@ -399,6 +449,8 @@
 
 <p align="center"><img src="../img/d1z/tu1.24.png" /></p>  
 <p align="center">图1.24  以DBA角色登录数据库</p>  
+
+
 &emsp;&emsp;还可以通过SQL*Plus进行一些简单的查询及其他操作，介绍如下。
 
 - 查询当前数据库名称
@@ -441,11 +493,15 @@ ALTER USER scott ACCOUNT UNLOCK ;
 <p align="center"><img src="../img/d1z/tu1.25.png" /></p>  
 <p align="center">图1.25  查询当前数据库名称</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.26.png" /></p>  
 <p align="center">图1.26  查询账户状态</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.27.png" /></p>  
 <p align="center">图1.27  解锁用户</p>  
+
+
 - 重置密码
 
 &emsp;&emsp;如果需要为某用户修改密码（如scott），也可以使用DBA角色的用户通过以下语句实现，结果如图1.28所示。
@@ -459,6 +515,8 @@ ALTER USER scott IDENTIFIED BY tiger ;
 
 <p align="center"><img src="../img/d1z/tu1.28.png" /></p>  
 <p align="center">图1.28  修改用户密码</p>  
+
+
 &emsp;&emsp;如此，就将scott用户的密码修改为了tiger。
 
 &emsp;&emsp;再次强调，解锁用户及修改密码操作一定要在DBA角色下执行。
@@ -475,6 +533,8 @@ ALTER USER scott IDENTIFIED BY tiger ;
 
 <p align="center"><img src="../img/d1z/tu1.29.png" /></p>  
 <p align="center">图1.29  Oracle Net Manager工具</p>  
+
+
 &emsp;&emsp;选择“服务命名”选项，单击左上角绿色的“+”图标，出现如图1.30所示的“网络服务名向导”对话框。
 
 &emsp;&emsp;在“网络服务名”文本框中输入一个网络服务名称，以后就可以在PL/SQL Dev等其他客户端工具中通过这个网络服务名称连接到对应的Oracle数据库服务器。
@@ -486,8 +546,11 @@ ALTER USER scott IDENTIFIED BY tiger ;
 <p align="center"><img src="../img/d1z/tu1.30.png" /></p>  
 <p align="center">图1.30  网络服务名向导</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.31.png" /></p>  
 <p align="center">图1.31  网络服务名向导之协议设置</p>  
+
+
 &emsp;&emsp;出现“服务”对话框，如图1.32所示，在该对话框中输入服务名。该服务名通常为Oracle数据库服务器安装时设置的全局数据库名，本例中输入orcl11，即所配置的网络服务名将链接到IP地址为192.168.1.141、端口号为1521的Oracle数据库的orcl11这个服务上，单击“下一步”按钮继续。
 
 &emsp;&emsp;出现“连接测试”对话框，单击该对话框上的“测试”按钮，如图1.33所示，提示测试没有成功。再单击“更改登录”，输入之前解锁的Oracle账户的用户名和密码，例如HR账户的用户名和密码，单击“确定”按钮后再单击图1.33中的“测试”按钮，直到出现如图1.34所示的连接测试成功的信息。
@@ -499,11 +562,15 @@ ALTER USER scott IDENTIFIED BY tiger ;
 <p align="center"><img src="../img/d1z/tu1.32.png" /></p>  
 <p align="center">图1.32  网络服务名向导之服务</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.33.png" /></p>  
 <p align="center">图1.33  网络服务名之连接测试失败</p>  
 
+
 <p align="center"><img src="../img/d1z/tu1.34.png" /></p>  
 <p align="center">图1.34  网络服务名之连接测试成功</p>  
+
+
 ### 1.7.4  PL/SQL Dev使用  
 
 &emsp;&emsp;PL/SQL Dev安装很简单，这里不再赘述。在客户端启动PL/SQL Dev，出现Oracle Logon对话框，如图1.35所示。正确输入HR账户用户名、密码，选择在客户端刚配置的网络服务名NetOrcl11（如果使用PL/SQL Dev在Oracle服务器端登录，则可直接通过Oracle数据库全局服务名访问数据库，不用再配置网络服务名），同时选择作为普通用户身份登录Oracle服务器。
@@ -512,12 +579,16 @@ ALTER USER scott IDENTIFIED BY tiger ;
 
 <p align="center"><img src="../img/d1z/tu1.35.png" /></p>  
 <p align="center">图1.35  PL/SQL Dev登录Oracle</p>  
+
+
 &emsp;&emsp;在PL/SQL Dev主界面中，左侧列出了该登录账户在该Oracle数据库中拥有的对象资源，例如表、视图、索引、存储过程、触发器等。本例中是通过HR这个账号登录的，单击左侧树形结构的Tables文件夹，显示出了HR账号可以访问的所有表，如图1.36所示。右击选中的REGIONS表，选择Query data查询数据，右侧的上部显示了执行的SQL语句，下部显示了执行SQL语句的结果，如图1.36所示。
 
 
 
 <p align="center"><img src="../img/d1z/tu1.36.png" /></p>  
 <p align="center">图1.36  PL/SQL Dev主界面</p>  
+
+
 &emsp;&emsp;关于PL/SQL Dev这个Oracle客户端工具具体如何使用，将在接下来的章节中展开。
 
 

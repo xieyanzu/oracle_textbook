@@ -1,0 +1,1299 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第三章    单行函数和多表查询 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="d4z.html" />
+    
+    
+    <link rel="prev" href="d2z.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="d1z.html">
+            
+                <a href="d1z.html">
+            
+                    
+                    第一章    关系型数据库Oracle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="d2z.html">
+            
+                <a href="d2z.html">
+            
+                    
+                    第二章    查询和排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="d3z.html">
+            
+                <a href="d3z.html">
+            
+                    
+                    第三章    单行函数和多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="d4z.html">
+            
+                <a href="d4z.html">
+            
+                    
+                    第四章    子查询和组函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="d5z.html">
+            
+                <a href="d5z.html">
+            
+                    
+                    第五章    操作数据和管理表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="d6z.html">
+            
+                <a href="d6z.html">
+            
+                    
+                    第六章    视图、序列和索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="d7z.html">
+            
+                <a href="d7z.html">
+            
+                    
+                    第七章    访问控制和其他数据库对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="d8z.html">
+            
+                <a href="d8z.html">
+            
+                    
+                    第八章    备份、恢复和SQL优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第三章    单行函数和多表查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#xFEFF;## &#x672C;&#x7AE0;&#x7B80;&#x4ECB;
+&#x2003;&#x2003;&#x7B2C;2&#x7AE0;&#x4ECB;&#x7ECD;&#x4E86;&#x67E5;&#x8BE2;&#x548C;&#x6392;&#x5E8F;&#xFF0C;&#x5C5E;&#x4E8E;SQL&#x8BED;&#x8A00;&#x4E2D;&#x57FA;&#x7840;&#x4E2D;&#x7684;&#x57FA;&#x7840;&#x3002;&#x672C;&#x7AE0;&#x8981;&#x6DF1;&#x5165;&#x4E00;&#x6B65;&#xFF0C;&#x4ECB;&#x7ECD;&#x4E24;&#x4E2A;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5355;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x662F;&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x77E5;&#x8BC6;&#x70B9;&#x4E0D;&#x8BBA;&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x4F01;&#x4E1A;&#x9762;&#x8BD5;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x7ECF;&#x5E38;&#x6D89;&#x53CA;&#xFF0C;&#x8BFB;&#x8005;&#x5FC5;&#x987B;&#x638C;&#x63E1;&#x3002;</p>
+<h2 id="31--sql&#x51FD;&#x6570;">3.1  SQL&#x51FD;&#x6570;</h2>
+<p>&#x2003;&#x2003;&#x51FD;&#x6570;&#xFF0C;&#x548C;Java&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&#x662F;&#x5B8C;&#x6210;&#x4E00;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#x96C6;&#x5408;&#x3002;SQL&#x51FD;&#x6570;&#x662F;SQL&#x8BED;&#x8A00;&#x7684;&#x4E00;&#x4E2A;&#x5F3A;&#x6709;&#x529B;&#x7279;&#x5F81;&#xFF0C;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x3002;SQL&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5982;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+<ul>
+<li><p>&#x6267;&#x884C;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x3002;</p>
+</li>
+<li><p>&#x4FEE;&#x6539;&#x5355;&#x4E2A;&#x6570;&#x636E;&#x9879;&#x3002;</p>
+</li>
+<li><p>&#x683C;&#x5F0F;&#x5316;&#x663E;&#x793A;&#x7684;&#x65E5;&#x671F;&#x548C;&#x6570;&#x5B57;&#x3002;</p>
+</li>
+<li><p>&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+</li>
+<li><p>&#x6839;&#x636E;&#x884C;&#x5206;&#x7EC4;&#x64CD;&#x7EB5;&#x8F93;&#x51FA;&#x3002;</p>
+</li>
+</ul>
+<p>&#x2003;&#x2003;&#x4E0E;Java&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;SQL&#x51FD;&#x6570;&#x6709;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x603B;&#x6709;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x7531;&#x4E8E;&#x7BC7;&#x5E45;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x672C;&#x4E66;&#x53EA;&#x7B80;&#x8981;&#x4ECB;&#x7ECD;&#x4F5C;&#x4E3A;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6700;&#x5E38;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6839;&#x636E;&#x51FD;&#x6570;&#x6240;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x884C;&#x6570;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;SQL&#x51FD;&#x6570;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF0C;&#x5355;&#x884C;&#x51FD;&#x6570;&#x548C;&#x591A;&#x884C;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x56FE;3.1&#x6240;&#x793A;&#x3002;&#x5176;&#x4E2D;&#x5355;&#x884C;&#x51FD;&#x6570;&#x4EC5;&#x5BF9;&#x5355;&#x4E2A;&#x884C;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x884C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x3002;&#x5728;&#x5355;&#x884C;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x53C8;&#x53EF;&#x6839;&#x636E;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#x7684;&#x4E0D;&#x540C;&#x5206;&#x4E3A;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x3001;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x3001;&#x65E5;&#x671F;&#x51FD;&#x6570;&#x3001;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x548C;&#x901A;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x56FE;3.2&#x6240;&#x793A;&#x3002;&#x800C;&#x591A;&#x884C;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6210;&#x7EC4;&#x7684;&#x591A;&#x4E2A;&#x884C;&#xFF0C;&#x6BCF;&#x4E2A;&#x884C;&#x7EC4;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x53C8;&#x79F0;&#x7EC4;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x8BFE;&#x7A0B;&#x4E2D;&#x7CFB;&#x7EDF;&#x4ECB;&#x7ECD;&#x3002;&#x5355;&#x884C;&#x51FD;&#x6570;&#x53EF;&#x64CD;&#x4F5C;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5E38;&#x91CF;&#x3001;&#x53D8;&#x91CF;&#x3001;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x5355;&#x884C;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5728;SELECT&#x3001;WHERE&#x548C;ORDER BY&#x5B50;&#x53E5;&#x4E2D;&#x51FA;&#x73B0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5D4C;&#x5957;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.1.png"></p>  
+<p align="center">&#x56FE;3.1  SQL&#x51FD;&#x6570;&#x5206;&#x7C7B; </p>  
+<p align="center"><img src="../img/d3z/tu3.2.png"></p>  
+<p align="center">&#x56FE;3.2  &#x5355;&#x884C;&#x51FD;&#x6570;&#x5206;&#x7C7B;</p>  
+
+
+
+<h2 id="32--&#x5B57;&#x7B26;&#x3001;&#x6570;&#x5B57;&#x3001;&#x65E5;&#x671F;&#x51FD;&#x6570;">3.2  &#x5B57;&#x7B26;&#x3001;&#x6570;&#x5B57;&#x3001;&#x65E5;&#x671F;&#x51FD;&#x6570;</h2>
+<p>&#x2003;&#x2003;&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x5355;&#x884C;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x3001;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x548C;&#x65E5;&#x671F;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="321--&#x5B57;&#x7B26;&#x51FD;&#x6570;">3.2.1  &#x5B57;&#x7B26;&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x5B57;&#x7B26;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x503C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x503C;&#x3002;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x636E;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x6BB5;&#x540D;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x8868;3.1&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7528;input&#x8868;&#x793A;&#xFF0C;&#x4EE3;&#x8868;&#x503C;&#x4E3A;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x8868;3.1  &#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x8BF4;    &#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOWER(input)</td>
+<td>&#x5C06;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x503C;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x4E3A;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td>UPPER(input)</td>
+<td>&#x5C06;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x503C;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;</td>
+</tr>
+<tr>
+<td>INITCAP(input)</td>
+<td>&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;&#xFF0C;&#x5176;&#x4ED6;&#x503C;&#x4E3A;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td>CONCAT(input1,input2)</td>
+<td>&#x8FDE;&#x63A5;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x503C;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x7B26;&#x503C;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x8FDE;&#x63A5;&#x8FD0;&#x7B97;&#x7B26;&quot;||&quot;</td>
+</tr>
+<tr>
+<td>SUBSTR(input,m[, n])</td>
+<td>&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x503C;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x4ECE;m&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#xFF0C;&#x53D6;n&#x4E2A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#xFF0C;&#x5982;&#x679C;n&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5219;&#x53D6;&#x5230;&#x5B57;&#x7B26;&#x503C;&#x7ED3;&#x5C3E;&#x5904;</td>
+</tr>
+<tr>
+<td>LENGTH(input)</td>
+<td>&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x6570;</td>
+</tr>
+<tr>
+<td>INSTR(input, char [,m] [, n] )</td>
+<td>&#x8FD4;&#x56DE;&#x5728;&#x5B57;&#x7B26;&#x503C;&#x4E2D;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;char&#x7684;&#x6570;&#x5B57;&#x4F4D;&#x7F6E;&#x3002;&#x53C2;&#x6570;m&#x4F5C;&#x4E3A;&#x67E5;&#x627E;&#x7684;&#x5F00;&#x59CB;&#xFF0C;&#x53C2;&#x6570;n&#x4EE3;&#x8868;&#x7B2C;n&#x6B21;&#x53D1;&#x73B0;&#x3002;m&#x548C;n&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;1&#xFF0C;&#x5373;&#x9ED8;&#x8BA4;&#x4ECE;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x67E5;&#x627E;&#xFF0C;&#x5E76;&#x4E14;&#x62A5;&#x544A;&#x7B2C;&#x4E00;&#x4E2A;&#x53D1;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td>REPLACE(input, char1,char2)</td>
+<td>&#x4ECE;&#x5B57;&#x7B26;&#x503C;&#x4E2D;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;char1&#xFF0C;&#x627E;&#x5230;&#x5219;&#x66FF;&#x6362;&#x6210;char2</td>
+</tr>
+<tr>
+<td>LPAD(input, n, char)   RPAD(input, n, char)</td>
+<td>&#x4ECE;&#x5DE6;&#x8FB9;&#xFF08;&#x6216;&#x53F3;&#x8FB9;&#xFF09;&#x5BF9;&#x5B57;&#x7B26;&#x503C;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;char&#x8FDB;&#x884C;&#x586B;&#x5145;&#xFF0C;&#x76F4;&#x5230;&#x6EE1;&#x8DB3;&#x53C2;&#x6570;n&#x7684;&#x957F;&#x5EA6;&#x8981;&#x6C42;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x548C;Java&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;&#x7C7B;&#x4F3C;&#xFF0C;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x9010;&#x4E00;&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#x6F14;&#x793A;&#xFF0C;&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5982;&#x8868;3.2&#x6240;&#x793A;&#xFF0C;&#x6765;&#x4ECB;&#x7ECD;&#x5404;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x8868;3.2  &#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONCAT(&apos;Oracle&apos;, &apos;DB&apos;)</td>
+<td>OracleDB</td>
+</tr>
+<tr>
+<td>SUBSTR(&apos;OracleDB&apos;,1,6)</td>
+<td>Oracle</td>
+</tr>
+<tr>
+<td>LENGTH(&apos;OracleDB&apos;)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>INSTR(&apos;OracleDB&apos;, &apos;DB&apos;)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>REPLACE(&apos;OracleDB&apos;, &apos;DB&apos;, &apos;Database&apos;)</td>
+<td>OracleDatabase</td>
+</tr>
+<tr>
+<td>LPAD(&apos;OracleDB&apos;, 12, &apos;*&apos;)</td>
+<td><em>**</em>OracleDB</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x73B0;&#x5728;&#x9700;&#x8981;&#x4ECE;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x96C7;&#x5458;&#x7F16;&#x53F7;&#x3001;&#x59D3;&#x540D;&#xFF08;&#x5305;&#x62EC;first_name&#x548C;last_name&#xFF0C;&#x5B57;&#x6BB5;&#x6807;&#x9898;&#x4E3A;Name&#xFF09;&#x3001;EMAIL&#x3001;EMAIL&#x957F;&#x5EA6;&#x3001;EMAIL&#x4E2D;@&#x7B26;&#x53F7;&#x7684;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x4E14;&#x4EC5;&#x83B7;&#x53D6;&#x804C;&#x4F4D;&#x7F16;&#x53F7;&#x4ECE;&#x7B2C;&#x56DB;&#x4E2A;&#x5B57;&#x7B26;&#x5F00;&#x59CB;&#xFF0C;&#x4E4B;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F;REP&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT employee_id, CONCAT(first_name || &apos; &apos;, last_name) AS &quot;Name&quot;, EMAIL,LENGTH (EMAIL), INSTR (EMAIL, &apos;@&apos;) 
+
+FROM employees 
+
+WHERE SUBSTR(job_id,4)  =  &apos;REP&apos;
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.3&#x6240;&#x793A;&#xFF0C;&#x56E0;&#x4E3A;EMAIL&#x5B57;&#x6BB5;&#x4EC5;&#x4FDD;&#x5B58;&#x4E86;@&#x7B26;&#x53F7;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x672A;&#x4FDD;&#x5B58;@&#x7B26;&#x53F7;&#x53CA;&#x4E4B;&#x540E;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x6240;&#x4EE5;EMAIL&#x4E2D;@&#x7B26;&#x53F7;&#x7684;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#x7ED3;&#x679C;&#x5747;&#x4E3A;0&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.3.png"></p>  
+<p align="center">&#x56FE;3.3  &#x5355;&#x884C;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7EFC;&#x5408;&#x4F7F;&#x7528;</p>  
+
+
+
+<h3 id="322--&#x6570;&#x5B57;&#x51FD;&#x6570;">3.2.2  &#x6570;&#x5B57;&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x6570;&#x5B57;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x53D7;&#x6570;&#x5B57;&#x8F93;&#x5165;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x503C;&#x3002;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5355;&#x884C;&#x6570;&#x5B57;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x8868;3.3&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x7528;input&#x8868;&#x793A;&#xFF0C;&#x4EE3;&#x8868;&#x503C;&#x4E3A;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x8868;3.3  &#x5355;&#x884C;&#x6570;&#x5B57;&#x51FD;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;  &#x6570;  &#x540D;</th>
+<th>&#x8BF4;    &#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROUND(input[,   n])</td>
+<td>&#x5C06;&#x6570;&#x5B57;&#x503C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x53C2;&#x6570;n&#x8868;&#x793A;&#x5C0F;&#x6570;&#x4F4D;&#xFF0C;&#x5982;&#x679C;n&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x65E0;&#x5C0F;&#x6570;&#x4F4D;</td>
+</tr>
+<tr>
+<td>TRUNC(input   [, n])</td>
+<td>&#x5C06;&#x6570;&#x5B57;&#x503C;&#x622A;&#x65AD;&#xFF0C;&#x53C2;&#x6570;n&#x8868;&#x793A;&#x622A;&#x65AD;&#x5230;&#x7684;&#x5C0F;&#x6570;&#x4F4D;&#xFF0C;&#x5982;&#x679C;n&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;0</td>
+</tr>
+<tr>
+<td>MOD(m,n)</td>
+<td>&#x8FD4;&#x56DE;m&#x9664;&#x4EE5;n&#x7684;&#x4F59;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5148;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;SQL&#x8BED;&#x53E5;&#xFF0C;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#x7684;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.4&#x6240;&#x793A;&#x3002;</p>
+<pre><code>SELECT ROUND(123.45678),ROUND(123.45678,2),ROUND(123.45678,-1) FROM dual
+</code></pre><p align="center"><img src="../img/d3z/tu3.4.png"></p>  
+<p align="center">&#x56FE;3.4  ROUND&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</p>  
+
+
+<p>&#x2003;&#x2003;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x4E2D;&#x7684;ROUND&#x51FD;&#x6570;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x505A;&#x89E3;&#x91CA;&#xFF0C;&#x9700;&#x8981;&#x6307;&#x51FA;&#x7684;&#x662F;&#xFF0C;&#x8BE5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;dual&#x8868;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x8868;&#xFF0C;&#x9700;&#x8981;&#x8BFB;&#x8005;&#x6709;&#x6240;&#x4E86;&#x89E3;&#x3002;dual&#x8868;&#x7684;&#x6240;&#x6709;&#x8005;&#x662F;&#x7528;&#x6237;SYS&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x3002;&#x5B83;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x5217;DUMMY&#x548C;&#x5E26;&#x6709;&#x503C;X&#x7684;&#x4E00;&#x884C;&#x3002;dual&#x8868;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5728;&#x6CA1;&#x6709;&#x76EE;&#x6807;&#x8868;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;SELECT&#x8BED;&#x6CD5;&#x5B8C;&#x6574;&#x6027;&#x8981;&#x6C42;&#xFF08;SELECT&#x5B50;&#x53E5;&#x5FC5;&#x987B;&#x5305;&#x62EC;FROM&#x5B50;&#x53E5;&#xFF09;&#xFF0C;&#x800C;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x4E0D;&#x9700;&#x8981;&#x4ECE;&#x8868;&#x4E2D;&#x771F;&#x5B9E;&#x53D6;&#x6570;&#x503C;&#x7684;&#x8868;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5982;&#x8868;3.4&#x6240;&#x793A;&#xFF0C;&#x4ECB;&#x7ECD;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x8868;3.4  &#x5355;&#x884C;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x7ED3;    &#x679C;</th>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRUNC(123.45678)</td>
+<td>123</td>
+<td>TRUNC(123.45678,-3)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>TRUNC(123.45678,3)</td>
+<td>123.456</td>
+<td>TRUNC(123.45678,-2)</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MOD(21,5)</td>
+<td>1</td>
+<td>MOD(-21,5)</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="323--&#x65E5;&#x671F;&#x51FD;&#x6570;">3.2.3  &#x65E5;&#x671F;&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5728;Oracle&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x4EE5;&#x6570;&#x5B57;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#x65E5;&#x671F;&#x503C;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x4E16;&#x7EAA;&#x3001;&#x5E74;&#x3001;&#x6708;&#x3001;&#x65E5;&#x3001;&#x5C0F;&#x65F6;&#x3001;&#x5206;&#x548C;&#x79D2;&#x3002;&#x5BF9;&#x4E8E;&#x65E5;&#x671F;&#xFF0C;Oracle&#x9ED8;&#x8BA4;&#x663E;&#x793A;&#x548C;&#x8F93;&#x5165;&#x683C;&#x5F0F;&#x662F;DD-MON-RR&#xFF0C;&#x4F8B;&#x5982;17-JUN-13&#x3002;&#x4F46;&#x5728;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x6BD4;&#x5982;&#x5728;PL/SQL Dev&#x4E2D;&#xFF0C;&#x663E;&#x793A;&#x683C;&#x5F0F;&#x4E3A;YYYY/MM/DD&#xFF0C;&#x4F8B;&#x5982;2013/6/17&#x3002;</p>
+<p>&#x2003;&#x2003;&#x867D;&#x7136;&#x9ED8;&#x8BA4;&#x7684;&#x663E;&#x793A;&#x548C;&#x8F93;&#x5165;&#x683C;&#x5F0F;&#x662F;DD-MON-RR&#xFF0C;&#x4F46;&#x662F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x7684;&#x65E5;&#x671F;&#x4E0D;&#x662F;&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;&#x6240;&#x6709;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x90FD;&#x4F1A;&#x88AB;&#x5B58;&#x50A8;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;17-JUN-13&#x663E;&#x793A;&#x7684;&#x662F;&#x65E5;&#x3001;&#x6708;&#x548C;&#x5E74;&#xFF0C;&#x4F46;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x7684;&#x4FE1;&#x606F;&#x4E5F;&#x5305;&#x542B;&#x5728;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x91CC;&#x3002;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x5982;&#x4E0B;&#xFF1A;2013&#x5E74;6&#x6708;17&#x65E5;11:22:33&#x3002;</p>
+<p>&#x2003;&#x2003;&#x65E5;&#x671F;&#x51FD;&#x6570;SYSDATE&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#xFF08;&#x5728;SQL Server&#x4E2D;&#x4F7F;&#x7528;GETDATE()&#x65B9;&#x6CD5;&#xFF09;&#x3002;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x7684;&#x65E5;&#x671F;&#xFF1A;</p>
+<pre><code>SELECT SYSDATE FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x65E2;&#x7136;Oracle&#x6570;&#x636E;&#x5E93;&#x4EE5;&#x6570;&#x5B57;&#x65B9;&#x5F0F;&#x5B58;&#x50A8;&#x65E5;&#x671F;&#xFF0C;&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;&#x5BF9;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;&#x5728;&#x65E5;&#x671F;&#x4E0A;&#x52A0;&#x6216;&#x51CF;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x589E;&#x52A0;&#x6216;&#x51CF;&#x5C11;&#x8BE5;&#x5929;&#x6570;&#x540E;&#x7684;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x7528;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x76F8;&#x51CF;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x76F8;&#x5DEE;&#x7684;&#x5929;&#x6570;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4F8B;&#x5982;&#x60F3;&#x77E5;&#x9053;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#xFF0C;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;60&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x622A;&#x6B62;&#x5230;&#x4ECA;&#x5929;&#x5171;&#x5DE5;&#x4F5C;&#x4E86;&#x591A;&#x5C11;&#x5468;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x7684;SQL&#x8BED;&#x53E5;&#xFF08;&#x83B7;&#x5F97;&#x5DE5;&#x4F5C;&#x5468;&#x7684;&#x57FA;&#x672C;&#x601D;&#x8DEF;&#x662F;&#x7528;&#x4ECA;&#x5929;&#x7684;&#x65E5;&#x671F;&#x51CF;&#x53BB;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#xFF0C;&#x9664;&#x4EE5;7&#x540E;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x5DE5;&#x4F5C;&#x5468;&#x3002;&#x4E0D;&#x8FC7;&#x6B64;&#x65F6;&#x7684;&#x5DE5;&#x4F5C;&#x5468;&#x5E26;&#x6709;&#x5C0F;&#x6570;&#xFF0C;&#x4E3A;&#x4E86;&#x663E;&#x793A;&#x6574;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8BE5;&#x7ED3;&#x679C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;ROUND&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x4E86;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF09;&#xFF1A;</p>
+<pre><code>SELECT first_name || &apos; &apos; || last_name AS &quot;Name&quot;,ROUND((SYSDATE-hire_date)/7) AS &quot;Weeks&quot;
+
+FROM employees
+
+WHERE department_id = 60
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.5&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.5.png"></p>  
+<p align="center">&#x56FE;3.5  SYSDATE&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</p>  
+
+
+<p>&#x2003;&#x2003;&#x65E5;&#x671F;&#x51FD;&#x6570;&#x5BF9;Oracle&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x4E86;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x65E5;&#x671F;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x8868;3.5&#x6240;&#x793A;&#xFF0C;&#x9664;&#x4E86;MONTHS_BETWEEN&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x503C;&#xFF0C;&#x6240;&#x6709;&#x65E5;&#x671F;&#x51FD;&#x6570;&#x90FD;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x8868;3.5  &#x65E5;&#x671F;&#x51FD;&#x6570;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x8BF4;    &#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MONTHS_BETWEEN(date1,date2)</td>
+<td>&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x4E4B;&#x95F4;&#x7684;&#x6708;&#x6570;</td>
+</tr>
+<tr>
+<td>ADD_MONTHS(date,n)</td>
+<td>&#x6DFB;&#x52A0;n&#x4E2A;&#x65E5;&#x5386;&#x6708;&#x540E;&#x7684;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td>NEXT_DAY(date,   char)</td>
+<td>&#x8BA1;&#x7B97;&#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x4E4B;&#x540E;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x5468;char&#x7684;&#x6307;&#x5B9A;&#x5929;&#x7684;&#x65E5;&#x671F;&#xFF0C;char&#x503C;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x661F;&#x671F;&#x7684;&#x6570;&#x6216;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>LAST_DAY(date)</td>
+<td>&#x8BA1;&#x7B97;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x6240;&#x5728;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;&#x7684;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td>ROUND(date[,&apos;fmt&apos;])</td>
+<td>&#x6309;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5F0F;fmt&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6307;&#x5B9A;&#x5355;&#x4F4D;&#x7684;&#x65E5;&#x671F;&#xFF0C;&#x5982;&#x679C;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5F0F; fmt &#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5219;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x5929;</td>
+</tr>
+<tr>
+<td>TRUNC(date[,&apos;fmt&apos;])</td>
+<td>&#x6309;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5F0F;fmt&#x622A;&#x65AD;&#x5230;&#x6307;&#x5B9A;&#x5355;&#x4F4D;&#x7684;&#x65E5;&#x671F;&#xFF0C;&#x5982;&#x679C;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x5F0F;fmt&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5219;&#x622A;&#x65AD;&#x5230;&#x5929;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x6709;&#x4E9B;&#x51FD;&#x6570;&#x7684;&#x8BF4;&#x660E;&#x4E0D;&#x5BB9;&#x6613;&#x770B;&#x61C2;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5177;&#x4F53;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5982;&#x8868;3.6&#x6240;&#x793A;&#xFF0C;&#x4F1A;&#x66F4;&#x5BB9;&#x6613;&#x660E;&#x767D;&#x3002;</p>
+<p>&#x8868;3.6  &#x65E5;&#x671F;&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MONTHS_BETWEEN (&apos;17-JUN-13&apos;,&apos;21-JAN-11&apos;)</td>
+<td>28.8709677419355</td>
+</tr>
+<tr>
+<td>ADD_MONTHS (&apos;17- JUN-13&apos;,10)</td>
+<td>&apos;17- APR-14&apos;</td>
+</tr>
+<tr>
+<td>NEXT_DAY(&apos;17- JUN-13&apos;, &apos;SUNDAY&apos;)</td>
+<td>&apos;24- JUN-13&apos;</td>
+</tr>
+<tr>
+<td>LAST_DAY(&apos;17- JUN-13&apos;)</td>
+<td>&apos;30- JUN-13&apos;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5728;&#x82F1;&#x6587;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x6708;&#x7528;&#x4E09;&#x4E2A;&#x5B57;&#x6BCD;&#x4F5C;&#x4E3A;&#x7F29;&#x5199;&#xFF0C;1&#x5230;12&#x6708;&#x5206;&#x522B;&#x662F;JAN&#x3001;FEB&#x3001;MAR&#x3001;APR&#x3001;MAY&#x3001;JUN&#x3001;JUL&#x3001;AUG&#x3001;SEP&#x3001;OCT&#x3001;NOV&#x3001;DEC&#xFF0C;&#x5468;&#x7528;&#x5177;&#x4F53;&#x7684;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x8868;&#x793A;&#xFF0C;&#x5468;&#x65E5;&#x3001;&#x5468;&#x4E00;&#x5230;&#x5468;&#x516D;&#x5206;&#x522B;&#x662F;SUNDAY&#x3001;MONDAY&#x3001;TUESDAY&#x3001;WEDNESDAY&#x3001;THURSDAY&#x3001;FRIDAY&#x3001;SATURDAY&#x3002;&#x5728;&#x4E2D;&#x6587;&#x7CFB;&#x7EDF;&#xFF08;&#x5B57;&#x7B26;&#x96C6;&#xFF09;&#x4E0B;&#xFF0C;&#x6708;&#x548C;&#x5468;&#x7684;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#x66F4;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x7528;1&#x6708;&#x3001;2&#x6708;&#x2026;&#x2026;12&#x6708;&#xFF0C;&#x661F;&#x671F;&#x4E00;&#x3001;&#x661F;&#x671F;&#x4E8C;&#x2026;&#x2026;&#x661F;&#x671F;&#x65E5;&#x8868;&#x793A;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x63A5;&#x4E0B;&#x6765;&#x7ED3;&#x5408;&#x96C7;&#x5458;&#x8868;&#x770B;&#x4E00;&#x4E2A;&#x7A0D;&#x5FAE;&#x590D;&#x6742;&#x70B9;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x5047;&#x8BBE;&#x5728;&#x4E2D;&#x6587;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x8981;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53D7;&#x96C7;&#x65E5;&#x671F;&#x5728;2007&#x5E74;1&#x6708;1&#x65E5;&#x5230;2007&#x5E74;6&#x6708;30&#x65E5;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4FE1;&#x606F;&#x5305;&#x62EC;&#x96C7;&#x5458;&#x7F16;&#x53F7;&#x3001;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#x3001;&#x5DF2;&#x96C7;&#x4F63;&#x7684;&#x6708;&#x6570;&#x3001;&#x4E09;&#x4E2A;&#x6708;&#x8BD5;&#x7528;&#x671F;&#x7ED3;&#x675F;&#x65E5;&#x671F;&#x3001;&#x63D0;&#x4EA4;&#x5165;&#x804C;&#x8D44;&#x6599;&#x65E5;&#x671F;&#xFF08;&#x96C7;&#x4F63;&#x65E5;&#x540E;&#x4E0B;&#x4E00;&#x5468;&#x7684;&#x5468;&#x4E00;&#xFF09;&#x3001;&#x9996;&#x6708;&#x7ED3;&#x85AA;&#x65E5;&#x671F;&#xFF08;&#x5230;&#x53D7;&#x96C7;&#x6708;&#x6700;&#x540E;&#x4E00;&#x5929;&#xFF09;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT employee_id AS &quot;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&quot;, hire_date AS &quot;&#x5165;&#x804C;&#x65E5;&#x671F;&quot;, MONTHS_BETWEEN (SYSDATE, hire_date) AS &quot;&#x96C7;&#x4F63;&#x6708;&#x6570;&quot;, ADD_MONTHS (hire_date, 3)  AS &quot;&#x8BD5;&#x7528;&#x671F;&#x7ED3;&#x675F;&#x65E5;&#x671F;&quot;, NEXT_DAY (hire_date, &apos;&#x661F;&#x671F;&#x4E00;&apos;) AS &quot;&#x8D44;&#x6599;&#x63D0;&#x4EA4;&#x65E5;&#x671F;&quot;, LAST_DAY(hire_date) AS &quot;&#x9996;&#x6708;&#x7ED3;&#x85AA;&#x65E5;&#x671F;&quot;
+
+FROM employees 
+
+WHERE hire_date BETWEEN &apos;1- 1&#x6708;-07&apos; AND &apos;30- 6&#x6708;-07&apos;
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.6&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.6.png"></p>  
+<p align="center">&#x56FE;3.6  &#x65E5;&#x671F;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</p>  
+
+<p>&#x2003;&#x2003;ROUND&#x548C;TRUNC&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x65E5;&#x671F;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x6309;&#x6307;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x6A21;&#x677F;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x6216;&#x622A;&#x65AD;&#xFF0C;&#x9ED8;&#x8BA4;&#x5230;&#x65E5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x6216;&#x622A;&#x65AD;&#x5230;&#x6708;&#x6216;&#x5E74;&#x3002;&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E9B;&#x793A;&#x4F8B;&#xFF0C;&#x5982;&#x8868;3.7&#x6240;&#x793A;&#x3002;</p>
+<p>&#x8868;3.7  &#x65E5;&#x671F;&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;&#x6570;&#xFF08;&#x5047;&#x5B9A;SYSDATE&#x503C;&#x4E3A;&apos;17- JUN-13&apos;&#xFF09;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROUND(SYSDATE, &apos;MONTH&apos;)</td>
+<td>&apos;01- JUL-13&apos;</td>
+</tr>
+<tr>
+<td>ROUND(SYSDATE, &apos;YEAR&apos;)</td>
+<td>&apos;01- JAN-13&apos;</td>
+</tr>
+<tr>
+<td>TRUNC (SYSDATE, &apos;MONTH&apos;)</td>
+<td>&apos;01- JUN-13&apos;</td>
+</tr>
+<tr>
+<td>TRUNC (SYSDATE, &apos;YEAR&apos;)</td>
+<td>&apos;01- JAN-13&apos;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x5BF9;&#x6708;&#x4EFD;&#x8FDB;&#x884C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x65F6;&#xFF0C;&#x65E5;&#x671F;1&#x65E5;&#x5230;15&#x65E5;&#x7ED3;&#x679C;&#x5728;&#x5F53;&#x524D;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;&#x65E5;&#x671F;16&#x65E5;&#x5230;31&#x65E5;&#x7ED3;&#x679C;&#x5728;&#x4E0B;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF1B;&#x5982;&#x679C;&#x5BF9;&#x5E74;&#x8FDB;&#x884C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;1&#x6708;&#x5230;6&#x6708;&#x7ED3;&#x679C;&#x5728;&#x5F53;&#x524D;&#x5E74;&#x7684;1&#x6708;1&#x65E5;&#xFF0C;7&#x6708;&#x5230;12 &#x6708;&#x7684;&#x7ED3;&#x679C;&#x5728;&#x4E0B;&#x5E74;&#x7684;1&#x6708;1&#x65E5;&#x3002;</p>
+<h2 id="33--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">3.3  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;32&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;3.2&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;30&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x5DE5;&#x5177;&#xFF1A;PL/SQL Dev&#x3002;</p>
+<h2 id="34--&#x8F6C;&#x6362;&#x51FD;&#x6570;">3.4  &#x8F6C;&#x6362;&#x51FD;&#x6570;</h2>
+<p>&#x2003;&#x2003;&#x548C;Java&#x8BED;&#x8A00;&#x7C7B;&#x4F3C;&#xFF0C;&#x65E2;&#x7136;SQL&#x8BED;&#x8A00;&#x4E2D;&#x6709;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5B58;&#x5728;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Oracle&#x6570;&#x636E;&#x5E93;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x67D0;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5B9E;&#x9645;&#x63D0;&#x4F9B;&#x7684;&#x5374;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;Oracle&#x80FD;&#x81EA;&#x52A8;&#x5C06;&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x671F;&#x671B;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x9690;&#x5F0F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;Oracle&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x76F4;&#x63A5;&#x8D4B;&#x503C;&#xFF0C;Oracle&#x6570;&#x636E;&#x5E93;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x5C06;VARCHAR2&#x6216;CHAR&#x8F6C;&#x6362;&#x5230;NUMBER&#x548C;DATE&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;NUMBER&#x548C;DATE&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x5230;VARCHAR2&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9690;&#x5F0F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x4E0D;&#x53EA;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#xFF0C;&#x5728;&#x53E6;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x6BD4;&#x5982;VARCHAR2&#x53EF;&#x4EE5;&#x88AB;&#x9690;&#x5F0F;&#x5730;&#x8F6C;&#x6362;&#x6210;ROWID&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9664;&#x4E86;&#x9690;&#x5F0F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#xFF0C;&#x663E;&#x5F0F;&#x5730;&#x5C06;&#x67D0;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x672C;&#x8282;&#x7684;&#x91CD;&#x70B9;&#x3002;</p>
+<p>&#x2003;&#x2003;SQL&#x8BED;&#x8A00;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x51FD;&#x6570;&#xFF0C;&#x5B9E;&#x73B0;&#x4ECE;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x662F;TO_CHAR&#x3001;TO_NUMBER&#x548C;TO_DATE&#x3002;</p>
+<h3 id="341--&#x5BF9;&#x65E5;&#x671F;&#x4F7F;&#x7528;tochar&#x51FD;&#x6570;">3.4.1  &#x5BF9;&#x65E5;&#x671F;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#xFF0C;&#x6240;&#x6709; Oracle &#x65E5;&#x671F;&#x503C;&#x9ED8;&#x8BA4;&#x90FD;&#x4EE5; DD-MON-RR &#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x73B0;&#x5728;&#x7528;TO_CHAR&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x65E5;&#x671F;&#x4ECE;&#x9ED8;&#x8BA4;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>TO_CHAR(date[, &apos;fmt&apos;])
+</code></pre><p>&#x2003;&#x2003;&#x5728;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x5355;&#x5F15;&#x53F7;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#x7684;&#xFF0C;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#x4EFB;&#x610F;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#x3002;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x76F4;&#x63A5;&#x8BA4;&#x8BC6;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x5BF9;&#x65E5;&#x671F;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT TO_CHAR(SYSDATE,&apos;YYYY/MM/DD,HH24-MI-SS&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;2013/06/17,15-44-06&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&apos;YYYY/MM/DD,HH24- MI-SS&apos; &#x5373;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#xFF0C;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x4E2D;&#x7684;YYYY&#x3001;MI&#x8FD9;&#x4E9B;&#x79F0;&#x4E3A;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#x3002;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x4E86;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x7684;&#x90E8;&#x5206;&#x5E38;&#x7528;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x8868;3.8&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x7ED3;&#x679C;&#x201D;&#x4E00;&#x5217;&#x662F;&#x9488;&#x5BF9;&#x503C;&#x4E3A;2013/06/17,15-44-06&#x7684;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x6309;&#x76F8;&#x5E94;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x8868;3.8  &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5143;&#x7D20;</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;&#x5143;&#x7D20;</th>
+<th>&#x8BF4;    &#x660E;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CC</td>
+<td>&#x4E16;&#x7EAA;</td>
+<td>21</td>
+</tr>
+<tr>
+<td>YYYY</td>
+<td>&#x5E74;</td>
+<td>2013</td>
+</tr>
+<tr>
+<td>YYY&#x3001;YY&#x3001;Y</td>
+<td>&#x5E74;&#x7684;&#x6700;&#x540E;&#x4E09;&#x3001;&#x4E8C;&#x3001;&#x4E00;&#x4E2A;&#x6570;&#x5B57;</td>
+<td>013&#x3001;13&#x3001;3</td>
+</tr>
+<tr>
+<td>Y,YYY</td>
+<td>&#x5E74;&#xFF0C;&#x5728;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5E26;&#x9017;&#x53F7;</td>
+<td>2,013</td>
+</tr>
+</tbody>
+</table>
+<p>&#x7EED;&#x8868;</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;&#x5143;&#x7D20;</th>
+<th>&#x8BF4;    &#x660E;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YEAR</td>
+<td>&#x62FC;&#x5199;&#x5E74;</td>
+<td>TWENTY   THIRTEEN</td>
+</tr>
+<tr>
+<td>BC&#x3001;AD</td>
+<td>&#x6839;&#x636E;&#x65E5;&#x671F;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A;BC&#x3001;AD</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>B.C.&#x3001;A.D.</td>
+<td>&#x6839;&#x636E;&#x65E5;&#x671F;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A;B.C.&#x3001;A.D.</td>
+<td>A.D.</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>&#x5B63;&#x5EA6;</td>
+<td>2</td>
+</tr>
+<tr>
+<td>MM</td>
+<td>&#x6708;&#xFF1A;&#x4E24;&#x4F4D;&#x6570;&#x5B57;&#x503C;</td>
+<td>06</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>&#x6708;&#x4EFD;&#x7684;&#x5168;&#x62FC;&#xFF0C;&#x53F3;&#x7AEF;&#x8865;&#x9F50;&#x7A7A;&#x683C;&#xFF0C;&#x603B;&#x957F;&#x4E3A;&#x4E5D;&#x4E2A;&#x5B57;&#x7B26;</td>
+<td>JUNE</td>
+</tr>
+<tr>
+<td>Mon</td>
+<td>&#x6708;&#x4EFD;&#x7684;&#x524D;&#x4E09;&#x4E2A;&#x5B57;&#x6BCD;&#xFF0C;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;</td>
+<td>Jun</td>
+</tr>
+<tr>
+<td>RM</td>
+<td>&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x6708;</td>
+<td>VI</td>
+</tr>
+<tr>
+<td>WW&#x3001;W</td>
+<td>&#x5728;&#x672C;&#x5E74;&#x6216;&#x672C;&#x6708;&#x7684;&#x7B2C;&#x51E0;&#x5468;</td>
+<td>24&#x3001;3</td>
+</tr>
+<tr>
+<td>DAY</td>
+<td>&#x5468;&#x51E0;&#x7684;&#x5168;&#x62FC;&#xFF0C;&#x53F3;&#x7AEF;&#x8865;&#x9F50;&#x7A7A;&#x683C;&#xFF0C;&#x603B;&#x957F;&#x4E3A;&#x4E5D;&#x4E2A;&#x5B57;&#x7B26;</td>
+<td>MONDAY</td>
+</tr>
+<tr>
+<td>DY</td>
+<td>&#x5468;&#x51E0;&#xFF0C;&#x524D;&#x4E09;&#x4E2A;&#x5B57;&#x6BCD;&#x7F29;&#x5199;</td>
+<td>MON</td>
+</tr>
+<tr>
+<td>DDD&#x6216;DD&#x6216;D</td>
+<td>&#x5728;&#x672C;&#x5E74;&#x3001;&#x672C;&#x6708;&#x6216;&#x672C;&#x5468;&#x7684;&#x7B2C;&#x51E0;&#x5929;</td>
+<td>168&#x3001;17&#x3001;2&#xFF08;&#x5468;&#x65E5;&#x4E3A;&#x7B2C;&#x4E00;&#x5929;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x770B;fm&#x3001;th&#x548C;sp&#x8FD9;&#x4E09;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x2003;&#x2003;fm&#x5143;&#x7D20;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x7528;&#x6765;&#x5220;&#x9664;&#x586B;&#x8865;&#x7684;&#x7A7A;&#x6216;&#x8005;&#x524D;&#x5BFC;0&#xFF0C;&#x5BF9;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x4F8B;&#x5B50;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x5C31;&#x80FD;&#x5F88;&#x5FEB;&#x660E;&#x767D;&#x3002;</p>
+<pre><code>SELECT TO_CHAR(SYSDATE,&apos;YYYY/MM/DD,HH24-MI-SS&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;2013/06/17,15-44-06&#x3002;</p>
+<pre><code>SELECT TO_CHAR(SYSDATE,&apos;fmYYYY/MM/DD,HH24-MI-SS&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;2013/6/17,15-44-6&#x3002;</p>
+<p>&#x2003;&#x2003;th&#x548C;sp&#x5143;&#x7D20;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x6307;&#x5B9A;&#x540E;&#x7F00;&#x6765;&#x5F71;&#x54CD;&#x6570;&#x5B57;&#x7684;&#x663E;&#x793A;&#xFF0C;th&#x52A0;&#x5728;&#x6570;&#x5B57;&#x540E;&#x9762;&#x8868;&#x793A;&#x5E8F;&#x6570;&#xFF0C;sp&#x52A0;&#x5728;&#x6570;&#x5B57;&#x540E;&#x9762;&#x8BA9;&#x6570;&#x5B57;&#x4EE5;&#x82F1;&#x6587;&#x7684;&#x5F62;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x63A5;&#x4E0B;&#x6765;&#x5217;&#x4E3E;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x7684;&#x90E8;&#x5206;&#x5E38;&#x7528;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x8868;3.9&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x7ED3;&#x679C;&#x201D;&#x4E00;&#x5217;&#x662F;&#x9488;&#x5BF9;&#x503C;&#x4E3A;2013/06/17,15-44-06&#x7684;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x6309;&#x76F8;&#x5E94;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x8868;3.9  &#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x5143;&#x7D20;</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;&#x5143;&#x7D20;</th>
+<th>&#x8BF4;    &#x660E;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AM&#x3001;PM</td>
+<td>&#x6839;&#x636E;&#x65F6;&#x95F4;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A; AM &#x6216;   PM</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>A.M.&#x6216;P.M.</td>
+<td>&#x6839;&#x636E;&#x65F6;&#x95F4;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#x4E3A; A.M. &#x6216;   P.M.</td>
+<td>P.M.</td>
+</tr>
+<tr>
+<td>HH&#x3001;HH12&#x3001;HH24</td>
+<td>12&#x5C0F;&#x65F6;&#x683C;&#x5F0F;&#xFF08;1&#xFF5E;12&#xFF09;&#x3001;12&#x5C0F;&#x65F6;&#x683C;&#x5F0F;&#xFF08;1&#xFF5E;12&#xFF09;&#x3001;24&#x5C0F;&#x65F6;&#x683C;&#x5F0F;&#xFF08;0&#xFF5E;23&#xFF09;</td>
+<td>03&#x3001;03&#x3001;15</td>
+</tr>
+<tr>
+<td>MI</td>
+<td>&#x5206;&#x949F;&#xFF08;0&#xFF5E;59&#xFF09;</td>
+<td>44</td>
+</tr>
+<tr>
+<td>SS</td>
+<td>&#x79D2;&#xFF08;0&#xFF5E;59&#xFF09;</td>
+<td>06</td>
+</tr>
+<tr>
+<td>SSSSS</td>
+<td>&#x4ECE;&#x5348;&#x591C;12&#x70B9;&#x4EE5;&#x6765;&#x7ECF;&#x8FC7;&#x7684;&#x79D2;&#x6570;</td>
+<td>56656</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x66F4;&#x597D;&#x7684;&#x8F93;&#x51FA;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#xFF0C;&#x4F5C;&#x4E3A;&#x5404;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x4E2D;&#x589E;&#x52A0;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x589E;&#x52A0;&#x65F6;&#x9700;&#x8981;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x73B0;&#x5728;&#x9700;&#x8981;&#x663E;&#x793A;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#x7684;&#x96C7;&#x5458;&#x540D;&#x5B57;&#x548C;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#xFF0C;&#x4E14;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#x4EE5;&#x201C;Seventh of 6&#x6708; 2013 15:44:6&#x201D;&#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x4EC5;&#x67E5;&#x8BE2;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;60&#x7684;&#x96C7;&#x5458;&#x4FE1;&#x606F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT first_name, TO_CHAR(hire_date, &apos;fmDdspth &quot;of&quot; Mon YYYY fmHH24:MI:SS&apos;) AS &quot;&#x96C7;&#x4F63;&#x65E5;&#x671F;&quot; 
+
+FROM employees
+
+WHERE department_id = 60
+</code></pre><p>&#x2003;&#x2003;&#x8BE5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x8FD8;&#x540C;&#x65F6;&#x6F14;&#x793A;&#x4E86;sp&#x548C;th&#x5143;&#x7D20;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.7&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.7.png"></p>  
+<p align="center">&#x56FE;3.7  &#x5BF9;&#x65E5;&#x671F;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;</p>  
+
+<h3 id="342--&#x5BF9;&#x6570;&#x5B57;&#x4F7F;&#x7528;tochar&#x51FD;&#x6570;">3.4.2  &#x5BF9;&#x6570;&#x5B57;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5F53;&#x6570;&#x5B57;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x6DF7;&#x7528;&#x4E14;&#x8F93;&#x51FA;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;&#x5C06;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x4E3A;&#x9700;&#x8981;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF08;VARCHAR2&#xFF09;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>TO_CHAR(number[, &apos;fmt&apos;])
+</code></pre><p>&#x2003;&#x2003;&#x8868;3.10&#x5217;&#x4E3E;&#x4E86;&#x5C06;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x65F6;&#xFF0C;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x4E2D;&#x201C;&#x7ED3;&#x679C;&#x201D;&#x4E00;&#x5217;&#x662F;&#x9488;&#x5BF9;&#x201C;&#x8F93;&#x5165;&#x201D;&#x7C7B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6309;&#x683C;&#x5F0F;&#x5143;&#x7D20;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x8868;3.10  &#x6570;&#x5B57;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x683C;&#x5F0F;&#x5143;&#x7D20;</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;&#x5143;&#x7D20;</th>
+<th>&#x8BF4;    &#x660E;</th>
+<th>&#x8F93;    &#x5165;</th>
+<th>&#x4E3E;    &#x4F8B;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>&#x6570;&#x5B57;&#x5BBD;&#x5EA6;&#xFF08;9&#x7684;&#x4E2A;&#x6570;&#x51B3;&#x5B9A;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF09;</td>
+<td>2468</td>
+<td>999999</td>
+<td>2468&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+</tr>
+<tr>
+<td>0</td>
+<td>&#x663E;&#x793A;&#x524D;&#x5BFC;0</td>
+<td>099999</td>
+<td>002468</td>
+<td></td>
+</tr>
+<tr>
+<td>$</td>
+<td>&#x7F8E;&#x5143;&#x7B26;&#x53F7;</td>
+<td>$999999</td>
+<td>$2468&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+<td></td>
+</tr>
+<tr>
+<td>L</td>
+<td>&#x672C;&#x5730;&#x8D27;&#x5E01;&#x7B26;&#x53F7;</td>
+<td>L9999</td>
+<td>&#xFFE5;2468</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>&#x6307;&#x5B9A;&#x5C0F;&#x6570;&#x70B9;&#x4F4D;&#x7F6E;</td>
+<td>999999.99</td>
+<td>2468.00&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+<td></td>
+</tr>
+<tr>
+<td>,</td>
+<td>&#x6307;&#x5B9A;&#x9017;&#x53F7;&#x4F4D;&#x7F6E;</td>
+<td>999,999</td>
+<td>2,468&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+<td></td>
+</tr>
+<tr>
+<td>MI</td>
+<td>&#x5C06;&#x8D1F;&#x6570;&#x53F3;&#x8FB9;&#x663E;&#x793A;&#x8D1F;&#x53F7;</td>
+<td>-2468</td>
+<td>999999MI</td>
+<td>2468-&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+</tr>
+<tr>
+<td>PR</td>
+<td>&#x5C06;&#x8D1F;&#x6570;&#x52A0;&#x4E0A;&#x62EC;&#x53F7;</td>
+<td>9999PR</td>
+<td><2468></2468></td>
+<td></td>
+</tr>
+<tr>
+<td>EEEE</td>
+<td>&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;</td>
+<td>99.99999EEEE</td>
+<td>-2.46800E+03&#xFF08;&#x524D;&#x9762;&#x65E0;&#x7A7A;&#x683C;&#xFF09;</td>
+<td></td>
+</tr>
+<tr>
+<td>V</td>
+<td>&#x4E58;n&#x4E2A;10&#xFF0C;n&#x7531;V&#x540E; 9 &#x7684;&#x4E2A;&#x6570;&#x51B3;&#x5B9A;</td>
+<td>999999V99</td>
+<td>-246800&#xFF08;&#x524D;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x9700;&#x8981;&#x663E;&#x793A;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#x7684;&#x96C7;&#x5458;&#x540D;&#x5B57;&#x548C;&#x85AA;&#x6C34;&#xFF0C;&#x4E14;&#x85AA;&#x6C34;&#x4EE5;&#x201C;$17,000.00&#x201D;&#x683C;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x4EC5;&#x67E5;&#x8BE2;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;90&#x7684;&#x96C7;&#x5458;&#x4FE1;&#x606F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT first_name AS &quot;&#x59D3;&#x540D;&quot;, TO_CHAR(salary, &apos;$99,999.99&apos;) AS &quot;&#x85AA;&#x6C34;&quot; 
+
+FROM employees
+
+WHERE department_id = 90
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.8&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.8.png"></p>  
+<p align="center">&#x56FE;3.8  &#x5BF9;&#x6570;&#x5B57;&#x4F7F;&#x7528;TO_CHAR&#x51FD;&#x6570;</p>  
+
+<h3 id="343--tonumber&#x51FD;&#x6570;">3.4.3  TO_NUMBER&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5728;&#x4F7F;&#x7528;SQL&#x8BED;&#x8A00;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x603B;&#x662F;&#x5411;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x6709;&#x65F6;&#x4E5F;&#x9700;&#x8981;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x5B57;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;TO_NUMBER&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>TO_NUMBER(char[, &apos;fmt&apos;])
+</code></pre><p>&#x2003;&#x2003;&#x5982;&#x8868;3.11&#x6240;&#x793A;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;TO_NUMBER&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x662F;&#x5148;&#x5C06;&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#xFF0C;&#x518D;&#x5C06;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x8868;3.11  TO_NUMBER&#x51FD;&#x6570;&#x793A;&#x4F8B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;    &#x6570;</th>
+<th>&#x7ED3;    &#x679C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TO_NUMBER(&apos;2468&apos;,   &apos;9999&apos;)</td>
+<td>2468</td>
+</tr>
+<tr>
+<td>TO_NUMBER(&apos;2468&apos;,   &apos;999&apos;)</td>
+<td>&#x62A5;&#x9519;</td>
+</tr>
+<tr>
+<td>TO_NUMBER(&apos;2468&apos;,   &apos;999999&apos;)</td>
+<td>2468</td>
+</tr>
+<tr>
+<td>TO_NUMBER(&apos;246a&apos;, &apos;9999&apos;)</td>
+<td>&#x62A5;&#x9519;</td>
+</tr>
+<tr>
+<td>TO_NUMBER(TO_CHAR(SYSDATE,&apos;YYYY&apos;),&apos;9999&apos;)</td>
+<td>2013</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;TO_NUMBER(&apos;2468&apos;, &apos;999&apos;)&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x62A5;&#x9519;&#x7684;&#x539F;&#x56E0;&#x662F;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x662F;&apos;999&apos;&#xFF0C;&#x8981;&#x6C42;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x6570;&#x5B57;&#x5728;-999&#xFF5E;999&#x8303;&#x56F4;&#x4E4B;&#x95F4;&#xFF0C;&#x800C;&#x5BF9;&apos;2468&apos;&#x4F7F;&#x7528;TO_NUMBER&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x662F;2468&#xFF0C;&#x8D85;&#x8FC7;&#x4E86;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x3002;TO_NUMBER(&apos;246a&apos;, &apos;9999&apos;)&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x62A5;&#x9519;&#x7684;&#x539F;&#x56E0;&#x662F;&#x5F3A;&#x5236;&#x5BF9;&#x4E00;&#x4E2A;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x3002;</p>
+<h3 id="344--todate&#x51FD;&#x6570;">3.4.4  TO_DATE&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;&#x5728;&#x5C06;&#x5B57;&#x7B26;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x5B57;&#x7B26;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#xFF1B;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x4E00;&#x4E2A;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x4E3A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#xFF0C;&#x4E5F;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5C06;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;TO_DATE&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>TO_DATE(char[, &apos;fmt&apos;])
+</code></pre><p>&#x2003;&#x2003;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x7B80;&#x5355;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>SELECT TO_DATE(&apos;17-JUN-13&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x8BE5;SQL&#x8BED;&#x53E5;&#x5728;PL/SQL Dev&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x663E;&#x793A;&#x7684;&#x7ED3;&#x679C;&#x662F;2013/6/17&#xFF0C;&#x8868;&#x660E;&#x6210;&#x529F;&#x8F6C;&#x6362;&#x6210;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x2003;&#x2003;TO_DATE&#x51FD;&#x6570;&#x7684;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;fx&#x5143;&#x7D20;&#xFF0C;&#x8BE5;&#x5143;&#x7D20;&#x6307;&#x793A;&#x5BF9;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x548C;TO_DATE&#x51FD;&#x6570;&#x7684;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x5FC5;&#x987B;&#x7CBE;&#x786E;&#x5339;&#x914D;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x548C;&#x7A7A;&#x683C;&#x3002;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x7CBE;&#x786E;&#x5339;&#x914D;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>SELECT  TO_DATE(&apos;Jan 03, 2006&apos;, &apos;fxMon DD, YYYY&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;PL/SQL Dev&#x4E0A;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x662F;2006/1/3&#xFF0C;&#x6210;&#x529F;&#x8F6C;&#x6362;&#x6210;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x3002;&#x7A0D;&#x7A0D;&#x8C03;&#x6574;&#x4E0A;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF08;&#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x5C06;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x4E2D;&#x5929;&#x6570;&#x7684;&#x201C;03&#x201D;&#x8C03;&#x6574;&#x4E3A;&#x201C;3&#x201D;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x662F;&#x5C06;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x201C;YYYY&#x201D;&#x540E;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x7B2C;&#x4E09;&#x884C;&#x662F;&#x5C06;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x201C;DD&#x201D;&#x548C;&#x201C;YYYY&#x201D;&#x4E4B;&#x540E;&#x539F;&#x6765;&#x7684;&#x9017;&#x53F7;&#x6539;&#x6210;&#x4E86;&#x5206;&#x53F7;&#xFF09;&#xFF1A;</p>
+<pre><code>SELECT  TO_DATE(&apos;Jan 3, 2006&apos;, &apos;fxMon DD, YYYY&apos;) FROM dual
+
+SELECT  TO_DATE(&apos;Jan 03, 2006&apos;, &apos;fxMon DD, YYYY &apos;) FROM dual
+
+SELECT  TO_DATE(&apos;Jan 03, 2006&apos;, &apos;fxMon DD; YYYY&apos;) FROM dual
+</code></pre><p>&#x2003;&#x2003;&#x5206;&#x522B;&#x6267;&#x884C;&#x8FD9;&#x4E09;&#x6761;SQL&#x8BED;&#x53E5;&#x65F6;&#x90FD;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x53EF;&#x53BB;&#x6389;fx&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x7CBE;&#x786E;&#x5339;&#x914D;&#x3002;&#x518D;&#x6B21;&#x6267;&#x884C;&#x8FD9;&#x4E09;&#x6761;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90FD;&#x80FD;&#x6B63;&#x5E38;&#x663E;&#x793A;&#x51FA;2006/1/3&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#x4E3A;2006&#x5E74;1&#x6708;3&#x65E5;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x663E;&#x793A;&#x96C7;&#x5458;&#x7684;&#x540D;&#x5B57;&#x548C;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#x4FE1;&#x606F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT first_name, hire_date
+
+FROM employees
+
+WHERE hire_date = TO_DATE(&apos;Jan 03, 2006&apos;, &apos;fxMon DD, YYYY&apos;)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.9&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.9.png"></p>  
+<p align="center">&#x56FE;3.9  TO_DATE&#x51FD;&#x6570;</p>  
+
+<p>&#x2003;&#x2003;&#x540C;&#x6837;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x6362;&#x4E00;&#x4E2A;SQL&#x8BED;&#x53E5;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4E00;&#x6837;&#x3002;</p>
+<pre><code>SELECT first_name, hire_date
+
+FROM employees
+
+WHERE TO_CHAR(hire_date,&apos;YY/MM/DD&apos;) = &apos;06/01/03&apos;
+</code></pre><p>&#x2003;&#x2003;&#x6BD4;&#x8F83;&#x8FD9;&#x4E24;&#x4E2A;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x662F;&#x5C06;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF1B;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;SQL&#x8BED;&#x53E5;&#x5219;&#x662F;&#x5C06;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#xFF0C;&#x5C06;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<h2 id="35--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">3.5  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;34&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;3.4&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;40&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x5DE5;&#x5177;&#xFF1A;PL/SQL Dev&#x3002;</p>
+<h2 id="36--&#x901A;&#x7528;&#x51FD;&#x6570;">3.6  &#x901A;&#x7528;&#x51FD;&#x6570;</h2>
+<p>&#x2003;&#x2003;&#x524D;&#x9762;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86;&#x5B57;&#x7B26;&#x7C7B;&#x578B;&#x3001;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x548C;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5C06;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x4EFB;&#x610F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;&#x4E14;&#x9002;&#x7528;&#x4E8E;&#x7A7A;&#x503C;&#xFF09;&#x7684;&#x901A;&#x7528;&#x51FD;&#x6570;&#x3002;&#x672C;&#x5C0F;&#x8282;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;NVL&#x3001;NVL2&#x548C;COALESCE&#x8FD9;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x5BF9;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;NULLIF&#x3001;DECODE&#x51FD;&#x6570;&#x4EE5;&#x53CA;CASE&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B66;&#x4E60;&#x3002;</p>
+<h3 id="361--nvl&#x51FD;&#x6570;">3.6.1  NVL&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;NVL&#x51FD;&#x6570;&#x5C31;&#x662F;&#x7528;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x7684;&#x503C;&#x66FF;&#x6362;&#x4E00;&#x4E2A;&#x7A7A;&#x503C;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>NVL(expr, value)
+</code></pre><p>&#x2003;&#x2003;&#x5176;&#x4E2D;expr&#x662F;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x7A7A;&#x503C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x6216;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x800C;value&#x662F;&#x8981;&#x66FF;&#x6362;&#x7684;&#x5B9E;&#x9645;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; NVL &#x51FD;&#x6570;&#x6765;&#x8F6C;&#x6362;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5373;expr&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x8FD4;&#x56DE;&#x503C;&#x901A;&#x5E38;&#x5FC5;&#x987B;&#x548C;expr&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x7B2C;2&#x7AE0;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x8FC7;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;&#x8BA1;&#x7B97;&#x8FC7;&#x5E74;&#x85AA;&#xFF0C;&#x5F53;&#x65F6;&#x5E74;&#x85AA;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x4E3A;&#x201C;&#x6708;&#x85AA;*12+&#x8FC7;&#x8282;&#x8D39;500&#x201D;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x8FD9;&#x6837;&#x7684;&#x5E74;&#x85AA;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x662F;&#x6709;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x516C;&#x53F8;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x96C7;&#x5458;&#x662F;&#x6309;&#x7167;&#x521A;&#x624D;&#x7684;&#x65B9;&#x5F0F;&#x53D1;&#x653E;&#x5168;&#x5E74;&#x85AA;&#x916C;&#x7684;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x96C7;&#x5458;&#x9700;&#x8981;&#x53D1;&#x653E;&#x4F63;&#x91D1;&#xFF0C;&#x5176;&#x4F63;&#x91D1;&#x6570;&#x989D;&#x4E3A;&#x6708;&#x85AA;*12*&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x3002;&#x5BF9;&#x4E8E;&#x80FD;&#x53D1;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x5176;&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x5B57;&#x6BB5;&#x6709;&#x6570;&#x503C;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x6CA1;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x516C;&#x53F8;&#x96C7;&#x5458;&#x7684;&#x5E74;&#x85AA;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x5E94;&#x4E3A;&#x201C;&#x6708;&#x85AA;*12+&#x8FC7;&#x8282;&#x8D39;500+&#x6708;&#x85AA;*12*&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x201D;&#xFF0C;&#x6CA1;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x6309;0&#x8BA1;&#x7B97;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#x6309;0&#x8BA1;&#x7B97;&#x8F6C;&#x6362;&#x4E3A;SQL&#x8BED;&#x53E5;&#x5373;NVL(commission_pct,0)&#x3002;&#x8981;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3001;&#x663E;&#x793A;&#x96C7;&#x5458;&#x7684;&#x5E74;&#x85AA;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF08;&#x53EA;&#x67E5;&#x8BE2;&#x51FA;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;80&#x6216;90&#x7684;&#x96C7;&#x5458;&#xFF09;&#xFF1A;</p>
+<pre><code>SELECT first_name AS &quot;&#x540D;&#x5B57;&quot;,(salary*12) + 500 + (salary*12*NVL(commission_pct,0)) AS &quot;&#x5E74;&#x85AA;&quot;, commission_pct AS &quot;&#x4F63;&#x91D1;&#x6BD4;&#x4F8B;&quot;
+
+FROM employees
+
+WHERE department_id IN(&apos;80&apos;,&apos;90&apos;)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.10&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.10.png"></p>  
+<p align="center">&#x56FE;3.10  NVL&#x51FD;&#x6570;</p>  
+
+<h3 id="362--nvl2&#x51FD;&#x6570;">3.6.2  NVL2&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;NVL2&#x51FD;&#x6570;&#x662F;&#x5728;NVL&#x51FD;&#x6570;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x518D;&#x63A8;&#x8FDB;&#x4E86;&#x4E00;&#x6B65;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>NVL2(expr, value1, value2)
+</code></pre><p>&#x2003;&#x2003;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x5728;&#x4E8E;&#x68C0;&#x67E5;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x53C2;&#x6570;&#x7684;&#x503C;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7EE7;&#x7EED;&#x8C03;&#x6574;&#x8BA1;&#x7B97;&#x5E74;&#x85AA;&#x7684;&#x6848;&#x4F8B;&#x3002;&#x5047;&#x8BBE;&#x8FC7;&#x8282;&#x8D39;&#x4E0D;&#x518D;&#x662F;&#x56FA;&#x5B9A;&#x503C;500&#xFF0C;&#x800C;&#x662F;&#x6839;&#x636E;&#x96C7;&#x5458;&#x85AA;&#x916C;&#x53D1;&#x653E;&#x65B9;&#x5F0F;&#x4EE5;&#x53CA;&#x5E95;&#x85AA;&#x7684;&#x4E0D;&#x540C;&#x786E;&#x5B9A;&#x8FC7;&#x8282;&#x8D39;&#x3002;&#x5176;&#x4E2D;&#x9488;&#x5BF9;&#x6CA1;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x8FC7;&#x8282;&#x8D39;&#x4E3A;&#x5E95;&#x85AA;&#x7684;50%&#xFF0C;&#x800C;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x8FC7;&#x8282;&#x8D39;&#x4E3A;&#x5E95;&#x85AA;&#x7684;30%&#x3002;&#x90A3;&#x4E48;&#x8FC7;&#x8282;&#x8D39;&#x7684;&#x6570;&#x989D;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x91C7;&#x7528;NVL2&#x51FD;&#x6570;&#x6765;&#x786E;&#x5B9A;&#xFF0C;&#x5177;&#x4F53;&#x5F62;&#x5F0F;&#x4E3A;NVL2(commission_pct, salary<em>30%, salary</em>50%)&#x3002;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3001;&#x663E;&#x793A;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;80&#x6216;90&#x7684;&#x96C7;&#x5458;&#x7684;&#x5E74;&#x85AA;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT first_name AS &quot;&#x540D;&#x5B57;&quot;,NVL2(commission_pct, salary*0.3, salary*0.5) AS &quot;&#x8FC7;&#x8282;&#x8D39;&quot;,(salary*12) + NVL2(commission_pct, salary*0.3, salary*0.5) + (salary*12*NVL(commission_pct, 0)) AS &quot;&#x5E74;&#x85AA;&quot;,commission_pct AS &quot;&#x4F63;&#x91D1;&#x6BD4;&#x4F8B;&quot;
+
+FROM employees
+
+WHERE department_id IN(&apos;80&apos;,&apos;90&apos;)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.11&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.11.png"></p>  
+<p align="center">&#x56FE;3.11  NVL2&#x51FD;&#x6570;</p>  
+
+<h3 id="363--coalesce&#x51FD;&#x6570;">3.6.3  COALESCE&#x51FD;&#x6570;</h3>
+<p>&#x2003;&#x2003;COALESCE&#x51FD;&#x6570;&#x6BD4;NVL&#x51FD;&#x6570;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x63A5;&#x53D7;&#x591A;&#x4E2A;&#x4EA4;&#x66FF;&#x7684;&#x503C;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>COALESCE (expr1, expr2&#x2026; exprn)
+</code></pre><p>&#x2003;&#x2003;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x5982;&#x679C;expr1&#x4E3A;&#x975E;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;expr1&#x7684;&#x503C;&#xFF1B;&#x5982;&#x679C;expr1&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;expr2&#x7684;&#x503C;&#xFF0C;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x5982;&#x679C;&#x524D;&#x9762;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;exprn&#x7684;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x73B0;&#x5728;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x9488;&#x5BF9;&#x96C7;&#x5458;&#x8868;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x663E;&#x793A;&#x7684;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x96C7;&#x5458;&#x662F;&#x6709;&#x4F63;&#x91D1;&#x7684;&#x96C7;&#x5458;&#xFF0C;&#x5219;&#x8BE5;&#x5217;&#x663E;&#x793A;&#x8BE5;&#x96C7;&#x5458;&#x7684;&#x4F63;&#x91D1;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x5426;&#x5219;&#x663E;&#x793A;&#x8BE5;&#x96C7;&#x5458;&#x7ECF;&#x7406;&#x7684;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x96C7;&#x5458;&#x6CA1;&#x6709;&#x4F63;&#x91D1;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x7BA1;&#x7406;&#x4ED6;&#x7684;&#x7ECF;&#x7406;&#xFF0C;&#x5219;&#x8BE5;&#x96C7;&#x5458;&#x662F;&#x8001;&#x677F;&#xFF0C;&#x8BE5;&#x5217;&#x663E;&#x793A;&#x201C;&#x8001;&#x677F;&#x201D;&#x5373;&#x53EF;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT first_name,COALESCE(commission_pct, manager_id,&apos;&#x8001;&#x677F;&apos;) AS COALESCE&#x5217; 
+
+FROM employees
+
+WHERE department_id IN(&apos;80&apos;,&apos;90&apos;)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x63D0;&#x793A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5E94;&#x4E3A;NUMBER&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x8FD4;&#x56DE;CHAR&#x3002;&#x63A2;&#x5176;&#x539F;&#x56E0;&#xFF0C;COALESCE&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x3001;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x662F;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x7B2C;&#x4E09;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x201C;&#x8001;&#x677F;&#x201D;&#x662F;&#x5B57;&#x7B26;&#x578B;&#x7684;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x3002;&#x89E3;&#x51B3;&#x7684;&#x65B9;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C06;&#x7B2C;&#x4E00;&#x3001;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x90FD;&#x5F3A;&#x5236;&#x6027;&#x5730;&#x8F6C;&#x6362;&#x6210;&#x5B57;&#x7B26;&#x578B;&#x5373;&#x53EF;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A; </p>
+<pre><code>SELECT first_name,COALESCE (TO_CHAR(commission_pct) , TO_CHAR (manager_id) ,&apos;&#x8001;&#x677F;&apos;) AS COALESCE&#x5217; 
+
+FROM employees
+
+WHERE department_id IN(&apos;80&apos;,&apos;90&apos;)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.12&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.12.png"></p>  
+<p align="center">&#x56FE;3.12  COALESCE&#x51FD;&#x6570;</p>  
+
+
+
+<h2 id="37--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">3.7  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;36&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;3.6&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;20&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x5DE5;&#x5177;&#xFF1A;PL/SQL Dev&#x3002;</p>
+<h2 id="38--&#x591A;&#x8868;&#x67E5;&#x8BE2;">3.8  &#x591A;&#x8868;&#x67E5;&#x8BE2;</h2>
+<p>&#x2003;&#x2003;&#x5728;employees&#x8868;&#x4E2D;&#xFF0C;&#x96C7;&#x5458;&#x7684;&#x804C;&#x4F4D;&#x662F;&#x901A;&#x8FC7;job_id&#x8BB0;&#x5F55;&#x7684;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x804C;&#x4F4D;&#x7684;&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x5B58;&#x653E;&#x5728;jobs&#x8868;&#x91CC;&#x3002;&#x5BF9;&#x7528;&#x6237;&#x800C;&#x8A00;&#xFF0C;&#x5F80;&#x5F80;&#x5E76;&#x4E0D;&#x6E05;&#x695A;&#x6BCF;&#x4E2A;job_id&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x800C;&#x662F;&#x5E0C;&#x671B;&#x80FD;&#x76F4;&#x63A5;&#x770B;&#x5230;&#x6BCF;&#x4E2A;&#x96C7;&#x5458;&#x8BE6;&#x7EC6;&#x7684;&#x804C;&#x4F4D;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x4E24;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x8868;&#x8FDB;&#x884C;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x9700;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<h3 id="381--&#x7B49;&#x503C;&#x8FDE;&#x63A5;">3.8.1  &#x7B49;&#x503C;&#x8FDE;&#x63A5;</h3>
+<p>&#x2003;&#x2003;&#x5F53;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x9700;&#x4ECE;&#x591A;&#x4E2A;&#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#x5F97;&#x5230;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x91C7;&#x7528;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT  table1.column,  table2.column
+
+FROM  table1,  table2
+
+WHERE  table1.column1  =  table2.column2
+</code></pre><p>&#x2003;&#x2003;&#x5176;&#x4E2D;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x53EF;&#x9009;&#x62E9;&#x591A;&#x4E2A;&#x8868;&#x7684;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;FROM&#x5B50;&#x53E5;&#x4E2D;&#x8868;&#x660E;&#x5B57;&#x6BB5;&#x6765;&#x81EA;&#x591A;&#x4E2A;&#x8868;&#xFF0C;&#x800C;WHERE&#x5B50;&#x53E5;&#x4E3A;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#xFF0C;table1.column1=table2.column2&#x5373;&#x5177;&#x4F53;&#x7684;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x7684;SELECT&#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x5B57;&#x6BB5;&#x540D;&#x524D;&#x9762;&#x7528;&#x8868;&#x540D;&#x53EF;&#x4EE5;&#x4F7F;&#x8BED;&#x4E49;&#x6E05;&#x695A;&#xFF0C;&#x5E76;&#x4E14;&#x52A0;&#x5FEB;&#x6570;&#x636E;&#x5E93;&#x8BBF;&#x95EE;&#xFF0C;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#xFF1B;&#x5982;&#x679C;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x51FA;&#x73B0;&#x5728;&#x591A;&#x4E2A;&#x8868;&#x4E2D;&#xFF0C;&#x5B57;&#x6BB5;&#x540D;&#x5FC5;&#x987B;&#x52A0;&#x8868;&#x540D;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F15;&#x8D77;&#x51B2;&#x7A81;&#x3002;&#x4E3A;&#x4E86;&#x5C06;N &#x4E2A;&#x8868;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;N-1&#x4E2A;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9996;&#x5148;&#x4ECB;&#x7ECD;&#x6700;&#x7B80;&#x5355;&#x4E5F;&#x6700;&#x5E38;&#x7528;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x4E5F;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x7B80;&#x5355;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x96C7;&#x5458;&#x7684;&#x804C;&#x4F4D;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x6BD4;&#x8F83;employees&#x8868;&#x4E2D;&#x7684;job_id&#x5B57;&#x6BB5;&#x548C;jobs&#x8868;&#x4E2D;&#x7684; job_id &#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x5F53;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;job_id &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;&#x624D;&#x53EF;&#x8FDE;&#x63A5;&#x51FA;&#x96C7;&#x5458;&#x7684;&#x5177;&#x4F53;&#x804C;&#x4F4D;&#x4FE1;&#x606F;&#xFF0C;&#x5B8C;&#x6210;&#x8BE5;&#x6848;&#x4F8B;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT employees.first_name, jobs.job_title, employees.salary
+
+FROM employees, jobs
+
+WHERE employees.job_id = jobs.job_id
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.13&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.13.png"></p>  
+<p align="center">&#x56FE;3.13  &#x7B49;&#x503C;&#x8FDE;&#x63A5;</p>  
+
+<h3 id="382--&#x8868;&#x522B;&#x540D;">3.8.2  &#x8868;&#x522B;&#x540D;</h3>
+<p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3001;&#x907F;&#x514D;&#x5B57;&#x6BB5;&#x540D;&#x51B2;&#x7A81;&#xFF0C;&#x5728;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x7684;SELECT&#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x5E94;&#x8BE5;&#x4EE5;&#x201C;&#x8868;&#x540D;.&#x5B57;&#x6BB5;&#x540D;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x547D;&#x540D;&#x3002;&#x4E0D;&#x8FC7;&#x6309;&#x7167;&#x6B64;&#x89C4;&#x5219;&#x7F16;&#x5199;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5728;&#x6240;&#x9009;&#x5B57;&#x6BB5;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;SELECT&#x5B50;&#x53E5;&#x5F80;&#x5F80;&#x5197;&#x957F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8868;&#x522B;&#x540D;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x548C;&#x7ED9;&#x5B57;&#x6BB5;&#x8D77;&#x522B;&#x540D;&#x4E00;&#x6837;&#xFF0C;&#x8868;&#x522B;&#x540D;&#x5C31;&#x662F;&#x7ED9;&#x8868;&#x8D77;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x3002;&#x4E0D;&#x8FC7;&#x4E24;&#x8005;&#x7684;&#x4E0D;&#x540C;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x5B57;&#x6BB5;&#x522B;&#x540D;&#x901A;&#x5E38;&#x662F;&#x4E3A;&#x4E86;&#x663E;&#x793A;&#x7684;&#x5B57;&#x6BB5;&#x6807;&#x9898;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x800C;&#x8D77;&#x7684;&#xFF0C;&#x800C;&#x8868;&#x522B;&#x540D;&#x662F;&#x4E3A;&#x4E86;&#x8BA9;SQL&#x8BED;&#x53E5;&#x7B80;&#x5355;&#x3001;&#x6613;&#x8BFB;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED9;employees&#x8868;&#x8D77;&#x522B;&#x540D;&#x4E3A;e&#xFF0C;&#x7ED9;jobs&#x8868;&#x8D77;&#x522B;&#x540D;&#x4E3A;j&#xFF0C;&#x4FEE;&#x6539;&#x5B8C;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title, e.salary
+
+FROM employees e, jobs j
+
+WHERE e.job_id = j.job_id
+</code></pre><p>&#x2003;&#x2003;&#x4E24;&#x6BB5;SQL&#x8BED;&#x53E5;&#x76F8;&#x6BD4;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x8868;&#x522B;&#x540D;&#x7684;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x7B80;&#x5355;&#x3001;&#x6613;&#x8BFB;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x4F7F;&#x7528;&#x8868;&#x522B;&#x540D;&#x65F6;&#xFF0C;&#x8981;&#x6CE8;&#x610F;&#x8868;&#x522B;&#x540D;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x6709;30&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x4E0D;&#x8FC7;&#x76F8;&#x4FE1;&#x6CA1;&#x6709;&#x54EA;&#x4E2A;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4F1A;&#x5199;&#x51FA;&#x8FD9;&#x4E48;&#x957F;&#x7684;&#x8868;&#x522B;&#x540D;&#xFF1B;&#x8868;&#x522B;&#x540D;&#x7684;&#x4F5C;&#x7528;&#x8303;&#x56F4;&#x5728;&#x6574;&#x4E2A;SELECT&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x79BB;&#x5F00;&#x8FD9;&#x4E2A;SELECT&#x8BED;&#x53E5;&#x5373;&#x65E0;&#x6548;&#x3002;</p>
+<h3 id="383--&#x591A;&#x8868;&#x7B49;&#x503C;&#x8FDE;&#x63A5;">3.8.3  &#x591A;&#x8868;&#x7B49;&#x503C;&#x8FDE;&#x63A5;</h3>
+<p>&#x2003;&#x2003;&#x524D;&#x9762;&#x5728;&#x8BB2;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x5C06;employees&#x8868;&#x548C;jobs&#x8868;&#x901A;&#x8FC7;job_id&#x8FDB;&#x884C;&#x4E86;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x60F3;&#x5728;&#x5BF9;employees&#x8868;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x65F6;&#x663E;&#x793A;&#x96C7;&#x5458;&#x7684;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF08;department_name&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#xFF08;department_id&#xFF09;&#xFF0C;&#x8BE5;&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;</p>
+<p>&#x2003;&#x2003;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x5177;&#x4F53;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title,d.department_name, e.salary
+
+FROM employees e, jobs j,departments d
+
+WHERE e.job_id = j.job_id AND e.department_id = d.department_id
+</code></pre><p>&#x2003;&#x2003;&#x5728;SQL&#x8BED;&#x53E5;&#x7684;WHERE&#x5B50;&#x53E5;&#x91CC;&#xFF0C;&#x7528;AND&#x5C06;&#x4E24;&#x4E2A;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#x3002;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.14&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.14.png"></p>  
+<p align="center">&#x56FE;3.14  &#x591A;&#x8868;&#x7B49;&#x503C;&#x8FDE;&#x63A5;</p>  
+
+<p>&#x2003;&#x2003;&#x5206;&#x6790;&#x8BE5;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x8868;&#x662F;employees&#x8868;&#xFF0C;&#x5206;&#x522B;&#x901A;&#x8FC7;job_id&#x548C;jobs&#x8868;&#x5173;&#x8054;&#x8FDE;&#x63A5;&#xFF08;&#x5176;&#x4E2D;jobs&#x8868;&#x4E2D;&#x7684;job_id&#x5B57;&#x6BB5;&#x662F;&#x4E3B;&#x952E;&#xFF0C;employees&#x8868;&#x4E2D;&#x7684;job_id&#x5B57;&#x6BB5;&#x662F;&#x5916;&#x952E;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;department_id&#x548C;departments&#x8868;&#x5173;&#x8054;&#x8FDE;&#x63A5;&#xFF08;&#x5176;&#x4E2D;departments&#x8868;&#x4E2D;&#x7684;department_id&#x5B57;&#x6BB5;&#x662F;&#x4E3B;&#x952E;&#xFF0C;employees&#x8868;&#x4E2D;&#x7684;department_id&#x5B57;&#x6BB5;&#x662F;&#x5916;&#x952E;&#xFF09;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x5BF9;employees&#x8868;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x65F6;&#x663E;&#x793A;&#x96C7;&#x5458;&#x6240;&#x5728;&#x7684;&#x57CE;&#x5E02;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x5462;&#xFF1F;&#x901A;&#x8FC7;&#x5206;&#x6790;&#xFF0C;employees&#x8868;&#x4E2D;&#x6CA1;&#x6709;&#x548C;&#x57CE;&#x5E02;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x4F46;&#x548C;employees&#x8868;&#x5173;&#x8054;&#x7684;departments&#x8868;&#x4E2D;&#x6709;&#x6240;&#x5728;&#x5730;&#x7F16;&#x53F7;&#xFF08;location_id&#xFF09;&#xFF0C;&#x800C;&#x901A;&#x8FC7;location_id&#x53EF;&#x5173;&#x8054;&#x5230;locations&#x8868;&#xFF0C;&#x8BE5;&#x8868;&#x4E2D;&#x6709;&#x57CE;&#x5E02;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5728;departments&#x8868;&#x4E0A;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title,d.department_name, l.city, e.salary
+
+FROM employees e, jobs j,departments d,locations l 
+
+WHERE e.job_id = j.job_id AND e.department_id = d.department_id AND d.location_id = l.location_id
+</code></pre><p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x4ECB;&#x7ECD;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#xFF0C;&#x56FE;3.15&#x663E;&#x793A;&#x4E86;&#x56DB;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.15.png"></p>  
+<p align="center">&#x56FE;3.15  &#x591A;&#x8868;&#x8FDE;&#x63A5;&#x793A;&#x610F;&#x56FE;</p>  
+
+<h3 id="384--&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x3001;using&#x5B50;&#x53E5;&#x548C;on&#x5B50;&#x53E5;">3.8.4  &#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x3001;USING&#x5B50;&#x53E5;&#x548C;ON&#x5B50;&#x53E5;</h3>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#xFF0C;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x4E14;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Oracle&#x7684;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x5B9E;&#x73B0;&#x4E24;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x7B2C;3.8.2&#x8282;&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;employees&#x8868;&#x548C;jobs&#x8868;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title, e.salary
+
+FROM employees e, jobs j
+
+WHERE e.job_id = j.job_id
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x4E24;&#x4E2A;&#x8868;&#x90FD;&#x7528;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#x540D;job_id&#xFF0C;&#x4E14;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x6570;&#x578B;&#x90FD;&#x662F;VARCHAR2&#x7C7B;&#x578B;&#xFF0C;&#x6EE1;&#x8DB3;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x7684;&#x6761;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x5C06;&#x4E0A;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#x8C03;&#x6574;&#x5982;&#x4E0B;&#xFF0C;&#x7528;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#xFF08;NATURAL JOIN&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x3002;</p>
+<pre><code>SELECT e.first_name, j.job_title, e.salary
+
+FROM employees e 
+
+NATURAL JOIN jobs j
+</code></pre><p>&#x2003;&#x2003;&#x5728;&#x4F7F;&#x7528;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x7528;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x91C7;&#x7528;NATURAL JOIN&#x5173;&#x952E;&#x5B57;&#x5B9E;&#x73B0;&#x4E86;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#xFF0C;&#x800C;&#x4F7F;&#x7528;USING&#x5B50;&#x53E5;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title, e.salary
+
+FROM employees e JOIN jobs j
+
+USING(job_id)
+</code></pre><p>&#x2003;&#x2003;&#x53E6;&#x5916;&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x8FD8;&#x662F;&#x4F7F;&#x7528;USING&#x5B50;&#x53E5;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x90FD;&#x4E0D;&#x80FD;&#x5728;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x8868;&#x7684;&#x524D;&#x7F00;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5DF2;&#x7ECF;&#x662F;&#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#xFF0C;&#x4E0D;&#x518D;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x8868;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x7528;USING&#x5B50;&#x53E5;&#x6307;&#x5B9A;&#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ON&#x5B50;&#x53E5;&#x5B8C;&#x6210;&#x7C7B;&#x4F3C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E0A;&#x9762;&#x4F7F;&#x7528;USING&#x5B50;&#x53E5;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7B49;&#x4EF7;&#x7684;&#x4F7F;&#x7528;ON&#x5B50;&#x53E5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, j.job_title, e.salary
+
+FROM employees e JOIN jobs j
+
+ON (e.job_id = j.job_id)
+</code></pre><p>&#x2003;&#x2003;ON&#x5B50;&#x53E5;&#x6BD4;USING&#x5B50;&#x53E5;&#x66F4;&#x4E3A;&#x7075;&#x6D3B;&#xFF0C;&#x56E0;&#x4E3A;USING&#x5B50;&#x53E5;&#x91CC;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x90FD;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x65F6;&#xFF0C;&#x624D;&#x80FD;&#x4F7F;&#x7528;USING&#x5B50;&#x53E5;&#x6307;&#x5B9A;&#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#x3002;&#x800C;ON&#x5B50;&#x53E5;&#x548C;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x4E00;&#x6837;&#xFF0C;&#x7528;&#x4E8E;&#x8FDE;&#x63A5;&#x7684;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5176;&#x5B57;&#x6BB5;&#x540D;&#x53EF;&#x4EE5;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;&#x4E86;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x3001;USING&#x5B50;&#x53E5;&#x548C;ON&#x5B50;&#x53E5;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7EE7;&#x7EED;&#x7ED9;employees&#x8868;&#x548C;departments&#x8868;&#x5EFA;&#x7ACB;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, d.department_name, e.salary
+
+FROM employees e
+
+NATURAL JOIN departments d
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;32&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x56FE;3.16&#x6240;&#x793A;&#x3002;&#x8BE5;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x7B49;&#x4EF7;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, d.department_name, e.salary   
+
+FROM employees e,departments d
+
+WHERE e.department_id = d.department_id
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x7B49;&#x503C;&#x8FDE;&#x63A5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5374;&#x8FD4;&#x56DE;&#x4E86;106&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x56FE;3.17&#x6240;&#x793A;&#x3002;&#x8FD9;&#x8BF4;&#x660E;&#x8FD9;&#x4E24;&#x6BB5;SQL&#x8BED;&#x53E5;&#x4E0D;&#x7B49;&#x4EF7;&#xFF0C;&#x4F46;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x91CC;&#x5462;&#xFF1F;</p>
+<p align="center"><img src="../img/d3z/tu3.16.png"></p>  
+<p align="center">&#x56FE;3.16  &#x81EA;&#x7136;&#x8FDE;&#x63A5;</p>  
+
+<p align="center"><img src="../img/d3z/tu3.17.png"></p>  
+<p align="center">&#x56FE;3.17  &#x7B49;&#x503C;&#x8FDE;&#x63A5;</p>  
+
+
+
+<p>&#x2003;&#x2003;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x8FD9;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x8868;&#x7ED3;&#x6784;&#x540E;&#x53D1;&#x73B0;&#xFF0C;&#x4E24;&#x8868;&#x4E2D;&#x4E0D;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;department_id&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;manager_id&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x5BF9;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x4E86;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x6240;&#x4EE5;&#x8BE5;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x7B49;&#x4EF7;&#x7684;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, d.department_name, e.salary   
+
+FROM employees e,departments d
+
+WHERE e.department_id = d.department_id AND e.manager_id = d.manager_id
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;&#x548C;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x4E00;&#x6837;&#x7684;32&#x6761;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#x7684;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#x90FD;&#x662F;&#x5728;&#x4E24;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;SQL&#x8BED;&#x53E5;&#x5B9E;&#x73B0;&#x4E86;employees&#x8868;&#x3001;departments&#x8868;&#x548C;locations&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x81EA;&#x7136;&#x8FDE;&#x63A5;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x4E09;&#x5411;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, d.department_name, l.city, e.salary    
+
+FROM employees e
+
+NATURAL JOIN departments d
+
+NATURAL JOIN locations l
+</code></pre><p>&#x2003;&#x2003;&#x5176;&#x7B49;&#x4EF7;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, d.department_name, l.city, e.salary    
+
+FROM employees e,departments d,locations l
+
+WHERE e.department_id = d.department_id AND e.manager_id = d.manager_id AND d.location_id = l.location_id
+</code></pre><h3 id="385--&#x81EA;&#x5173;&#x8054;">3.8.5  &#x81EA;&#x5173;&#x8054;</h3>
+<p>&#x2003;&#x2003;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5173;&#x8054;&#xFF0C;&#x7528;&#x4E00;&#x5F20;&#x8868;&#x5B9E;&#x73B0;&#x591A;&#x8868;&#x67E5;&#x8BE2;&#xFF0C;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>--&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#x548C;&#x76F8;&#x5E94;&#x7684;&#x9886;&#x5BFC;&#x59D3;&#x540D;
+
+SELECT e.first_name &#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;,b.first_name &#x8001;&#x677F;&#x59D3;&#x540D; FROM employees e, employees b
+
+WHERE e.manager_id=b.employee_id
+</code></pre><p>&#x2003;&#x2003;&#x4E0A;&#x8FF0;SQL&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x5C06;&#x540C;&#x4E00;&#x5F20;employees&#x8868;&#x901A;&#x8FC7;&#x522B;&#x540D;&#x770B;&#x6210;&#x4E86;&#x4E24;&#x5F20;&#x4E0D;&#x540C;&#x7684;&#x8868;&#xFF1A;&#x5C06;&#x522B;&#x540D;&#x4E3A;e&#x7684;&#x8868;&#x770B;&#x6210;&#x5458;&#x5DE5;&#x8868;&#xFF0C;&#x5C06;&#x522B;&#x540D;&#x4E3A;b&#x7684;&#x8868;&#x770B;&#x6210;&#x9886;&#x5BFC;&#x8868;&#xFF0C;&#x518D;&#x5728;&#x5458;&#x5DE5;&#x8868;&#x548C;&#x9886;&#x5BFC;&#x8868;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x3002;</p>
+<h2 id="39--&#x5916;&#x8FDE;&#x63A5;">3.9  &#x5916;&#x8FDE;&#x63A5;</h2>
+<p>&#x2003;&#x2003;&#x5728;&#x4ECB;&#x7ECD;&#x5916;&#x8FDE;&#x63A5;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x8981;&#x4E86;&#x89E3;&#x4EC0;&#x4E48;&#x662F;&#x5185;&#x8FDE;&#x63A5;&#x4EE5;&#x53CA;&#x5185;&#x8FDE;&#x63A5;&#x548C;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x5728;&#x6807;&#x51C6;SQL&#x4E2D;&#xFF0C;&#x5C06;&#x4E24;&#x4E2A;&#x8868;&#x8FDE;&#x63A5;&#xFF0C;&#x4EC5;&#x8FD4;&#x56DE;&#x5339;&#x914D;&#x6761;&#x4EF6;&#x7684;&#x884C;&#x7684;&#x8FDE;&#x63A5;&#x79F0;&#x4E3A;&#x5185;&#x8FDE;&#x63A5;&#x3002;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x662F;&#x5185;&#x8FDE;&#x63A5;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x56E0;&#x4E3A;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x4EC5;&#x8FD4;&#x56DE;&#x6EE1;&#x8DB3;&#x7B49;&#x503C;&#x6761;&#x4EF6;&#x7684;&#x884C;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x800C;&#x8A00;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5185;&#x8FDE;&#x63A5;&#x5C31;&#x662F;&#x975E;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x4E0D;&#x662F;&#x201C;=&#x201D;&#xFF0C;&#x800C;&#x8FD4;&#x56DE;&#x7684;&#x884C;&#x4EC5;&#x4E3A;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E2A;&#x975E;&#x201C;=&#x201D;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x7684;&#x884C;&#x3002;</p>
+<h3 id="391--&#x975E;&#x7B49;&#x503C;&#x5185;&#x8FDE;&#x63A5;">3.9.1  &#x975E;&#x7B49;&#x503C;&#x5185;&#x8FDE;&#x63A5;</h3>
+<p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#x975E;&#x7B49;&#x503C;&#x5185;&#x8FDE;&#x63A5;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x4E3A;HR&#x7528;&#x6237;&#x65B0;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x5176;&#x8868;&#x7ED3;&#x6784;&#x548C;&#x8868;&#x5185;&#x5BB9;&#x5206;&#x522B;&#x5982;&#x56FE;3.18&#x548C;&#x56FE;3.19&#x6240;&#x793A;&#x3002;&#x5177;&#x4F53;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x8868;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x4E2D;&#x5C06;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.18.png"></p>  
+<p align="center">&#x56FE;3.18  &#x5458;&#x5DE5;&#x5206;&#x7C7B;&#x8868;&#x7ED3;&#x6784;</p>  
+
+<p align="center"><img src="../img/d3z/tu3.19.png"></p>  
+<p align="center"> &#x56FE;3.19  &#x5458;&#x5DE5;&#x5206;&#x7C7B;&#x8868;&#x5185;&#x5BB9;</p>  
+
+
+
+<p>&#x2003;&#x2003;&#x4ECE;&#x56FE;3.18&#x548C;&#x56FE;3.19&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x516C;&#x53F8;&#x5C06;&#x5458;&#x5DE5;&#x5206;&#x4E3A;A&#x3001;B&#x3001;C&#x3001;D&#x56DB;&#x7C7B;&#xFF0C;&#x5206;&#x7C7B;&#x4F9D;&#x636E;&#x4E3A;&#x96C7;&#x5458;&#x7684;&#x96C7;&#x4F63;&#x65E5;&#x671F;&#x3002;&#x73B0;&#x5728;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x51FA;&#x96C7;&#x5458;&#x7684;&#x540D;&#x5B57;&#x3001;&#x85AA;&#x6C34;&#x548C;&#x6240;&#x5C5E;&#x5206;&#x7C7B;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, e.salary, eg.e_grade 
+
+FROM employees e,egrade eg
+
+WHERE e.hire_date BETWEEN eg.hire_start AND eg.hire_end
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x6BB5;SQL&#x8BED;&#x53E5;&#x7684;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;&#x662F;&#x5224;&#x65AD;&#x65E5;&#x671F;&#x662F;&#x5426;&#x5728;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x4E0D;&#x662F;&#x201C;=&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x662F;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#xFF0C;&#x5176;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4EC5;&#x4E3A;&#x6EE1;&#x8DB3;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;&#x7684;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x8BE5;&#x8FDE;&#x63A5;&#x662F;&#x975E;&#x7B49;&#x503C;&#x5185;&#x8FDE;&#x63A5;&#x3002;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.20&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.20.png"></p>  
+<p align="center">&#x56FE;3.20  &#x975E;&#x7B49;&#x503C;&#x5185;&#x8FDE;&#x63A5;</p>  
+
+<h3 id="392--&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x5168;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x7B1B;&#x5361;&#x513F;&#x79EF;">3.9.2  &#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x5168;&#x5916;&#x8FDE;&#x63A5;&#x3001;&#x7B1B;&#x5361;&#x513F;&#x79EF;</h3>
+<ul>
+<li>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x53C8;&#x79F0;&#x5DE6;&#x8FDE;&#x63A5;&#xFF0C;&#x6307;&#x5728;&#x4E24;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x8FD4;&#x56DE;&#x5185;&#x8FDE;&#x63A5;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8FD4;&#x56DE;&#x5DE6;&#x8868;&#x4E2D;&#x672A;&#x5339;&#x914D;&#x7684;&#x884C;&#xFF0C;&#x53F3;&#x8868;&#x4E2D;&#x76F8;&#x5E94;&#x5B57;&#x6BB5;&#x7F6E;&#x7A7A;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5BF9;employees&#x8868;&#x548C;departments&#x8868;&#x8FDB;&#x884C;&#x5DE6;&#x8FDE;&#x63A5;&#xFF0C; employees&#x8868;&#x4F5C;&#x4E3A;&#x5DE6;&#x8868;&#xFF0C;departments&#x8868;&#x4F5C;&#x4E3A;&#x53F3;&#x8868;&#xFF0C;&#x4F7F;&#x7528;&#x5DE6;&#x8FDE;&#x63A5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, e.department_id, d.department_name
+
+FROM employees e
+
+LEFT OUTER JOIN departments d 
+
+ON (e.department_id = d.department_id)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.21&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.21.png"></p>  
+<p align="center">&#x56FE;3.21  &#x5DE6;&#x5916;&#x8FDE;&#x63A5;</p>  
+
+<p>&#x2003;&#x2003;&#x4ECE;&#x56FE;3.21&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5DE6;&#x8FDE;&#x63A5;&#x5728;&#x5185;&#x8FDE;&#x63A5;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5C06;&#x5DE6;&#x8868;&#xFF08;employees&#xFF09;&#x4E2D;&#x672A;&#x5339;&#x914D;&#x7684;&#x884C;&#x4E5F;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#xFF0C;&#x53F3;&#x8868;&#x4E2D;&#x76F8;&#x5E94;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x662F;&#x4E00;&#x79CD;&#x5DE6;&#x8FDE;&#x63A5;&#x7684;&#x5199;&#x6CD5;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x7565;&#x5FAE;&#x6709;&#x4E9B;&#x590D;&#x6742;&#xFF0C;&#x4E0B;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#x540C;&#x6837;&#x5B8C;&#x6210;&#x4E86;&#x4E0A;&#x9762;&#x5DE6;&#x8FDE;&#x63A5;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x4E66;&#x5199;&#x548C;&#x9605;&#x8BFB;&#x4E0A;&#x90FD;&#x5BB9;&#x6613;&#x8BB8;&#x591A;&#x3002;</p>
+<pre><code>SELECT e.first_name, e.department_id, d.department_name
+
+FROM employees e,departments d
+
+WHERE e.department_id = d.department_id(+)
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x6BB5;SQL&#x8BED;&#x53E5;&#x548C;&#x7B49;&#x503C;&#x8FDE;&#x63A5;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x7B49;&#x53F7;&#x7684;&#x67D0;&#x4E00;&#x8FB9;&#x52A0;&#x4E0A;&#x4E86;&#x4E00;&#x4E2A;&#x201C;(+)&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x201C;(+)&#x201D;&#x5E94;&#x8BE5;&#x88AB;&#x653E;&#x7F6E;&#x5728;&#x4E0D;&#x9700;&#x8981;&#x589E;&#x52A0;&#x672A;&#x5339;&#x914D;&#x7684;&#x884C;&#x7684;&#x8868;&#x7684;&#x4E00;&#x4FA7;&#x3002;&#x91C7;&#x7528;&#x201C;(+)&#x201D;&#x8FDB;&#x884C;&#x5916;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5DE6;&#x8868;&#x548C;&#x53F3;&#x8868;&#x4E4B;&#x5206;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x53EF;&#x4EE5;&#x5728;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;&#x7684;&#x4E24;&#x8FB9;&#x90FD;&#x653E;&#x201C;(+)&#x201D;&#x3002;</p>
+<ul>
+<li>&#x53F3;&#x5916;&#x8FDE;&#x63A5;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#x53C8;&#x79F0;&#x53F3;&#x8FDE;&#x63A5;&#xFF0C;&#x548C;&#x5DE6;&#x8FDE;&#x63A5;&#x6B63;&#x597D;&#x76F8;&#x53CD;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x4ECD;&#x7136;&#x5BF9;employees&#x8868;&#x548C;departments&#x8868;&#x8FDB;&#x884C;&#x53F3;&#x8FDE;&#x63A5;&#xFF0C;employees&#x8868;&#x4F5C;&#x4E3A;&#x5DE6;&#x8868;&#xFF0C;departments&#x8868;&#x4F5C;&#x4E3A;&#x53F3;&#x8868;&#xFF0C;&#x4F7F;&#x7528;&#x53F3;&#x8FDE;&#x63A5;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, department_id, d.department_name
+
+FROM employees e
+
+RIGHT OUTER JOIN departments d
+
+USING(department_id)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.22&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.22.png"></p>  
+<p align="center">&#x56FE;3.22  &#x53F3;&#x5916;&#x8FDE;&#x63A5;</p>  
+
+<p>&#x2003;&#x2003;&#x7528;&#x201C;(+)&#x201D;&#x4EE3;&#x66FF;&#x53F3;&#x5916;&#x8FDE;&#x63A5;&#xFF0C;SQL&#x8BED;&#x53E5;&#x7684;&#x5177;&#x4F53;&#x5199;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, e.department_id, d.department_name
+
+FROM employees e,departments d
+
+WHERE d.department_id = e.department_id(+)
+</code></pre><ul>
+<li>&#x5168;&#x5916;&#x8FDE;&#x63A5;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x6240;&#x8C13;&#x5168;&#x5916;&#x8FDE;&#x63A5;&#xFF0C;&#x4E5F;&#x79F0;&#x5168;&#x8FDE;&#x63A5;&#xFF0C;&#x662F;&#x6307;&#x4E24;&#x4E2A;&#x8868;&#x5728;&#x8FD4;&#x56DE;&#x5185;&#x8FDE;&#x63A5;&#x7ED3;&#x679C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x8FD8;&#x8FD4;&#x56DE;&#x5DE6;&#x8868;&#x53CA;&#x53F3;&#x8868;&#x4E2D;&#x672A;&#x5339;&#x914D;&#x7684;&#x884C;&#xFF0C;&#x53F3;&#x8868;&#x53CA;&#x5DE6;&#x8868;&#x4E2D;&#x76F8;&#x5E94;&#x5B57;&#x6BB5;&#x7F6E;&#x7A7A;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT e.first_name, department_id, d.department_name
+
+FROM employees e
+
+FULL OUTER JOIN departments d
+
+USING(department_id)
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;3.23&#x6240;&#x793A;&#x3002;</p>
+<p align="center"><img src="../img/d3z/tu3.23.png"></p>  
+<p align="center">&#x56FE;3.23  &#x5168;&#x8FDE;&#x63A5;</p>  
+
+<ul>
+<li>&#x7B1B;&#x5361;&#x513F;&#x79EF;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x622A;&#x6B62;&#x5230;&#x73B0;&#x5728;&#xFF0C;&#x6240;&#x4ECB;&#x7ECD;&#x7684;&#x591A;&#x8868;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;&#x90FD;&#x6709;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x5BF9;&#x8FDE;&#x63A5;&#x8FDB;&#x884C;&#x9650;&#x5236;&#x3002;&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x65E0;&#x6548;&#x6216;&#x8005;&#x9057;&#x6F0F;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#xFF0C;&#x5176;&#x4E2D;&#x6240;&#x6709;&#x884C;&#x7684;&#x7EC4;&#x5408;&#x90FD;&#x88AB;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x5373;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#x8FDE;&#x63A5;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#x4F1A;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x884C;&#xFF0C;&#x4F8B;&#x5982;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x5047;&#x8BBE;&#x6709;100&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8868;&#x4E2D;&#x6709;200&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x4F7F;&#x7528;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x4E24;&#x8005;&#x76F8;&#x4E58;&#x7684;20000&#x6761;&#x8BB0;&#x5F55;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x9664;&#x975E;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5E94;&#x8BE5;&#x4FDD;&#x8BC1;&#x8FDE;&#x63A5;&#x6761;&#x4EF6;&#x6B63;&#x786E;&#x6709;&#x6548;&#xFF0C;&#x4E0D;&#x8981;&#x51FA;&#x73B0;&#x7B1B;&#x5361;&#x513F;&#x79EF;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<h2 id="310--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">3.10  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
+<h4 id="&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;38&#x8282;&#x548C;39&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;">&#x76EE;&#x6807;&#xFF1A;&#x5B8C;&#x6210;&#x672C;&#x7AE0;3.8&#x8282;&#x548C;3.9&#x8282;&#x7684;&#x4EFB;&#x52A1;&#x3002;</h4>
+<p>&#x65F6;&#x95F4;&#xFF1A;40&#x5206;&#x949F;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B66;&#x5458;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#xFF0C;&#x5C0F;&#x7EC4;&#x7EC4;&#x957F;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x5DE5;&#x5177;&#xFF1A;PL/SQL Dev&#x3002;</p>
+<h2 id="311--&#x672C;&#x7AE0;&#x7EC3;&#x4E60;">3.11  &#x672C;&#x7AE0;&#x7EC3;&#x4E60;</h2>
+<p>1  &#x4E0B;&#x5217;&#xFF08;    &#xFF09;&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x201C;&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x6BCD;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;&#xFF0C;&#x5176;&#x4ED6;&#x503C;&#x4E3A;&#x5C0F;&#x5199;&#x201D;&#x7684;&#x529F;&#x80FD;&#x3002;&#xFF08;&#x9009;&#x62E9;&#x4E00;&#x9879;&#xFF09;</p>
+<p>&#x2003;&#x2003;A&#xFF0E;LOWER</p>
+<p>&#x2003;&#x2003;B&#xFF0E;UPPER</p>
+<p>&#x2003;&#x2003;C&#xFF0E;INITCAP</p>
+<p>&#x2003;&#x2003;D&#xFF0E;CONCAT</p>
+<p>2  &#x51FD;&#x6570;TRUNC&#xFF08;SYSDATE, &apos;MONTH&apos;&#xFF09;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF08;    &#xFF09;&#xFF08;&#x5047;&#x5B9A;SYSDATE&#x503C;&#x4E3A;&apos;23-JUN-13&apos;&#xFF09;&#x3002;&#xFF08;&#x9009;&#x62E9;&#x4E00;&#x9879;&#xFF09;</p>
+<p>&#x2003;&#x2003;A&#xFF0E;&apos;01- JUL-13&apos;</p>
+<p>&#x2003;&#x2003;B&#xFF0E;&apos;01- JAN-13&apos;</p>
+<p>&#x2003;&#x2003;C&#xFF0E;&apos;01- JUN-13&apos;</p>
+<p>&#x2003;&#x2003;D&#xFF0E;&apos;01- JAN-13&apos;</p>
+<p>3  &#x5982;&#x679C;&#x60F3;&#x8BA9;Oracle&#x4E2D;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#x7684;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x4E3A;&#x201C;2013/6/23,22-7-16&#x201D;&#xFF0C;&#x5176;&#x683C;&#x5F0F;&#x6A21;&#x677F;&#x7684;&#x5199;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;    &#x3002;</p>
+<p>4  &#x8BF7;&#x63CF;&#x8FF0;fm&#x3001;fx&#x3001;th&#x548C;sp&#x8FD9;&#x56DB;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>5  &#x8BF7;&#x63CF;&#x8FF0;&#x4EC0;&#x4E48;&#x662F;&#x5185;&#x8FDE;&#x63A5;&#x548C;&#x5916;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>6  &#x8BF7;&#x63CF;&#x8FF0;&#x4EC0;&#x4E48;&#x662F;&#x5DE6;&#x8FDE;&#x63A5;&#x3001;&#x53F3;&#x8FDE;&#x63A5;&#x548C;&#x5168;&#x8FDE;&#x63A5;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="d2z.html" class="navigation navigation-prev " aria-label="Previous page: 第二章    查询和排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="d4z.html" class="navigation navigation-next " aria-label="Next page: 第四章    子查询和组函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第三章    单行函数和多表查询","level":"1.4","depth":1,"next":{"title":"第四章    子查询和组函数","level":"1.5","depth":1,"path":"chapters/d4z.md","ref":"chapters/d4z.md","articles":[]},"previous":{"title":"第二章    查询和排序","level":"1.3","depth":1,"path":"chapters/d2z.md","ref":"chapters/d2z.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapters/d3z.md","mtime":"2020-04-14T03:32:50.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T03:37:44.572Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

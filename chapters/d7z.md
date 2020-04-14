@@ -57,7 +57,6 @@ IDENTIFIED BY password
 <p align="center"><img src="../img/d7z/tu7.1.png" /></p>  
 <p align="center">图7.1  创建用户</p>  
 
-
 ### 7.1.2  系统权限  
 
 &emsp;&emsp;创建了用户jacky之后，数据库管理员就可以给这个用户授予指定的系统权限。给一个用户授权的简要语法形式如下：
@@ -102,7 +101,6 @@ TO jacky
 <p align="center"><img src="../img/d7z/tu7.2.png" /></p>  
 <p align="center">图7.2  授予系统权限</p>  
 
-
 &emsp;&emsp;在图7.2中，第二列Grantable的含义是jacky用户是否有权限将第一列相关的系统权限授权给其他用户，默认情况下是不允许的，这个授予权限的权限也需要授权，在PL/SQL Dev图形界面下，直接选中即可。
 
 &emsp;&emsp;还是在图7.2中，刚才选择的是第四个系统权限选项卡，细心的读者已经观察到，第二个Object privileges是对象权限选项卡，第三个Role privileges是角色权限选项卡，打开之后分别能看到jacky用户拥有哪些对象权限和角色权限。
@@ -137,10 +135,11 @@ GRANT developer TO jacky;
 
 <p align="center"><img src="../img/d7z/tu7.3.png" /></p>  
 <p align="center">图7.3  授予角色权限</p>  
-
 <p align="center"><img src="../img/d7z/tu7.4.png" /></p>  
 <p align="center">图7.4  给用户指定角色</p>  
-​                                            
+
+
+
 
 &emsp;&emsp;Oracle数据库内置了一些角色，可供数据库管理员直接使用。对于程序开发人员使用的Oracle用户，数据库管理员通常给这些用户指定为resource和connect角色，而对于最终用户使用的Oracle用户，通常仅指定为connect角色。关于这两个角色分别具有什么权限，读者可以查询相关的数据字典视图。
 
@@ -207,7 +206,6 @@ SELECT * FROM employees
 
 <p align="center"><img src="../img/d7z/tu7.5.png" /></p>  
 <p align="center">图7.5  授予对象权限</p>  
-
 
 &emsp;&emsp;提示“表或视图不存在”，什么原因呢？不是刚刚给jacky用户授予了查询employees表的权限吗？其原因在于，在数据库中，方案（schema）是管理数据库对象的逻辑结构，一个数据库对象的全称应该是“方案名.对象名”（默认情况下方案名等于用户的名字），之前不使用方案名的原因是用户操作的数据库对象是本用户的对象，方案名可以省略。而现在是用jacky用户访问数据库，需要操作HR用户的employees对象，所以必须写全名，故正确的SQL语句如下（执行完后会获得对应的数据）：
 
@@ -412,7 +410,6 @@ END [pname]
 <p align="center">图7.6  过程参数模式</p>  
 
 
-
 &emsp;&emsp;假设现在要创建这样的过程，实现的功能是要给指定的（通过雇员编号指定）雇员加薪，如果雇员编号在200以内加薪10%，雇员编号大于等于200则加薪15%，创建存储过程的SQL语句如下（用HR用户身份创建）：
 
 
@@ -466,10 +463,11 @@ END raise_salary;
 
 <p align="center"><img src="../img/d7z/tu7.7.png" /></p>  
 <p align="center">图7.7  Procedures文件夹 </p>  
-
 <p align="center"><img src="../img/d7z/tu7.8.png" /></p>  
 <p align="center">图7.8  调用过程</p>  
-​                                   
+
+
+
 
 &emsp;&emsp;之前添加雇员编号为207的雇员雇员时薪水为8000元，因为雇员编号大于等于200，故加薪15%，更新后的薪水应该是9200元。执行该脚本（增加了COMMIT提交语句），再次查询雇员编号为207的雇员薪水，的确更新为9200元。
 
@@ -574,7 +572,6 @@ END get_manager_id;
 
 <p align="center"><img src="../img/d7z/tu7.9.png" /></p>  
 <p align="center">图7.9  调用函数</p>  
-
 
 &emsp;&emsp;不仅可以通过这种方式调用函数，还可以用如下SELECT语句调用函数：
 
@@ -791,6 +788,8 @@ WHERE department_id = 60
 <p align="center"><img src="../img/d7z/tu7.10.png" /></p>  
 <p align="center">图7.10  语句触发器提示失败</p>  
 
+
+
 - 创建和测试行触发器
 
 &emsp;&emsp;创建针对表的行触发器的语法形式如下：
@@ -858,7 +857,6 @@ WHERE employee_id IN (106, 107)
 
 <p align="center"><img src="../img/d7z/tu7.11.png" /></p>  
 <p align="center">图7.11  行触发器执行结果</p>  
-
 
 
 

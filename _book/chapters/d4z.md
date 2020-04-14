@@ -35,7 +35,6 @@ WHERE salary > (SELECT salary FROM employees WHERE last_name = 'Abel') AND depar
 <p align="center"><img src="../img/d4z/tu4.1.png" /></p>  
 <p align="center">图4.1  子查询</p>  
 
-
 &emsp;&emsp;总结子查询的语法形式：
 
 
@@ -72,7 +71,6 @@ WHERE department_id = (SELECT department_id FROM employees WHERE employee_id = 1
 <p align="center"><img src="../img/d4z/tu4.2.png" /></p>  
 <p align="center">图4.2  单行子查询</p>  
 
-
 &emsp;&emsp;上面的SQL语句查出的是这个部门所有雇员，如果仅想查出该部门中薪水高于编号105的雇员的信息，则需要再增加一个比较条件用于比较薪水，且具体的比较值由另一个子查询完成。其SQL语句如下：
 
 
@@ -91,7 +89,6 @@ AND salary > (SELECT salary FROM employees WHERE employee_id = 105)
 
 <p align="center"><img src="../img/d4z/tu4.3.png" /></p>  
 <p align="center">图4.3  多个单行子查询</p>  
-
 
 &emsp;&emsp;刚才查询的是该部门中薪水高于编号105的雇员信息，如果想查询出薪水大于公司雇员平均薪水的该部门雇员的信息，其SQL语句如下：
 
@@ -112,7 +109,6 @@ AND salary >= (SELECT AVG(salary) FROM employees)
 
 <p align="center"><img src="../img/d4z/tu4.4.png" /></p>  
 <p align="center">图4.4  加入组函数的单行子查询</p>  
-
 
 ### 4.1.3  多行子查询  
 
@@ -138,10 +134,11 @@ WHERE salary IN (SELECT salary FROM employees WHERE department_id = 60)
 
 <p align="center"><img src="../img/d4z/tu4.5.png" /></p>  
 <p align="center">图4.5  多行子查询</p>  
-
 <p align="center"><img src="../img/d4z/tu4.6.png" /></p>  
 <p align="center">图4.6  子查询结果</p>  
-​                                                         
+
+
+
 
 &emsp;&emsp;主查询在子查询结果的基础上执行，等价于执行如下的SQL语句，返回结果和图4.6相同。
 
@@ -183,7 +180,6 @@ WHERE salary < ANY(SELECT salary FROM employees WHERE department_id = 60)
 
 <p align="center"><img src="../img/d4z/tu4.7.png" /></p>  
 <p align="center">图4.7  ANY运算符使用</p>  
-
 
 
 
@@ -275,7 +271,6 @@ WHERE salary < (SELECT MAX(salary) FROM employees WHERE department_id = 60)
 <p align="center"><img src="../img/d4z/tu4.8.png" /></p>  
 <p align="center">图4.8  IT部门雇员信息</p>  
 
-
 &emsp;&emsp;对该数据集使用MAX、MIN、AVG和SUM这四个组函数，SQL语句如下，运行结果如图4.9所示。
 
 
@@ -291,14 +286,12 @@ FROM employees WHERE department_id = 60
 <p align="center"><img src="../img/d4z/tu4.9.png" /></p>  
 <p align="center">图4.9  组函数使用</p>  
 
-
 &emsp;&emsp;修改该SQL语句，将AVG(salary)和SUM(salary)这两个组函数修改为AVG(DISTINCT salary)和SUM(DISTINCT salary)，运行结果如图4.10所示。
 
 
 
 <p align="center"><img src="../img/d4z/tu4.10.png" /></p>  
 <p align="center">图4.10  组函数使用</p>  
-
 
 &emsp;&emsp;使用DISTINCT关键字的目的是去除重复，SUM(DISTINCT salary)函数仅对不重复的行进行求和。图4.8中，编号为105和106的员工薪水重复，所以仅取一行数据参与求和，故AVG(DISTINCT salary)实际是对9000、6000、4800和4200求和，得到的结果是24000。同理，AVG(DISTINCT salary)函数也仅对这四个数求平均值，结果为6000。
 
@@ -323,7 +316,6 @@ FROM employees
 
 <p align="center"><img src="../img/d4z/tu4.11.png" /></p>  
 <p align="center">图4.11  COUNT组函数使用</p>  
-
 
 &emsp;&emsp;上面的例子中，统计雇员总人数时，是对“*”进行COUNT。如果COUNT函数里的参数是字段manager_id，执行SQL语句后，统计出的人数是106名，并不是正确的数值。其原因在于，雇员表中老板这条记录的manager_id字段为空，COUNT(manager_id)是忽略空值的，所以没有统计老板。
 
@@ -362,7 +354,6 @@ FROM employees GROUP BY department_id
 <p align="center"><img src="../img/d4z/tu4.12.png" /></p>  
 <p align="center">图4.12  GROUP BY使用</p>  
 
-
 &emsp;&emsp;注意，在SELECT子句中，只可以有组函数和分组字段（包括对分组字段的操作），如果包括其他字段会报错。另外，如果GROUP BY子句后要包括ORDER BY子句，则ORDER BY子句用于排序的字段必须是分组字段或组函数。例如要将刚才获取的结果按照各部门最高薪水值进行从高到底的排序，其SQL语句如下：
 
 
@@ -379,7 +370,6 @@ GROUP BY department_id ORDER BY MAX(salary) DESC
 
 <p align="center"><img src="../img/d4z/tu4.13.png" /></p>  
 <p align="center">图4.13  对分组结果进行排序</p>  
-
 
 &emsp;&emsp;读者可以尝试一下，修改上面的SQL语句，分别在SELECT子句和ORDER BY子句中增加salary或其他字段，执行SQL语句，看看会出现什么样的结果。
 
@@ -406,7 +396,6 @@ ORDER BY department_id, job_id
 
 <p align="center"><img src="../img/d4z/tu4.14.png" /></p>  
 <p align="center">图4.14  分组中再分组</p>  
-
 &emsp;&emsp;同样的，SELECT子句和ORDER BY子句中只能包括分组字段和组函数。
 
 ### 4.3.5  约束分组结果  
@@ -425,7 +414,6 @@ WHERE department_id IN(50,60,80,90) GROUP BY department_id
 
 <p align="center"><img src="../img/d4z/tu4.15.png" /></p>  
 <p align="center">图4.15  分组前使用WHERE子句约束行</p>  
-
 
 &emsp;&emsp;这里需要强调的是，WHERE子句必须在GROUP BY子句前，而且从含义上来说，也是先进行约束之后再进行分组。所以，WHERE子句中选择的字段，并非必须为分组字段，但也肯定不能是组函数。
 
@@ -447,7 +435,6 @@ GROUP BY department_id HAVING MAX(salary) > 12000
 
 <p align="center"><img src="../img/d4z/tu4.16.png" /></p>  
 <p align="center">图4.16  HAVING子句使用</p>  
-
 
 &emsp;&emsp;请读者思考一下，可以在HAVING子句中使用非分组字段、组函数吗？
 

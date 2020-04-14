@@ -94,7 +94,7 @@
                 <a href="../">
             
                     
-                    前言
+                    目录
             
                 </a>
             
@@ -265,7 +265,6 @@ WHERE salary &gt; (SELECT salary FROM employees WHERE last_name = &apos;Abel&apo
 <p align="center"><img src="../img/d4z/tu4.1.png"></p>  
 <p align="center">&#x56FE;4.1  &#x5B50;&#x67E5;&#x8BE2;</p>  
 
-
 <p>&#x2003;&#x2003;&#x603B;&#x7ED3;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x8BED;&#x6CD5;&#x5F62;&#x5F0F;&#xFF1A;</p>
 <pre><code>SELECT select_list1 FROM table1
 
@@ -282,7 +281,6 @@ WHERE department_id = (SELECT department_id FROM employees WHERE employee_id = 1
 <p align="center"><img src="../img/d4z/tu4.2.png"></p>  
 <p align="center">&#x56FE;4.2  &#x5355;&#x884C;&#x5B50;&#x67E5;&#x8BE2;</p>  
 
-
 <p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#x67E5;&#x51FA;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x90E8;&#x95E8;&#x6240;&#x6709;&#x96C7;&#x5458;&#xFF0C;&#x5982;&#x679C;&#x4EC5;&#x60F3;&#x67E5;&#x51FA;&#x8BE5;&#x90E8;&#x95E8;&#x4E2D;&#x85AA;&#x6C34;&#x9AD8;&#x4E8E;&#x7F16;&#x53F7;105&#x7684;&#x96C7;&#x5458;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x518D;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x85AA;&#x6C34;&#xFF0C;&#x4E14;&#x5177;&#x4F53;&#x7684;&#x6BD4;&#x8F83;&#x503C;&#x7531;&#x53E6;&#x4E00;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#x5B8C;&#x6210;&#x3002;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>SELECT employee_id,last_name, salary FROM employees
 
@@ -293,7 +291,6 @@ AND salary &gt; (SELECT salary FROM employees WHERE employee_id = 105)
 <p align="center"><img src="../img/d4z/tu4.3.png"></p>  
 <p align="center">&#x56FE;4.3  &#x591A;&#x4E2A;&#x5355;&#x884C;&#x5B50;&#x67E5;&#x8BE2;</p>  
 
-
 <p>&#x2003;&#x2003;&#x521A;&#x624D;&#x67E5;&#x8BE2;&#x7684;&#x662F;&#x8BE5;&#x90E8;&#x95E8;&#x4E2D;&#x85AA;&#x6C34;&#x9AD8;&#x4E8E;&#x7F16;&#x53F7;105&#x7684;&#x96C7;&#x5458;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x67E5;&#x8BE2;&#x51FA;&#x85AA;&#x6C34;&#x5927;&#x4E8E;&#x516C;&#x53F8;&#x96C7;&#x5458;&#x5E73;&#x5747;&#x85AA;&#x6C34;&#x7684;&#x8BE5;&#x90E8;&#x95E8;&#x96C7;&#x5458;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>SELECT employee_id,last_name, salary FROM employees
 
@@ -303,7 +300,6 @@ AND salary &gt;= (SELECT AVG(salary) FROM employees)
 </code></pre><p>&#x2003;&#x2003;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x8BE5;&#x8BED;&#x53E5;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B50;&#x67E5;&#x8BE2;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;AVG(salary)&#x51FD;&#x6570;&#x6C42;&#x51FA;&#x4E86;&#x516C;&#x53F8;&#x96C7;&#x5458;&#x5E73;&#x5747;&#x85AA;&#x6C34;&#xFF08;6461.83&#x5143;&#xFF09;&#xFF0C;AVG&#x51FD;&#x6570;&#x662F;&#x7EC4;&#x51FD;&#x6570;&#xFF0C;&#x672C;&#x7AE0;&#x540E;&#x534A;&#x90E8;&#x5206;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.4&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.4.png"></p>  
 <p align="center">&#x56FE;4.4  &#x52A0;&#x5165;&#x7EC4;&#x51FD;&#x6570;&#x7684;&#x5355;&#x884C;&#x5B50;&#x67E5;&#x8BE2;</p>  
-
 
 <h3 id="413--&#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;">4.1.3  &#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;</h3>
 <p>&#x2003;&#x2003;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x591A;&#x884C;&#x88AB;&#x79F0;&#x4E3A;&#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x5BF9;&#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;&#x8981;&#x4F7F;&#x7528;&#x591A;&#x884C;&#x8FD0;&#x7B97;&#x7B26;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x884C;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F8B;&#x5982;IN&#x3001;ANY&#x548C;ALL&#x4E09;&#x4E2A;&#x591A;&#x884C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
@@ -316,52 +312,32 @@ WHERE salary IN (SELECT salary FROM employees WHERE department_id = 60)
 <p>&#x2003;&#x2003;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x5148;&#x770B;&#x5B50;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x201C;SELECT salary FROM employees WHERE department_id = 60&#x201D;&#xFF0C;&#x6267;&#x884C;&#x8BE5;&#x8BED;&#x53E5;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.6&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.5.png"></p>  
 <p align="center">&#x56FE;4.5  &#x591A;&#x884C;&#x5B50;&#x67E5;&#x8BE2;</p>  
-
 <p align="center"><img src="../img/d4z/tu4.6.png"></p>  
 <p align="center">&#x56FE;4.6  &#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;</p>  
-&#x200B;                                                         
-
-&#x2003;&#x2003;&#x4E3B;&#x67E5;&#x8BE2;&#x5728;&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x548C;&#x56FE;4.6&#x76F8;&#x540C;&#x3002;
 
 
-```
-SELECT employee_id,last_name, salary,department_id FROM employees
+
+
+<p>&#x2003;&#x2003;&#x4E3B;&#x67E5;&#x8BE2;&#x5728;&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x548C;&#x56FE;4.6&#x76F8;&#x540C;&#x3002;</p>
+<pre><code>SELECT employee_id,last_name, salary,department_id FROM employees
 
 WHERE salary IN (9000,6000,4800,4800,4200)
-```
-
-
-- ANY&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x540C;SOME&#x8FD0;&#x7B97;&#x7B26;&#xFF09;&#x548C;ALL&#x8FD0;&#x7B97;&#x7B26;
-
-&#x2003;&#x2003;ANY &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x4E00;&#x4E2A;&#x503C;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x4EFB;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x800C;ALL &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x4E00;&#x4E2A;&#x503C;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x3002;
-
-&#x2003;&#x2003;&lt; ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5C0F;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;
-
-&#x2003;&#x2003;\&gt; ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5927;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x3002;
-
-&#x2003;&#x2003;= ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x7B49;&#x540C;&#x4E8E;IN&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x3002;
-
-&#x2003;&#x2003;&lt; ALL&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5C0F;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x3002;
-
-&#x2003;&#x2003;\&gt; ALL&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5927;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;
-
-&#x2003;&#x2003;&#x5982;&#x679C;&#x60F3;&#x67E5;&#x8BE2;&#x516C;&#x53F8;&#x7684;&#x6240;&#x6709;&#x96C7;&#x5458;&#x4E2D;&#xFF0C;&#x54EA;&#x4E9B;&#x96C7;&#x5458;&#x7684;&#x85AA;&#x6C34;&#x5C0F;&#x4E8E;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;60&#x7684;IT&#x90E8;&#x95E8;&#x91CC;&#x85AA;&#x6C34;&#x6700;&#x9AD8;&#x7684;&#x96C7;&#x5458;&#x7684;&#x85AA;&#x6C34;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;
-
-
-```
-SELECT employee_id,last_name, salary, department_id FROM employees
+</code></pre><ul>
+<li>ANY&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#x540C;SOME&#x8FD0;&#x7B97;&#x7B26;&#xFF09;&#x548C;ALL&#x8FD0;&#x7B97;&#x7B26;</li>
+</ul>
+<p>&#x2003;&#x2003;ANY &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x4E00;&#x4E2A;&#x503C;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x4EFB;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x800C;ALL &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x4E00;&#x4E2A;&#x503C;&#x4E0E;&#x5B50;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&lt; ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5C0F;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&gt; ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5927;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;= ANY&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x7B49;&#x540C;&#x4E8E;IN&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x2003;&#x2003;&lt; ALL&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5C0F;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&gt; ALL&#x5B50;&#x67E5;&#x8BE2;&#xFF1A;&#x5927;&#x4E8E;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5982;&#x679C;&#x60F3;&#x67E5;&#x8BE2;&#x516C;&#x53F8;&#x7684;&#x6240;&#x6709;&#x96C7;&#x5458;&#x4E2D;&#xFF0C;&#x54EA;&#x4E9B;&#x96C7;&#x5458;&#x7684;&#x85AA;&#x6C34;&#x5C0F;&#x4E8E;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;60&#x7684;IT&#x90E8;&#x95E8;&#x91CC;&#x85AA;&#x6C34;&#x6700;&#x9AD8;&#x7684;&#x96C7;&#x5458;&#x7684;&#x85AA;&#x6C34;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>SELECT employee_id,last_name, salary, department_id FROM employees
 
 WHERE salary &lt; ANY(SELECT salary FROM employees WHERE department_id = 60)
-```
-
-
-&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;80&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x90E8;&#x5206;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.7&#x6240;&#x793A;&#x3002;
-
-
-
+</code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD4;&#x56DE;80&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x90E8;&#x5206;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.7&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.7.png"></p>  
 <p align="center">&#x56FE;4.7  ANY&#x8FD0;&#x7B97;&#x7B26;&#x4F7F;&#x7528;</p>  
-
 
 
 
@@ -437,7 +413,6 @@ WHERE salary &lt; (SELECT MAX(salary) FROM employees WHERE department_id = 60)
 <p align="center"><img src="../img/d4z/tu4.8.png"></p>  
 <p align="center">&#x56FE;4.8  IT&#x90E8;&#x95E8;&#x96C7;&#x5458;&#x4FE1;&#x606F;</p>  
 
-
 <p>&#x2003;&#x2003;&#x5BF9;&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x4F7F;&#x7528;MAX&#x3001;MIN&#x3001;AVG&#x548C;SUM&#x8FD9;&#x56DB;&#x4E2A;&#x7EC4;&#x51FD;&#x6570;&#xFF0C;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.9&#x6240;&#x793A;&#x3002;</p>
 <pre><code>SELECT MAX(salary) AS &quot;&#x6700;&#x9AD8;&#x85AA;&quot;, MIN(salary) AS &quot;&#x6700;&#x4F4E;&#x85AA;&quot;, AVG(salary) AS &quot;&#x5E73;&#x5747;&#x85AA;&#x6C34;&quot;, SUM(salary) AS &quot;&#x85AA;&#x6C34;&#x603B;&#x548C;&quot; 
 
@@ -445,11 +420,9 @@ FROM employees WHERE department_id = 60
 </code></pre><p align="center"><img src="../img/d4z/tu4.9.png"></p>  
 <p align="center">&#x56FE;4.9  &#x7EC4;&#x51FD;&#x6570;&#x4F7F;&#x7528;</p>  
 
-
 <p>&#x2003;&#x2003;&#x4FEE;&#x6539;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5C06;AVG(salary)&#x548C;SUM(salary)&#x8FD9;&#x4E24;&#x4E2A;&#x7EC4;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x4E3A;AVG(DISTINCT salary)&#x548C;SUM(DISTINCT salary)&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.10&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.10.png"></p>  
 <p align="center">&#x56FE;4.10  &#x7EC4;&#x51FD;&#x6570;&#x4F7F;&#x7528;</p>  
-
 
 <p>&#x2003;&#x2003;&#x4F7F;&#x7528;DISTINCT&#x5173;&#x952E;&#x5B57;&#x7684;&#x76EE;&#x7684;&#x662F;&#x53BB;&#x9664;&#x91CD;&#x590D;&#xFF0C;SUM(DISTINCT salary)&#x51FD;&#x6570;&#x4EC5;&#x5BF9;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x884C;&#x8FDB;&#x884C;&#x6C42;&#x548C;&#x3002;&#x56FE;4.8&#x4E2D;&#xFF0C;&#x7F16;&#x53F7;&#x4E3A;105&#x548C;106&#x7684;&#x5458;&#x5DE5;&#x85AA;&#x6C34;&#x91CD;&#x590D;&#xFF0C;&#x6240;&#x4EE5;&#x4EC5;&#x53D6;&#x4E00;&#x884C;&#x6570;&#x636E;&#x53C2;&#x4E0E;&#x6C42;&#x548C;&#xFF0C;&#x6545;AVG(DISTINCT salary)&#x5B9E;&#x9645;&#x662F;&#x5BF9;9000&#x3001;6000&#x3001;4800&#x548C;4200&#x6C42;&#x548C;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;24000&#x3002;&#x540C;&#x7406;&#xFF0C;AVG(DISTINCT salary)&#x51FD;&#x6570;&#x4E5F;&#x4EC5;&#x5BF9;&#x8FD9;&#x56DB;&#x4E2A;&#x6570;&#x6C42;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;6000&#x3002;</p>
 <p>&#x2003;&#x2003;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;MAX&#x548C;MIN&#x51FD;&#x6570;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x4E0A;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x4EFB;&#x610F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x800C;AVG&#x3001;SUM&#x4EE5;&#x53CA;STDDEV&#x548C;VARIANCE&#x4EC5;&#x80FD;&#x7528;&#x5728;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x4E0A;&#x3002;</p>
@@ -461,7 +434,6 @@ FROM employees
 </code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.11&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.11.png"></p>  
 <p align="center">&#x56FE;4.11  COUNT&#x7EC4;&#x51FD;&#x6570;&#x4F7F;&#x7528;</p>  
-
 
 <p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7EDF;&#x8BA1;&#x96C7;&#x5458;&#x603B;&#x4EBA;&#x6570;&#x65F6;&#xFF0C;&#x662F;&#x5BF9;&#x201C;*&#x201D;&#x8FDB;&#x884C;COUNT&#x3002;&#x5982;&#x679C;COUNT&#x51FD;&#x6570;&#x91CC;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5B57;&#x6BB5;manager_id&#xFF0C;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x540E;&#xFF0C;&#x7EDF;&#x8BA1;&#x51FA;&#x7684;&#x4EBA;&#x6570;&#x662F;106&#x540D;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x6B63;&#x786E;&#x7684;&#x6570;&#x503C;&#x3002;&#x5176;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#xFF0C;&#x96C7;&#x5458;&#x8868;&#x4E2D;&#x8001;&#x677F;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x7684;manager_id&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#xFF0C;COUNT(manager_id)&#x662F;&#x5FFD;&#x7565;&#x7A7A;&#x503C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x7EDF;&#x8BA1;&#x8001;&#x677F;&#x3002;</p>
 <p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;NVL&#x51FD;&#x6570;&#x5C06;&#x7A7A;&#x503C;&#x7F6E;&#x4E3A;&#x67D0;&#x503C;&#xFF0C;&#x4F7F;&#x7EC4;&#x51FD;&#x6570;&#x5728;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#x3001;&#x8BA1;&#x7B97;&#x65F6;&#xFF0C;&#x4E0D;&#x5FFD;&#x7565;&#x8BE5;&#x884C;&#xFF0C;&#x5177;&#x4F53;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -479,7 +451,6 @@ FROM employees GROUP BY department_id
 <p align="center"><img src="../img/d4z/tu4.12.png"></p>  
 <p align="center">&#x56FE;4.12  GROUP BY&#x4F7F;&#x7528;</p>  
 
-
 <p>&#x2003;&#x2003;&#x6CE8;&#x610F;&#xFF0C;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x53EA;&#x53EF;&#x4EE5;&#x6709;&#x7EC4;&#x51FD;&#x6570;&#x548C;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#xFF08;&#x5305;&#x62EC;&#x5BF9;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x7684;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x5305;&#x62EC;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;GROUP BY&#x5B50;&#x53E5;&#x540E;&#x8981;&#x5305;&#x62EC;ORDER BY&#x5B50;&#x53E5;&#xFF0C;&#x5219;ORDER BY&#x5B50;&#x53E5;&#x7528;&#x4E8E;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x662F;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x6216;&#x7EC4;&#x51FD;&#x6570;&#x3002;&#x4F8B;&#x5982;&#x8981;&#x5C06;&#x521A;&#x624D;&#x83B7;&#x53D6;&#x7684;&#x7ED3;&#x679C;&#x6309;&#x7167;&#x5404;&#x90E8;&#x95E8;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#x503C;&#x8FDB;&#x884C;&#x4ECE;&#x9AD8;&#x5230;&#x5E95;&#x7684;&#x6392;&#x5E8F;&#xFF0C;&#x5176;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>SELECT department_id, MAX(salary) FROM employees 
 
@@ -487,7 +458,6 @@ GROUP BY department_id ORDER BY MAX(salary) DESC
 </code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.13&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.13.png"></p>  
 <p align="center">&#x56FE;4.13  &#x5BF9;&#x5206;&#x7EC4;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</p>  
-
 
 <p>&#x2003;&#x2003;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#xFF0C;&#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7684;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5206;&#x522B;&#x5728;SELECT&#x5B50;&#x53E5;&#x548C;ORDER BY&#x5B50;&#x53E5;&#x4E2D;&#x589E;&#x52A0;salary&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#xFF0C;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x770B;&#x770B;&#x4F1A;&#x51FA;&#x73B0;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 <h3 id="434--&#x5206;&#x7EC4;&#x4E2D;&#x518D;&#x5206;&#x7EC4;">4.3.4  &#x5206;&#x7EC4;&#x4E2D;&#x518D;&#x5206;&#x7EC4;</h3>
@@ -501,16 +471,24 @@ ORDER BY department_id, job_id
 </code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x90E8;&#x5206;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.14&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.14.png"></p>  
 <p align="center">&#x56FE;4.14  &#x5206;&#x7EC4;&#x4E2D;&#x518D;&#x5206;&#x7EC4;</p>  
+&#x2003;&#x2003;&#x540C;&#x6837;&#x7684;&#xFF0C;SELECT&#x5B50;&#x53E5;&#x548C;ORDER BY&#x5B50;&#x53E5;&#x4E2D;&#x53EA;&#x80FD;&#x5305;&#x62EC;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x548C;&#x7EC4;&#x51FD;&#x6570;&#x3002;
 
-<p>&#x2003;&#x2003;&#x540C;&#x6837;&#x7684;&#xFF0C;SELECT&#x5B50;&#x53E5;&#x548C;ORDER BY&#x5B50;&#x53E5;&#x4E2D;&#x53EA;&#x80FD;&#x5305;&#x62EC;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x548C;&#x7EC4;&#x51FD;&#x6570;&#x3002;</p>
-<h3 id="435--&#x7EA6;&#x675F;&#x5206;&#x7EC4;&#x7ED3;&#x679C;">4.3.5  &#x7EA6;&#x675F;&#x5206;&#x7EC4;&#x7ED3;&#x679C;</h3>
-<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#x7684;&#x6848;&#x4F8B;&#xFF0C;&#x7B97;&#x51FA;&#x4E86;&#x516C;&#x53F8;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#x3002;&#x5982;&#x679C;&#x53EA;&#x60F3;&#x83B7;&#x5F97;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;50&#x3001;60&#x3001;80&#x3001;90&#x8FD9;&#x56DB;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;WHERE&#x5B50;&#x53E5;&#x9650;&#x5B9A;&#x9009;&#x62E9;&#x7684;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E9B;&#x9009;&#x62E9;&#x884C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x518D;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.15&#x6240;&#x793A;&#x3002;</p>
-<pre><code>SELECT department_id, MAX(salary) FROM employees 
+### 4.3.5  &#x7EA6;&#x675F;&#x5206;&#x7EC4;&#x7ED3;&#x679C;  
+
+&#x2003;&#x2003;&#x4E4B;&#x524D;&#x7684;&#x6848;&#x4F8B;&#xFF0C;&#x7B97;&#x51FA;&#x4E86;&#x516C;&#x53F8;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#x3002;&#x5982;&#x679C;&#x53EA;&#x60F3;&#x83B7;&#x5F97;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x4E3A;50&#x3001;60&#x3001;80&#x3001;90&#x8FD9;&#x56DB;&#x4E2A;&#x90E8;&#x95E8;&#x7684;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;WHERE&#x5B50;&#x53E5;&#x9650;&#x5B9A;&#x9009;&#x62E9;&#x7684;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E9B;&#x9009;&#x62E9;&#x884C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x518D;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.15&#x6240;&#x793A;&#x3002;
+
+
+```
+SELECT department_id, MAX(salary) FROM employees 
 
 WHERE department_id IN(50,60,80,90) GROUP BY department_id
-</code></pre><p align="center"><img src="../img/d4z/tu4.15.png"></p>  
-<p align="center">&#x56FE;4.15  &#x5206;&#x7EC4;&#x524D;&#x4F7F;&#x7528;WHERE&#x5B50;&#x53E5;&#x7EA6;&#x675F;&#x884C;</p>  
+```
 
+
+
+
+<p align="center"><img src="../img/d4z/tu4.15.png"></p>  
+<p align="center">&#x56FE;4.15  &#x5206;&#x7EC4;&#x524D;&#x4F7F;&#x7528;WHERE&#x5B50;&#x53E5;&#x7EA6;&#x675F;&#x884C;</p>  
 
 <p>&#x2003;&#x2003;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#xFF0C;WHERE&#x5B50;&#x53E5;&#x5FC5;&#x987B;&#x5728;GROUP BY&#x5B50;&#x53E5;&#x524D;&#xFF0C;&#x800C;&#x4E14;&#x4ECE;&#x542B;&#x4E49;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x4E5F;&#x662F;&#x5148;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#x4E4B;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x3002;&#x6240;&#x4EE5;&#xFF0C;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x9009;&#x62E9;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x975E;&#x5FC5;&#x987B;&#x4E3A;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#xFF0C;&#x4F46;&#x4E5F;&#x80AF;&#x5B9A;&#x4E0D;&#x80FD;&#x662F;&#x7EC4;&#x51FD;&#x6570;&#x3002;</p>
 <p>&#x2003;&#x2003;&#x90A3;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x5206;&#x7EC4;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x53EA;&#x663E;&#x793A;&#x6700;&#x9AD8;&#x85AA;&#x6C34;&#x5927;&#x4E8E;12000&#x5143;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;HAVING&#x5B50;&#x53E5;&#x5BF9;&#x5206;&#x7EC4;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#x3002;HAVING&#x5B50;&#x53E5;&#x5FC5;&#x987B;&#x5728;GROUP BY&#x5B50;&#x53E5;&#x4E4B;&#x540E;&#xFF0C;&#x5728;ORDER BY&#x5B50;&#x53E5;&#x4E4B;&#x524D;&#x3002;&#x5B8C;&#x6210;&#x4E0A;&#x9762;&#x9700;&#x6C42;&#x7684;SQL&#x8BED;&#x53E5;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -522,7 +500,6 @@ GROUP BY department_id HAVING MAX(salary) &gt; 12000
 </code></pre><p>&#x2003;&#x2003;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;4.16&#x6240;&#x793A;&#x3002;</p>
 <p align="center"><img src="../img/d4z/tu4.16.png"></p>  
 <p align="center">&#x56FE;4.16  HAVING&#x5B50;&#x53E5;&#x4F7F;&#x7528;</p>  
-
 
 <p>&#x2003;&#x2003;&#x8BF7;&#x8BFB;&#x8005;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;HAVING&#x5B50;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x975E;&#x5206;&#x7EC4;&#x5B57;&#x6BB5;&#x3001;&#x7EC4;&#x51FD;&#x6570;&#x5417;&#xFF1F;</p>
 <h2 id="44--&#x4E0A;&#x673A;&#x4EFB;&#x52A1;">4.4  &#x4E0A;&#x673A;&#x4EFB;&#x52A1;</h2>
@@ -594,7 +571,7 @@ GROUP BY department_id HAVING MAX(salary) &gt; 12000
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四章    子查询和组函数","level":"1.5","depth":1,"next":{"title":"第五章    操作数据和管理表","level":"1.6","depth":1,"path":"chapters/d5z.md","ref":"chapters/d5z.md","articles":[]},"previous":{"title":"第三章    单行函数和多表查询","level":"1.4","depth":1,"path":"chapters/d3z.md","ref":"chapters/d3z.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapters/d4z.md","mtime":"2020-04-14T03:36:22.753Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T03:37:44.572Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四章    子查询和组函数","level":"1.5","depth":1,"next":{"title":"第五章    操作数据和管理表","level":"1.6","depth":1,"path":"chapters/d5z.md","ref":"chapters/d5z.md","articles":[]},"previous":{"title":"第三章    单行函数和多表查询","level":"1.4","depth":1,"path":"chapters/d3z.md","ref":"chapters/d3z.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapters/d4z.md","mtime":"2020-04-14T08:15:15.932Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T08:15:32.882Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
